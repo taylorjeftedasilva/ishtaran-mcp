@@ -3,7 +3,8 @@
 // intentionally the local monorepo path today -- there is no public ishtaran-mcp/mercatto
 // remote repo yet (confirmed this session); this field must be updated, never invented, if/when
 // a public mirror repo is created. `sourceArchiveUrl` is null for the same reason: the local
-// build indexes the path directly rather than downloading an archive.
+// build indexes the path directly rather than downloading an archive. A PLANNED entry has
+// `repositoryUrl: null` -- never a fabricated URL for code that doesn't exist yet.
 export type ProjectStatus = 'READY' | 'PLANNED' | 'EXPERIMENTAL' | 'DEPRECATED';
 
 export interface ProjectEntry {
@@ -12,9 +13,9 @@ export interface ProjectEntry {
   description: string;
   status: ProjectStatus;
   pattern: string;
-  repositoryUrl: string;
-  defaultBranch: string;
-  revision: string;
+  repositoryUrl: string | null;
+  defaultBranch: string | null;
+  revision: string | null;
   sourceArchiveUrl: string | null;
   contentHash: string | null;
   languages: string[];
@@ -81,6 +82,54 @@ export function buildProjects(monorepoCommit: string, monorepoCommitDate: string
       entryPoints: ['examples/quickstart-node/index.js'],
       minimumKnowledgeVersion: '0.1.0',
       knownLimitations: ['Does not cover Settlement, Payout, Withdrawal, or webhooks -- not a substitute for the marketplace/wallet/service recipes.'],
+      lastValidatedAt: monorepoCommitDate,
+    },
+    {
+      id: 'wallet-payment-app',
+      name: 'Wallet / payment app (planned reference)',
+      description:
+        'A planned reference implementation for the wallet-payment-app recipe (end-user balance, deposit, withdrawal). The underlying capabilities are real and supported today (see the wallet-payment-app recipe, recipeStatus: SUPPORTED_CONCEPT) -- no runnable code exists for this pattern yet.',
+      status: 'PLANNED',
+      pattern: 'wallet-payment-app',
+      repositoryUrl: null,
+      defaultBranch: null,
+      revision: null,
+      sourceArchiveUrl: null,
+      contentHash: null,
+      languages: [],
+      frameworks: [],
+      capabilities: ['accounts', 'deposits', 'ledger', 'withdrawals'],
+      sdk: [],
+      difficulty: 'intermediate',
+      tags: ['wallet', 'payments', 'planned'],
+      docs: [],
+      entryPoints: [],
+      minimumKnowledgeVersion: '0.1.0',
+      knownLimitations: ['PLANNED only -- no reference code exists yet. Do not present this as available; use the wallet-payment-app recipe (get_recipe) for the supported pattern instead.'],
+      lastValidatedAt: monorepoCommitDate,
+    },
+    {
+      id: 'service-milestone',
+      name: 'Services / milestone-based release (planned reference)',
+      description:
+        'A planned reference implementation for the service-milestone recipe (partial Settlement released per milestone). The underlying capability (partial ExecuteSettlement) is real and supported today (see the service-milestone recipe, recipeStatus: SUPPORTED_CONCEPT) -- no runnable code exists for this pattern yet.',
+      status: 'PLANNED',
+      pattern: 'service-milestone',
+      repositoryUrl: null,
+      defaultBranch: null,
+      revision: null,
+      sourceArchiveUrl: null,
+      contentHash: null,
+      languages: [],
+      frameworks: [],
+      capabilities: ['transactions', 'settlement', 'refunds'],
+      sdk: [],
+      difficulty: 'intermediate',
+      tags: ['services', 'milestone', 'escrow', 'planned'],
+      docs: [],
+      entryPoints: [],
+      minimumKnowledgeVersion: '0.1.0',
+      knownLimitations: ['PLANNED only -- no reference code exists yet. Do not present this as available; use the service-milestone recipe (get_recipe) for the supported pattern instead.'],
       lastValidatedAt: monorepoCommitDate,
     },
   ];

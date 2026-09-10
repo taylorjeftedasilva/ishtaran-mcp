@@ -128,9 +128,9 @@ export interface ProjectEntry {
   description: string;
   status: 'READY' | 'PLANNED' | 'EXPERIMENTAL' | 'DEPRECATED';
   pattern: string;
-  repositoryUrl: string;
-  defaultBranch: string;
-  revision: string;
+  repositoryUrl: string | null;
+  defaultBranch: string | null;
+  revision: string | null;
   sourceArchiveUrl: string | null;
   contentHash: string | null;
   languages: string[];

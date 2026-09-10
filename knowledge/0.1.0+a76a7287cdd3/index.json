@@ -117,6 +117,16 @@
       "id": "quickstart-node",
       "status": "READY",
       "pattern": "getting-started"
+    },
+    {
+      "id": "wallet-payment-app",
+      "status": "PLANNED",
+      "pattern": "wallet-payment-app"
+    },
+    {
+      "id": "service-milestone",
+      "status": "PLANNED",
+      "pattern": "service-milestone"
     }
   ],
   "counts": {
@@ -126,7 +136,7 @@
     "errors": 12,
     "webhookEvents": 36,
     "recipes": 3,
-    "projects": 2,
+    "projects": 4,
     "conflicts": 0
   }
 }

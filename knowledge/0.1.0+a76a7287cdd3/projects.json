@@ -7,7 +7,7 @@
     "pattern": "marketplace",
     "repositoryUrl": "https://github.com/taylorjeftedasilva/smartcontract (monorepo path: examples/marketplace-mercatto)",
     "defaultBranch": "main",
-    "revision": "51f148541d0e98e43b8d29c70a69bf25121bf6a3",
+    "revision": "33cc3aacd27e12c9922c56b57d0841f7526388d5",
     "sourceArchiveUrl": null,
     "contentHash": null,
     "languages": [
@@ -52,7 +52,7 @@
       "Uses Sandbox only, never Production.",
       "THRESHOLD/SCHEDULED PayoutPolicy not exercised (not publicly supported)."
     ],
-    "lastValidatedAt": "2026-09-09T18:40:46-03:00"
+    "lastValidatedAt": "2026-09-10T05:53:41-03:00"
   },
   {
     "id": "quickstart-node",
@@ -62,7 +62,7 @@
     "pattern": "getting-started",
     "repositoryUrl": "https://github.com/taylorjeftedasilva/smartcontract (monorepo path: examples/quickstart-node)",
     "defaultBranch": "main",
-    "revision": "51f148541d0e98e43b8d29c70a69bf25121bf6a3",
+    "revision": "33cc3aacd27e12c9922c56b57d0841f7526388d5",
     "sourceArchiveUrl": null,
     "contentHash": null,
     "languages": [
@@ -101,6 +101,74 @@
     "knownLimitations": [
       "Does not cover Settlement, Payout, Withdrawal, or webhooks -- not a substitute for the marketplace/wallet/service recipes."
     ],
-    "lastValidatedAt": "2026-09-09T18:40:46-03:00"
+    "lastValidatedAt": "2026-09-10T05:53:41-03:00"
+  },
+  {
+    "id": "wallet-payment-app",
+    "name": "Wallet / payment app (planned reference)",
+    "description": "A planned reference implementation for the wallet-payment-app recipe (end-user balance, deposit, withdrawal). The underlying capabilities are real and supported today (see the wallet-payment-app recipe, recipeStatus: SUPPORTED_CONCEPT) -- no runnable code exists for this pattern yet.",
+    "status": "PLANNED",
+    "pattern": "wallet-payment-app",
+    "repositoryUrl": null,
+    "defaultBranch": null,
+    "revision": null,
+    "sourceArchiveUrl": null,
+    "contentHash": null,
+    "languages": [],
+    "frameworks": [],
+    "capabilities": [
+      "accounts",
+      "deposits",
+      "ledger",
+      "withdrawals"
+    ],
+    "sdk": [],
+    "difficulty": "intermediate",
+    "tags": [
+      "wallet",
+      "payments",
+      "planned"
+    ],
+    "docs": [],
+    "entryPoints": [],
+    "minimumKnowledgeVersion": "0.1.0",
+    "knownLimitations": [
+      "PLANNED only -- no reference code exists yet. Do not present this as available; use the wallet-payment-app recipe (get_recipe) for the supported pattern instead."
+    ],
+    "lastValidatedAt": "2026-09-10T05:53:41-03:00"
+  },
+  {
+    "id": "service-milestone",
+    "name": "Services / milestone-based release (planned reference)",
+    "description": "A planned reference implementation for the service-milestone recipe (partial Settlement released per milestone). The underlying capability (partial ExecuteSettlement) is real and supported today (see the service-milestone recipe, recipeStatus: SUPPORTED_CONCEPT) -- no runnable code exists for this pattern yet.",
+    "status": "PLANNED",
+    "pattern": "service-milestone",
+    "repositoryUrl": null,
+    "defaultBranch": null,
+    "revision": null,
+    "sourceArchiveUrl": null,
+    "contentHash": null,
+    "languages": [],
+    "frameworks": [],
+    "capabilities": [
+      "transactions",
+      "settlement",
+      "refunds"
+    ],
+    "sdk": [],
+    "difficulty": "intermediate",
+    "tags": [
+      "services",
+      "milestone",
+      "escrow",
+      "planned"
+    ],
+    "docs": [],
+    "entryPoints": [],
+    "minimumKnowledgeVersion": "0.1.0",
+    "knownLimitations": [
+      "PLANNED only -- no reference code exists yet. Do not present this as available; use the service-milestone recipe (get_recipe) for the supported pattern instead."
+    ],
+    "lastValidatedAt": "2026-09-10T05:53:41-03:00"
   }
 ]

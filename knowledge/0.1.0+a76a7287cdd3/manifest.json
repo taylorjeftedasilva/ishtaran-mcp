@@ -1,11 +1,11 @@
 {
   "schemaVersion": "1.0.0",
-  "knowledgeVersion": "0.1.0+eea0565d623f",
-  "generatedAt": "2026-09-09T21:40:58.316Z",
-  "sourceCommit": "51f148541d0e98e43b8d29c70a69bf25121bf6a3",
+  "knowledgeVersion": "0.1.0+a76a7287cdd3",
+  "generatedAt": "2026-09-10T09:04:15.832Z",
+  "sourceCommit": "33cc3aacd27e12c9922c56b57d0841f7526388d5",
   "openApiVersion": "v1",
   "openApiHash": "a91e482943a06d3c29749b94fb3d5a29ae2ec5d80cff7a9c6ab171b687807590",
-  "bundleHash": "eea0565d623f94a4dc29adbf9072fc42ce304d2a4ab5806a50b7ac59780d524e",
+  "bundleHash": "a76a7287cdd3d7cc187a72de4c1d51fa324dde5f98a5cce7f0625ed63f7193fa",
   "supportedSdkVersions": [
     {
       "language": "typescript",
