@@ -1,0 +1,330 @@
+{
+  "conceptToCapabilities": {
+    "Settlement": [
+      "accounts",
+      "ledger"
+    ],
+    "Payout": [
+      "payout"
+    ],
+    "obrigação econômica (economic obligation)": [
+      "ledger"
+    ],
+    "PlatformFee": [
+      "settlement"
+    ],
+    "PricingPolicy configuration": [],
+    "SelfCustody": [
+      "organizations"
+    ],
+    "NetworkCostPayerAccount": [],
+    "CUSTOMER_RESOURCES": [],
+    "ExecutionSource": [
+      "auth"
+    ],
+    "API Key": [],
+    "Deposit": [],
+    "Withdrawal multi-source": [
+      "accounts"
+    ],
+    "Settlement multi-source": [
+      "settlement"
+    ],
+    "ManagedCustody availability": [],
+    "PayoutPolicy (public modes)": [
+      "payout"
+    ],
+    "Production readiness": [
+      "sandbox",
+      "transactions"
+    ]
+  },
+  "capabilityToOperations": {
+    "accountholders": [
+      "CreateAccountHolderInvitation",
+      "RevokeRelationship",
+      "SignUpAccountHolder",
+      "LoginAccountHolder",
+      "GetAccountHolderMe",
+      "ClaimAccountHolderInvitation",
+      "SignUpAndClaimAccountHolderInvitation"
+    ],
+    "accounts": [
+      "ListAccountsByOrganization",
+      "CreateAccount",
+      "AuthorizeAccountForApplication",
+      "GetAccount",
+      "CloseAccount",
+      "FreezeAccount",
+      "UnfreezeAccount"
+    ],
+    "apikeys": [
+      "RotateApiKey",
+      "RevokeApiKey"
+    ],
+    "applications": [
+      "ListEnvironments",
+      "CreateEnvironment",
+      "ArchiveApplication",
+      "SuspendApplication",
+      "ReactivateApplication"
+    ],
+    "assetnetworkcatalog": [
+      "ListAssets",
+      "GetAsset",
+      "ListNetworks",
+      "GetNetwork",
+      "ListAssetNetworks",
+      "GetAssetNetwork"
+    ],
+    "auth": [
+      "Login",
+      "RefreshToken",
+      "RequestPasswordReset",
+      "ConfirmPasswordReset",
+      "SignUp"
+    ],
+    "deposits": [
+      "CreatePaymentIntent",
+      "GetPaymentIntent",
+      "GetDeposit"
+    ],
+    "environments": [
+      "ListApiKeys",
+      "GenerateApiKey"
+    ],
+    "executioncustody": [
+      "RegisterWallet",
+      "AllocateDepositAddress",
+      "GetWallet",
+      "GetWalletPublicMaterial",
+      "CreateSigningRequest",
+      "GetNetworkExecutionQuote",
+      "GetSigningRequest",
+      "SubmitSignedTransaction",
+      "RegisterExecutionDestination",
+      "RegisterExecutionSource",
+      "SyncCustomerResourceStake",
+      "RegisterNetworkCostPayerAccount",
+      "UpdateNetworkResourcePreference"
+    ],
+    "ledger": [
+      "GetAccountBalance",
+      "GetAccountLedgerEntries"
+    ],
+    "members": [
+      "AcceptInvite",
+      "ListMembers",
+      "InviteMember",
+      "AssignMemberRole",
+      "SuspendMember",
+      "ReactivateMember",
+      "RemoveMember"
+    ],
+    "notifications": [
+      "SearchWebhookEndpoints",
+      "ConfigureWebhookEndpoint",
+      "GetWebhookEndpoint",
+      "RotateWebhookEndpointSecret",
+      "DeactivateWebhookEndpoint",
+      "SearchWebhookDeliveries",
+      "GetWebhookDelivery",
+      "RedeliverWebhook"
+    ],
+    "organizations": [
+      "CreateOrganization",
+      "GetOrganization",
+      "SuspendOrganization",
+      "ReactivateOrganization",
+      "ListApplications",
+      "CreateApplication"
+    ],
+    "payout": [
+      "GetPayableSummary",
+      "CreatePayoutBatch",
+      "GetPayoutBatch"
+    ],
+    "sandbox": [
+      "SandboxFaucet",
+      "SandboxSimulateDeposit",
+      "SandboxSimulateConfirmation",
+      "SandboxSimulateBroadcastConfirmation",
+      "SandboxSimulateWithdrawal",
+      "SandboxSetObservedTreasuryBalance",
+      "GetSandboxObservedTreasuryBalance",
+      "GetSandboxObservedAddress",
+      "GetSandboxBroadcastAttempt"
+    ],
+    "settlement": [
+      "SearchSettlements",
+      "ExecuteSettlement",
+      "GetSettlement",
+      "ReleaseRetainedSplit",
+      "SearchRefunds",
+      "ExecuteRefund",
+      "GetRefund",
+      "GetTransactionSettlementSummary"
+    ],
+    "transactions": [
+      "CreateTransaction",
+      "GetTransaction",
+      "GetTransactionState",
+      "ReserveTransactionBalance",
+      "CancelTransaction",
+      "FreezeTransaction",
+      "UnfreezeTransaction"
+    ],
+    "withdrawals": [
+      "CreateWithdrawalDestination",
+      "SearchWithdrawals",
+      "RequestWithdrawal",
+      "GetWithdrawalQuote",
+      "GetWithdrawal",
+      "CancelWithdrawal",
+      "RetryWithdrawalBroadcast"
+    ],
+    "workflowrules": [
+      "ListWorkflowsByOrganization",
+      "CreateWorkflow",
+      "GetWorkflow",
+      "CreateWorkflowVersion",
+      "GetWorkflowVersion",
+      "PublishWorkflowVersion",
+      "CreateRule",
+      "ListEventTypes",
+      "CreateEventType",
+      "IngestEvent"
+    ]
+  },
+  "operationToErrors": {
+    "CreatePayoutBatch": [
+      "PAYOUT_BATCH_IDEMPOTENCY_KEY_CONFLICT",
+      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE",
+      "PAYOUT_BATCH_TRIGGER_NOT_SUPPORTED"
+    ],
+    "GetNetworkExecutionQuote": [
+      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE"
+    ],
+    "ExecuteSettlement": [
+      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE"
+    ],
+    "RequestWithdrawal": [
+      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE"
+    ],
+    "SyncCustomerResourceStake": [
+      "CUSTOMER_NETWORK_RESOURCE_INSUFFICIENT",
+      "CUSTOMER_RESOURCE_STAKE_INVALID"
+    ],
+    "RegisterExecutionSource": [
+      "EXECUTION_SOURCE_ALREADY_REGISTERED"
+    ],
+    "RegisterNetworkCostPayerAccount": [
+      "NETWORK_COST_PAYER_ACCOUNT_ALREADY_REGISTERED"
+    ],
+    "SubmitSignedTransaction": [
+      "SIGNED_TRANSACTION_MISMATCH"
+    ]
+  },
+  "errorToOperations": {
+    "IDEMPOTENCY_KEY_CONFLICT": [],
+    "PAYOUT_BATCH_IDEMPOTENCY_KEY_CONFLICT": [
+      "CreatePayoutBatch"
+    ],
+    "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE": [
+      "GetNetworkExecutionQuote",
+      "ExecuteSettlement",
+      "CreatePayoutBatch",
+      "RequestWithdrawal"
+    ],
+    "CUSTOMER_NETWORK_RESOURCE_INSUFFICIENT": [
+      "SyncCustomerResourceStake"
+    ],
+    "CUSTOMER_RESOURCE_STAKE_INVALID": [
+      "SyncCustomerResourceStake"
+    ],
+    "EXECUTION_SOURCE_ALREADY_REGISTERED": [
+      "RegisterExecutionSource"
+    ],
+    "NETWORK_COST_PAYER_ACCOUNT_ALREADY_REGISTERED": [
+      "RegisterNetworkCostPayerAccount"
+    ],
+    "EXECUTION_DESTINATION_ALREADY_REGISTERED": [],
+    "PAYOUT_POLICY_MODE_NOT_SUPPORTED": [],
+    "PAYOUT_BATCH_TRIGGER_NOT_SUPPORTED": [
+      "CreatePayoutBatch"
+    ],
+    "VALIDATION_ERROR": [],
+    "SIGNED_TRANSACTION_MISMATCH": [
+      "SubmitSignedTransaction"
+    ]
+  },
+  "recipeToCapabilities": {
+    "marketplace": [
+      "Application/Environment/API Key setup",
+      "Account creation (buyer, seller, platform)",
+      "PaymentIntent + Deposit funding",
+      "Transaction reserve, with per-participant splitPercentage",
+      "Settlement (with PlatformFee)",
+      "Payout (IMMEDIATE or MANUAL)",
+      "Webhooks"
+    ],
+    "wallet-payment-app": [
+      "Account creation per end user",
+      "Transaction reserve (PaymentIntent is always Transaction-scoped -- there is no account-only deposit without a Transaction)",
+      "PaymentIntent + Deposit funding",
+      "Ledger balance query",
+      "WithdrawalDestination registration",
+      "RequestWithdrawal",
+      "Webhooks"
+    ],
+    "service-milestone": [
+      "PaymentIntent + Deposit funding",
+      "Transaction reserve",
+      "Partial Settlement (multiple ExecuteSettlement calls against one Transaction)",
+      "Webhooks"
+    ]
+  },
+  "recipeToOperations": {
+    "marketplace": [],
+    "wallet-payment-app": [],
+    "service-milestone": []
+  },
+  "webhookEventToCategory": {
+    "transaction.created": "Transaction",
+    "transaction.funded": "Transaction",
+    "transaction.reserved": "Transaction",
+    "transaction.cancelled": "Transaction",
+    "transaction.frozen": "Transaction",
+    "transaction.unfrozen": "Transaction",
+    "transaction.settled": "Transaction",
+    "transaction.refunded": "Transaction",
+    "payment_intent.created": "PaymentIntent",
+    "payment_intent.cancelled": "PaymentIntent",
+    "payment_intent.expired": "PaymentIntent",
+    "payment_intent.late_deposit_received": "PaymentIntent",
+    "deposit.address_generated": "Deposit",
+    "deposit.detected": "Deposit",
+    "deposit.confirming": "Deposit",
+    "deposit.confirmed": "Deposit",
+    "deposit.rejected": "Deposit",
+    "deposit.reorg_frozen": "Deposit",
+    "deposit.under_review": "Deposit",
+    "settlement.executed": "Settlement",
+    "settlement.failed": "Settlement",
+    "settlement.fee_applied": "Settlement",
+    "settlement.split_portion_retained": "Settlement",
+    "settlement.split_portion_released": "Settlement",
+    "refund.executed": "Refund",
+    "refund.rejected": "Refund",
+    "withdrawal.requested": "Withdrawal",
+    "withdrawal.approved": "Withdrawal",
+    "withdrawal.rejected": "Withdrawal",
+    "withdrawal.cancelled": "Withdrawal",
+    "withdrawal.broadcast": "Withdrawal",
+    "withdrawal.broadcast_failed": "Withdrawal",
+    "withdrawal.confirmed": "Withdrawal",
+    "withdrawal.failed": "Withdrawal",
+    "withdrawal.requires_reconciliation": "Withdrawal",
+    "withdrawal_destination.registered": "Withdrawal"
+  }
+}

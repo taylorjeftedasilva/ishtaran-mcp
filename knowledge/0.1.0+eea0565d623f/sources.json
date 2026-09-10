@@ -1,0 +1,66 @@
+[
+  {
+    "path": "website/openapi/ishtaran-api.json",
+    "contentHash": "a91e482943a06d3c29749b94fb3d5a29ae2ec5d80cff7a9c6ab171b687807590"
+  },
+  {
+    "path": "sdk-feature-matrix.json",
+    "contentHash": "950d799bf2abffced4d6b750a5ed879586386605aaf0bd3592eb90e55d452346"
+  },
+  {
+    "path": "website/docs/webhooks.md",
+    "contentHash": "b4161a68daaed01c303ac736389cf224d2341f1c77c8c4087f89f91d457653f1"
+  },
+  {
+    "path": "website/docs/errors.md",
+    "contentHash": "586752eb202f4009d2fd18453d94c3f533b905d4c2b72810b2eb964dc7f35358"
+  },
+  {
+    "path": "website/docs/idempotency.md",
+    "contentHash": "fbdc52000297a64ee7efb46100aad3e72eca9618ebf3d01376b2e3d34b5b63fb"
+  },
+  {
+    "path": "website/docs/getting-started.md",
+    "contentHash": "0fa3c369c47ed08692eb0f9c81dcacc780ef74a96e7cf82c0f6c680fe809618d"
+  },
+  {
+    "path": "website/docs/concepts/authentication.md",
+    "contentHash": "cc3cc95188d7a23ab5d1c23983cd6fba810b21906964ec5adcd86f733f8e3003"
+  },
+  {
+    "path": "website/docs/concepts/network-execution.md",
+    "contentHash": "c405b6a73636f056966e833e450a669e084b5a7df698a268cf28d8b1e7be3b02"
+  },
+  {
+    "path": "website/docs/concepts/self-custody.md",
+    "contentHash": "d44dc651759057f8f49fb9810a1f03214fc6362bce003c8e497ec03a83c3da88"
+  },
+  {
+    "path": "website/docs/concepts/transactions-settlements.md",
+    "contentHash": "4a4c434450b907eac351a40a79b05bebc15496485763fd70b91ea582550e0bb9"
+  },
+  {
+    "path": "website/static/ai/marketplace-mercatto/manifest.yaml",
+    "contentHash": "3b2fe1f22b051a6356490cdefc1346f6362e8617a2c687a31a5731b93e5368df"
+  },
+  {
+    "path": "website/static/ai/marketplace-mercatto/capability-index.yaml",
+    "contentHash": "55b222042dd3b32c48f2d01fc96adaf12995c82a7767c923b60f0fb0f0647016"
+  },
+  {
+    "path": "website/static/ai/marketplace-mercatto/anti-patterns.yaml",
+    "contentHash": "ac4d7fb833075701bec2c46c84633cfe505b88b19c5e38fdb93a33c75cd72ba5"
+  },
+  {
+    "path": "website/static/ai/marketplace-mercatto/scenario-manifest.yaml",
+    "contentHash": "30b643aebab7de5027e8772d0d164c8c79e995a860db28d2084924f9ef96df6c"
+  },
+  {
+    "path": "website/static/ai/marketplace-mercatto/operation-cards/execute-settlement.yaml",
+    "contentHash": "ce4e6a409b69c115b6d4c2a34c317037849a3911ff17afca6294af07e6cd78d1"
+  },
+  {
+    "path": "docs/architecture/CUSTODY-EXECUTION-MODES.md",
+    "contentHash": "bb9c4d73d6c9dcdbadb7493458d9dc69d0685d0a75820a84a893869f937d91e3"
+  }
+]

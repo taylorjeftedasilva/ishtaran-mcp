@@ -1,0 +1,125 @@
+[
+  {
+    "code": "IDEMPOTENCY_KEY_CONFLICT",
+    "httpStatus": 409,
+    "meaning": "The Idempotency-Key (or body field, depending on the route) was already used with a DIFFERENT payload. A real replay of the exact same payload with the same key returns the original result instead of erroring.",
+    "remediation": "Never generate a new key and blindly retry -- if the original request actually succeeded, retrying with a new key double-executes it. Use a stable, deterministic key per real intent.",
+    "retryable": false,
+    "relatedOperations": []
+  },
+  {
+    "code": "PAYOUT_BATCH_IDEMPOTENCY_KEY_CONFLICT",
+    "httpStatus": 409,
+    "meaning": "Same rule as IDEMPOTENCY_KEY_CONFLICT, specific to CreatePayoutBatch.",
+    "remediation": "Same as IDEMPOTENCY_KEY_CONFLICT.",
+    "retryable": false,
+    "relatedOperations": [
+      "CreatePayoutBatch"
+    ]
+  },
+  {
+    "code": "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE",
+    "httpStatus": 422,
+    "meaning": "The NetworkCostPayerAccount doesn't have enough balance to cover the charged network cost.",
+    "remediation": "Fund the Account (a normal Deposit) for at least `deficit` more `billingAsset`, then retry. See concepts/network-execution.md § First funding.",
+    "retryable": true,
+    "relatedOperations": [
+      "GetNetworkExecutionQuote",
+      "ExecuteSettlement",
+      "CreatePayoutBatch",
+      "RequestWithdrawal"
+    ],
+    "extensions": [
+      "payerAccountId",
+      "availableBalance",
+      "requiredAmount",
+      "deficit",
+      "billingAsset",
+      "remediation:\"DEPOSIT_REQUIRED\""
+    ]
+  },
+  {
+    "code": "CUSTOMER_NETWORK_RESOURCE_INSUFFICIENT",
+    "httpStatus": 422,
+    "meaning": "Under CUSTOMER_RESOURCES mode, the registered ExecutionSource doesn't have enough declared on-chain resource capacity. Fails closed -- no silent fallback to ISHTARAN_RESOURCES unless allowFallbackToIshtaranResources was set.",
+    "remediation": "Increase on-chain resources and re-sync via syncResourceStake, or explicitly opt into fallback.",
+    "retryable": true,
+    "relatedOperations": [
+      "SyncCustomerResourceStake"
+    ]
+  },
+  {
+    "code": "CUSTOMER_RESOURCE_STAKE_INVALID",
+    "httpStatus": 400,
+    "meaning": "The values passed to syncResourceStake are structurally invalid (e.g. negative).",
+    "remediation": "Fix the request; never retry unchanged.",
+    "retryable": false,
+    "relatedOperations": [
+      "SyncCustomerResourceStake"
+    ]
+  },
+  {
+    "code": "EXECUTION_SOURCE_ALREADY_REGISTERED",
+    "httpStatus": 409,
+    "meaning": "First-registration-wins -- an ExecutionSource already exists for that Wallet/AssetNetwork pair.",
+    "remediation": "Fetch the existing registration instead of registering again.",
+    "retryable": false,
+    "relatedOperations": [
+      "RegisterExecutionSource"
+    ]
+  },
+  {
+    "code": "NETWORK_COST_PAYER_ACCOUNT_ALREADY_REGISTERED",
+    "httpStatus": 409,
+    "meaning": "First-registration-wins -- a NetworkCostPayerAccount already exists for that Organization/AssetNetwork pair.",
+    "remediation": "Fetch the existing registration instead of registering again.",
+    "retryable": false,
+    "relatedOperations": [
+      "RegisterNetworkCostPayerAccount"
+    ]
+  },
+  {
+    "code": "EXECUTION_DESTINATION_ALREADY_REGISTERED",
+    "httpStatus": 409,
+    "meaning": "First-registration-wins -- an ExecutionDestination already exists for that Account/AssetNetwork pair.",
+    "remediation": "Fetch the existing registration instead of registering again.",
+    "retryable": false,
+    "relatedOperations": []
+  },
+  {
+    "code": "PAYOUT_POLICY_MODE_NOT_SUPPORTED",
+    "httpStatus": 422,
+    "meaning": "An attempt to configure PayoutPolicy to THRESHOLD or SCHEDULED -- only IMMEDIATE and MANUAL are supported today.",
+    "remediation": "Use IMMEDIATE or MANUAL; don't build against the other two as available capabilities.",
+    "retryable": false,
+    "relatedOperations": []
+  },
+  {
+    "code": "PAYOUT_BATCH_TRIGGER_NOT_SUPPORTED",
+    "httpStatus": 422,
+    "meaning": "CreatePayoutBatch on the public route only ever creates a MANUAL-triggered batch. NOTE: the current public OpenAPI request schema (Payout.Contracts.Requests.CreatePayoutBatchRequest: environmentId, assetNetworkId, explicitOwnerIds, idempotencyKey) has no `trigger` field at all -- website/docs/errors.md's 'Always send trigger = MANUAL' phrasing describes a field that does not exist in the current public contract. This is a documented drift between the public docs and the OpenAPI contract, not a real request parameter to send; recorded in conflicts.json.",
+    "remediation": "Call CreatePayoutBatch with no `trigger` field -- the public route only supports MANUAL semantics regardless. THRESHOLD/SCHEDULED payout automation is not reachable through this public route at all.",
+    "retryable": false,
+    "relatedOperations": [
+      "CreatePayoutBatch"
+    ]
+  },
+  {
+    "code": "VALIDATION_ERROR",
+    "httpStatus": 400,
+    "meaning": "Structural request validation failed (missing/malformed field). The response includes the specific field errors.",
+    "remediation": "Fix the request shape per the returned detail; never retry unchanged.",
+    "retryable": false,
+    "relatedOperations": []
+  },
+  {
+    "code": "SIGNED_TRANSACTION_MISMATCH",
+    "httpStatus": 422,
+    "meaning": "A signature submitted for a SigningRequest leg whose recomputed canonical hash doesn't match the one the backend independently computed -- the leg is never broadcast.",
+    "remediation": "A tampered amount/destination/asset/network produces a different hash and is rejected outright -- re-derive the signature from the exact canonical hash the backend returned, never a locally-reconstructed one.",
+    "retryable": false,
+    "relatedOperations": [
+      "SubmitSignedTransaction"
+    ]
+  }
+]

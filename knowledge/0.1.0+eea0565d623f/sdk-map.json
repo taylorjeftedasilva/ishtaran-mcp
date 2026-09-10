@@ -1,0 +1,4187 @@
+[
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountHoldersResource.ts",
+    "resourceAccessor": "accountHolders",
+    "methodName": "signUp",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/signup",
+    "signature": "async signUp(email: string, password: string): Promise<AccountHolderTokenResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountHoldersResource.ts",
+    "resourceAccessor": "accountHolders",
+    "methodName": "login",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/login",
+    "signature": "async login(email: string, password: string): Promise<AccountHolderTokenResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountHoldersResource.ts",
+    "resourceAccessor": "accountHolders",
+    "methodName": "me",
+    "httpVerb": "GET",
+    "pathShape": "/v1/account-holders/me",
+    "signature": "me(): Promise<AccountHolderResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountHoldersResource.ts",
+    "resourceAccessor": "accountHolders",
+    "methodName": "claimInvitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/invitations/claim",
+    "signature": "claimInvitation(plainTextToken: string): Promise<ClaimAccountHolderInvitationResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountHoldersResource.ts",
+    "resourceAccessor": "accountHolders",
+    "methodName": "signUpAndClaimInvitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/invitations/signup-and-claim",
+    "signature": "async signUpAndClaimInvitation( plainTextToken: string, email: string, password: string, ): Promise<SignUpAndClaimAccountHolderInvitationResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountsResource.ts",
+    "resourceAccessor": "accounts",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/accounts",
+    "signature": "create(organizationId: string, externalId: string): Promise<CreateAccountResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountsResource.ts",
+    "resourceAccessor": "accounts",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/accounts",
+    "signature": "list(organizationId: string): Promise<OrganizationAccountResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountsResource.ts",
+    "resourceAccessor": "accounts",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*",
+    "signature": "get(accountId: string): Promise<AccountResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountsResource.ts",
+    "resourceAccessor": "accounts",
+    "methodName": "authorizeApplication",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/accounts/*/authorize-application",
+    "signature": "authorizeApplication(organizationId: string, accountId: string, applicationId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountsResource.ts",
+    "resourceAccessor": "accounts",
+    "methodName": "freeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/freeze",
+    "signature": "freeze(accountId: string, reason?: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountsResource.ts",
+    "resourceAccessor": "accounts",
+    "methodName": "unfreeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/unfreeze",
+    "signature": "unfreeze(accountId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountsResource.ts",
+    "resourceAccessor": "accounts",
+    "methodName": "close",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/accounts/*",
+    "signature": "close(accountId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountsResource.ts",
+    "resourceAccessor": "accounts",
+    "methodName": "createAccountHolderInvitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/account-holder-invitations",
+    "signature": "createAccountHolderInvitation(organizationId: string, externalId?: string): Promise<CreateAccountHolderInvitationResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../accountsResource.ts",
+    "resourceAccessor": "accounts",
+    "methodName": "revokeRelationship",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/relationships/*/revoke",
+    "signature": "revokeRelationship(organizationId: string, relationshipId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../apiKeysResource.ts",
+    "resourceAccessor": "apiKeys",
+    "methodName": "revoke",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/api-keys/*",
+    "signature": "revoke(apiKeyId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../apiKeysResource.ts",
+    "resourceAccessor": "apiKeys",
+    "methodName": "rotate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/api-keys/*/rotate",
+    "signature": "rotate(apiKeyId: string, overlapWindowMs: number): Promise<RotateApiKeyResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../applicationsResource.ts",
+    "resourceAccessor": "applications",
+    "methodName": "archive",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/archive",
+    "signature": "archive(applicationId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../applicationsResource.ts",
+    "resourceAccessor": "applications",
+    "methodName": "suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/suspend",
+    "signature": "suspend(applicationId: string, reason?: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../applicationsResource.ts",
+    "resourceAccessor": "applications",
+    "methodName": "reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/reactivate",
+    "signature": "reactivate(applicationId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../applicationsResource.ts",
+    "resourceAccessor": "applications",
+    "methodName": "createEnvironment",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/environments",
+    "signature": "createEnvironment(applicationId: string, type: EnumValue<number>): Promise<CreatedResourceResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../assetNetworkCatalogResource.ts",
+    "resourceAccessor": "assetNetworkCatalog",
+    "methodName": "listAssets",
+    "httpVerb": "GET",
+    "pathShape": "/v1/assets",
+    "signature": "listAssets(): Promise<AssetResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../assetNetworkCatalogResource.ts",
+    "resourceAccessor": "assetNetworkCatalog",
+    "methodName": "getAsset",
+    "httpVerb": "GET",
+    "pathShape": "/v1/assets/*",
+    "signature": "getAsset(assetId: string): Promise<AssetResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../assetNetworkCatalogResource.ts",
+    "resourceAccessor": "assetNetworkCatalog",
+    "methodName": "listNetworks",
+    "httpVerb": "GET",
+    "pathShape": "/v1/networks",
+    "signature": "listNetworks(): Promise<NetworkResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../assetNetworkCatalogResource.ts",
+    "resourceAccessor": "assetNetworkCatalog",
+    "methodName": "getNetwork",
+    "httpVerb": "GET",
+    "pathShape": "/v1/networks/*",
+    "signature": "getNetwork(networkId: string): Promise<NetworkResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../assetNetworkCatalogResource.ts",
+    "resourceAccessor": "assetNetworkCatalog",
+    "methodName": "listAssetNetworks",
+    "httpVerb": "GET",
+    "pathShape": "/v1/asset-networks",
+    "signature": "listAssetNetworks(status?: EnumValue<string>): Promise<AssetNetworkResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../assetNetworkCatalogResource.ts",
+    "resourceAccessor": "assetNetworkCatalog",
+    "methodName": "getAssetNetwork",
+    "httpVerb": "GET",
+    "pathShape": "/v1/asset-networks/*",
+    "signature": "getAssetNetwork(assetNetworkId: string): Promise<AssetNetworkResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../authResource.ts",
+    "resourceAccessor": "auth",
+    "methodName": "login",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/login",
+    "signature": "async login(email: string, password: string): Promise<TokenResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../authResource.ts",
+    "resourceAccessor": "auth",
+    "methodName": "signUp",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/signup",
+    "signature": "async signUp(organizationName: string, email: string, password: string, idempotencyKey?: string): Promise<SignUpResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../authResource.ts",
+    "resourceAccessor": "auth",
+    "methodName": "refresh",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/refresh",
+    "signature": "async refresh(refreshToken: string): Promise<TokenResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../authResource.ts",
+    "resourceAccessor": "auth",
+    "methodName": "requestPasswordReset",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/password-reset/request",
+    "signature": "async requestPasswordReset(email: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../authResource.ts",
+    "resourceAccessor": "auth",
+    "methodName": "confirmPasswordReset",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/password-reset/confirm",
+    "signature": "async confirmPasswordReset(resetToken: string, newPassword: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../depositsResource.ts",
+    "resourceAccessor": "deposits",
+    "methodName": "createPaymentIntent",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/payment-intents",
+    "signature": "createPaymentIntent( organizationId: string, transactionId: string, assetNetworkId: string, amount: string, expiresAt: string | undefined, idempotencyKey?: string, ): Promise<CreatePaymentIntentResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../depositsResource.ts",
+    "resourceAccessor": "deposits",
+    "methodName": "getPaymentIntent",
+    "httpVerb": "GET",
+    "pathShape": "/v1/payment-intents/*",
+    "signature": "getPaymentIntent(paymentIntentId: string): Promise<PaymentIntentResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../depositsResource.ts",
+    "resourceAccessor": "deposits",
+    "methodName": "getDeposit",
+    "httpVerb": "GET",
+    "pathShape": "/v1/deposits/*",
+    "signature": "getDeposit(depositId: string): Promise<DepositResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../environmentsResource.ts",
+    "resourceAccessor": "environments",
+    "methodName": "listApiKeys",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/api-keys",
+    "signature": "listApiKeys(environmentId: string): Promise<ApiKeyMetadataResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../environmentsResource.ts",
+    "resourceAccessor": "environments",
+    "methodName": "generateApiKey",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/api-keys",
+    "signature": "generateApiKey(environmentId: string): Promise<GenerateApiKeyResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../eventTypesResource.ts",
+    "resourceAccessor": "eventTypes",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/event-types",
+    "signature": "create(organizationId: string, name: string): Promise<CreateEventTypeResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../eventTypesResource.ts",
+    "resourceAccessor": "eventTypes",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/event-types",
+    "signature": "list(organizationId: string): Promise<EventTypeResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../eventsResource.ts",
+    "resourceAccessor": "events",
+    "methodName": "ingest",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/events",
+    "signature": "ingest( applicationId: string, workflowVersionId: string, currentStateId: string, transactionReference: string, eventTypeId: string, eventSource: EnumValue<number>, payload: Record<string, string> | undefined, idempotencyKey?: string, ): Promise<EventIngestionResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../executionDestinationsResource.ts",
+    "resourceAccessor": "executionDestinations",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-destinations",
+    "signature": "register(organizationId: string, accountId: string, assetNetworkId: string, address: string): Promise<RegisterExecutionDestinationResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../executionSourcesResource.ts",
+    "resourceAccessor": "executionSources",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-sources",
+    "signature": "register( organizationId: string, environmentId: string, assetNetworkId: string, walletId: string, derivationReference: number, address: string | null, ): Promise<RegisterExecutionSourceResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../executionSourcesResource.ts",
+    "resourceAccessor": "executionSources",
+    "methodName": "syncResourceStake",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-sources/*/resource-stake",
+    "signature": "syncResourceStake( organizationId: string, executionSourceId: string, availableNativeAmount: string, availableEnergy: string, availableBandwidth: string, ): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../ledgerResource.ts",
+    "resourceAccessor": "ledger",
+    "methodName": "getBalance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/balance",
+    "signature": "getBalance(accountId: string, assetNetworkId: string): Promise<BalanceResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../ledgerResource.ts",
+    "resourceAccessor": "ledger",
+    "methodName": "listEntries",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/ledger-entries",
+    "signature": "listEntries( accountId: string, assetNetworkId: string, options: { nature?: EnumValue<number>; from?: string; to?: string; skip: number; take: number }, ): Promise<LedgerEntryResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../membersResource.ts",
+    "resourceAccessor": "members",
+    "methodName": "invite",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/members",
+    "signature": "invite(organizationId: string, email: string, role: EnumValue<number>): Promise<InviteMemberResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../membersResource.ts",
+    "resourceAccessor": "members",
+    "methodName": "acceptInvite",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/accept-invite",
+    "signature": "acceptInvite(inviteToken: string, password: string): Promise<TokenResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../membersResource.ts",
+    "resourceAccessor": "members",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/members",
+    "signature": "list(organizationId: string): Promise<MemberResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../membersResource.ts",
+    "resourceAccessor": "members",
+    "methodName": "assignRole",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/role",
+    "signature": "assignRole(memberId: string, newRole: EnumValue<number>): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../membersResource.ts",
+    "resourceAccessor": "members",
+    "methodName": "suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/suspend",
+    "signature": "suspend(memberId: string, reason?: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../membersResource.ts",
+    "resourceAccessor": "members",
+    "methodName": "reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/reactivate",
+    "signature": "reactivate(memberId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../membersResource.ts",
+    "resourceAccessor": "members",
+    "methodName": "remove",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/members/*",
+    "signature": "remove(memberId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../networkCostPayerAccountsResource.ts",
+    "resourceAccessor": "networkCostPayerAccounts",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/network-cost-payer-accounts",
+    "signature": "register(organizationId: string, assetNetworkId: string, accountId: string): Promise<RegisterNetworkCostPayerAccountResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../networkCostPayerAccountsResource.ts",
+    "resourceAccessor": "networkCostPayerAccounts",
+    "methodName": "updateResourcePreference",
+    "httpVerb": "PATCH",
+    "pathShape": "/v1/organizations/*/network-cost-payer-accounts/*/resource-preference",
+    "signature": "updateResourcePreference( organizationId: string, assetNetworkId: string, resourcePreference: EnumValue<number>, allowFallbackToIshtaranResources: boolean, ): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../networkExecutionResource.ts",
+    "resourceAccessor": "networkExecution",
+    "methodName": "quote",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/network-execution-quote",
+    "signature": "quote( environmentId: string, assetNetworkId: string, operations: NetworkExecutionOperationInput[] | null, networkCostPayer: EnumValue<number>, ): Promise<NetworkExecutionQuoteResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../organizationsResource.ts",
+    "resourceAccessor": "organizations",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations",
+    "signature": "create(name: string, idempotencyKey?: string): Promise<CreatedResourceResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../organizationsResource.ts",
+    "resourceAccessor": "organizations",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*",
+    "signature": "get(organizationId: string): Promise<OrganizationResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../organizationsResource.ts",
+    "resourceAccessor": "organizations",
+    "methodName": "suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/suspend",
+    "signature": "suspend(organizationId: string, reason?: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../organizationsResource.ts",
+    "resourceAccessor": "organizations",
+    "methodName": "reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/reactivate",
+    "signature": "reactivate(organizationId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../organizationsResource.ts",
+    "resourceAccessor": "organizations",
+    "methodName": "listApplications",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/applications",
+    "signature": "listApplications(organizationId: string): Promise<ApplicationResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../organizationsResource.ts",
+    "resourceAccessor": "organizations",
+    "methodName": "createApplication",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/applications",
+    "signature": "createApplication(organizationId: string, name: string, idempotencyKey?: string): Promise<CreatedResourceResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../payoutResource.ts",
+    "resourceAccessor": "payout",
+    "methodName": "getPayableSummary",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/payable-summary",
+    "signature": "getPayableSummary(accountId: string, assetNetworkId: string): Promise<PayableSummaryResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../payoutResource.ts",
+    "resourceAccessor": "payout",
+    "methodName": "createBatch",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/payout-batches",
+    "signature": "async createBatch( organizationId: string, environmentId: string, assetNetworkId: string, explicitOwnerIds: string[] | null, idempotencyKey?: string, ): Promise<CreatePayoutBatchResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../payoutResource.ts",
+    "resourceAccessor": "payout",
+    "methodName": "getBatch",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/payout-batches/*",
+    "signature": "getBatch(organizationId: string, payoutBatchId: string): Promise<PayoutBatchResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../refundsResource.ts",
+    "resourceAccessor": "refunds",
+    "methodName": "executeRefund",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/refunds",
+    "signature": "executeRefund(transactionId: string, amount: string | undefined, reason: string | undefined, idempotencyKey?: string): Promise<ExecuteRefundResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../refundsResource.ts",
+    "resourceAccessor": "refunds",
+    "methodName": "listByTransaction",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/refunds",
+    "signature": "listByTransaction(transactionId: string): Promise<RefundResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../refundsResource.ts",
+    "resourceAccessor": "refunds",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/refunds/*",
+    "signature": "get(refundId: string): Promise<RefundResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "faucet",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/faucet",
+    "signature": "faucet(environmentId: string, depositAddress: string, assetNetworkId: string, amount: string): Promise<SandboxObservedAddressResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "simulateDeposit",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-deposit",
+    "signature": "simulateDeposit(environmentId: string, depositAddress: string, assetNetworkId: string, amount: string): Promise<SandboxObservedAddressResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "simulateConfirmation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-confirmation",
+    "signature": "simulateConfirmation(environmentId: string, sandboxObservedAddressId: string, additionalConfirmations: number, isFinal: boolean): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "simulateBroadcastConfirmation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-broadcast-confirmation",
+    "signature": "simulateBroadcastConfirmation(environmentId: string, broadcastAttemptId: string, additionalConfirmations: number, isFinal: boolean): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "simulateWithdrawal",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-withdrawal",
+    "signature": "simulateWithdrawal( environmentId: string, destinationAddress: string, amount: string, assetNetworkId: string, outcome: EnumValue<number>, failureReason: string | undefined, ): Promise<SandboxBroadcastAttemptResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "setObservedTreasuryBalance",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/treasury-balance",
+    "signature": "setObservedTreasuryBalance(environmentId: string, assetNetworkId: string, balance: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "getTreasuryBalance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/treasury-balance/*",
+    "signature": "getTreasuryBalance(environmentId: string, assetNetworkId: string): Promise<SandboxTreasuryObservedBalanceResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "getObservedAddress",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/observed-addresses/*",
+    "signature": "getObservedAddress(environmentId: string, id: string): Promise<SandboxObservedAddressResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "getBroadcastAttempt",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/broadcast-attempts/*",
+    "signature": "getBroadcastAttempt(environmentId: string, id: string): Promise<SandboxBroadcastAttemptResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../settlementsResource.ts",
+    "resourceAccessor": "settlements",
+    "methodName": "executeSettlement",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/settlements",
+    "signature": "executeSettlement(transactionId: string, amount?: string, idempotencyKey?: string): Promise<ExecuteSettlementResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../settlementsResource.ts",
+    "resourceAccessor": "settlements",
+    "methodName": "listByTransaction",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/settlements",
+    "signature": "listByTransaction(transactionId: string): Promise<SettlementResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../settlementsResource.ts",
+    "resourceAccessor": "settlements",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/settlements/*",
+    "signature": "get(settlementId: string): Promise<SettlementResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../settlementsResource.ts",
+    "resourceAccessor": "settlements",
+    "methodName": "getSummary",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/settlement-summary",
+    "signature": "getSummary(transactionId: string): Promise<TransactionSettlementSummaryResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../settlementsResource.ts",
+    "resourceAccessor": "settlements",
+    "methodName": "releaseRetainedSplit",
+    "httpVerb": "POST",
+    "pathShape": "/v1/settlements/*/split-allocations/*/release",
+    "signature": "releaseRetainedSplit(settlementId: string, allocationId: string, idempotencyKey?: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../signingRequestsResource.ts",
+    "resourceAccessor": "signingRequests",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/signing-requests",
+    "signature": "create( environmentId: string, walletId: string, derivationReference: number, originReference: string, assetNetworkId: string, sourceAddress: string, legs: ExecutionLegInput[], expiresAt: string, idempotencyKey?: string, ): Promise<CreateSigningRequestResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../signingRequestsResource.ts",
+    "resourceAccessor": "signingRequests",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/signing-requests/*",
+    "signature": "get(signingRequestId: string): Promise<SigningRequestResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../signingRequestsResource.ts",
+    "resourceAccessor": "signingRequests",
+    "methodName": "submitSignedTransaction",
+    "httpVerb": "POST",
+    "pathShape": "/v1/signing-requests/*/legs/*/submit",
+    "signature": "submitSignedTransaction( signingRequestId: string, executionLegId: string, submittedCanonicalHash: string, signatureHex: string, ): Promise<SubmitSignedTransactionResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../transactionsResource.ts",
+    "resourceAccessor": "transactions",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/transactions",
+    "signature": "create( organizationId: string, applicationId: string, environmentId: string, workflowVersionId: string | null, assetNetworkId: string, amount: string, participants: ParticipantInput[], idempotencyKey?: string, ): Promise<CreateTransactionResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../transactionsResource.ts",
+    "resourceAccessor": "transactions",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*",
+    "signature": "get(transactionId: string): Promise<TransactionResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../transactionsResource.ts",
+    "resourceAccessor": "transactions",
+    "methodName": "getState",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/state",
+    "signature": "getState(transactionId: string): Promise<TransactionStatusResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../transactionsResource.ts",
+    "resourceAccessor": "transactions",
+    "methodName": "reserve",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/reserve",
+    "signature": "async reserve(transactionId: string): Promise<"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../transactionsResource.ts",
+    "resourceAccessor": "transactions",
+    "methodName": "cancel",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/cancel",
+    "signature": "cancel(transactionId: string, reason?: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../transactionsResource.ts",
+    "resourceAccessor": "transactions",
+    "methodName": "freeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/freeze",
+    "signature": "freeze(transactionId: string, reason?: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../transactionsResource.ts",
+    "resourceAccessor": "transactions",
+    "methodName": "unfreeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/unfreeze",
+    "signature": "unfreeze(transactionId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../walletsResource.ts",
+    "resourceAccessor": "wallets",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/wallets",
+    "signature": "register( applicationId: string, networkId: string, scheme: EnumValue<number>, publicDerivationMaterial: string, idempotencyKey?: string, ): Promise<RegisterWalletResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../walletsResource.ts",
+    "resourceAccessor": "wallets",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/wallets/*",
+    "signature": "get(walletId: string): Promise<WalletResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../walletsResource.ts",
+    "resourceAccessor": "wallets",
+    "methodName": "getPublicMaterial",
+    "httpVerb": "GET",
+    "pathShape": "/v1/wallets/*/public-material",
+    "signature": "getPublicMaterial(walletId: string): Promise<WalletPublicMaterialResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../walletsResource.ts",
+    "resourceAccessor": "wallets",
+    "methodName": "allocateDepositAddress",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/wallets/deposit-addresses",
+    "signature": "allocateDepositAddress(applicationId: string, networkId: string): Promise<AllocatedDepositAddressResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../webhookDeliveriesResource.ts",
+    "resourceAccessor": "webhookDeliveries",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-deliveries/*",
+    "signature": "get(webhookDeliveryId: string): Promise<WebhookDeliveryResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../webhookDeliveriesResource.ts",
+    "resourceAccessor": "webhookDeliveries",
+    "methodName": "redeliver",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-deliveries/*/redeliver",
+    "signature": "redeliver(webhookDeliveryId: string): Promise<RedeliverWebhookResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../webhookEndpointsResource.ts",
+    "resourceAccessor": "webhookEndpoints",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/webhook-endpoints",
+    "signature": "create(organizationId: string, url: string): Promise<ConfigureWebhookEndpointResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../webhookEndpointsResource.ts",
+    "resourceAccessor": "webhookEndpoints",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/webhook-endpoints",
+    "signature": "list(organizationId: string): Promise<WebhookEndpointResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../webhookEndpointsResource.ts",
+    "resourceAccessor": "webhookEndpoints",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-endpoints/*",
+    "signature": "get(webhookEndpointId: string): Promise<WebhookEndpointResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../webhookEndpointsResource.ts",
+    "resourceAccessor": "webhookEndpoints",
+    "methodName": "rotateSecret",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-endpoints/*/rotate-secret",
+    "signature": "rotateSecret(webhookEndpointId: string): Promise<RotateWebhookEndpointSecretResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../webhookEndpointsResource.ts",
+    "resourceAccessor": "webhookEndpoints",
+    "methodName": "deactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-endpoints/*/deactivate",
+    "signature": "deactivate(webhookEndpointId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../webhookEndpointsResource.ts",
+    "resourceAccessor": "webhookEndpoints",
+    "methodName": "listDeliveries",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-endpoints/*/deliveries",
+    "signature": "listDeliveries(webhookEndpointId: string, eventType: string | undefined, status: EnumValue<number> | undefined): Promise<WebhookDeliveryResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../withdrawalsResource.ts",
+    "resourceAccessor": "withdrawals",
+    "methodName": "quote",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawals/quote",
+    "signature": "quote( organizationId: string, environmentId: string, accountId: string, withdrawalDestinationId: string, assetNetworkId: string, amount: string, ): Promise<WithdrawalQuoteResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../withdrawalsResource.ts",
+    "resourceAccessor": "withdrawals",
+    "methodName": "createDestination",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawal-destinations",
+    "signature": "createDestination(organizationId: string, address: string, assetNetworkId: string): Promise<CreateWithdrawalDestinationResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../withdrawalsResource.ts",
+    "resourceAccessor": "withdrawals",
+    "methodName": "request",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawals",
+    "signature": "request( organizationId: string, environmentId: string, accountId: string, withdrawalDestinationId: string, assetNetworkId: string, amount: string, idempotencyKey?: string, ): Promise<WithdrawalResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../withdrawalsResource.ts",
+    "resourceAccessor": "withdrawals",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/withdrawals/*",
+    "signature": "get(withdrawalId: string): Promise<WithdrawalResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../withdrawalsResource.ts",
+    "resourceAccessor": "withdrawals",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/withdrawals",
+    "signature": "list( organizationId: string, options: { status?: EnumValue<number>; from?: string; to?: string; skip?: number; take?: number } = {}, ): Promise<WithdrawalResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../withdrawalsResource.ts",
+    "resourceAccessor": "withdrawals",
+    "methodName": "cancel",
+    "httpVerb": "POST",
+    "pathShape": "/v1/withdrawals/*/cancel",
+    "signature": "cancel(withdrawalId: string, reason?: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../withdrawalsResource.ts",
+    "resourceAccessor": "withdrawals",
+    "methodName": "retryBroadcast",
+    "httpVerb": "POST",
+    "pathShape": "/v1/withdrawals/*/retry-broadcast",
+    "signature": "retryBroadcast(withdrawalId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../workflowsResource.ts",
+    "resourceAccessor": "workflows",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/workflows",
+    "signature": "create(organizationId: string, name: string): Promise<CreateWorkflowResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../workflowsResource.ts",
+    "resourceAccessor": "workflows",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/workflows",
+    "signature": "list(organizationId: string): Promise<WorkflowResponse[]>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../workflowsResource.ts",
+    "resourceAccessor": "workflows",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/workflows/*",
+    "signature": "get(workflowId: string): Promise<WorkflowResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../workflowsResource.ts",
+    "resourceAccessor": "workflows",
+    "methodName": "createVersion",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions",
+    "signature": "createVersion(workflowId: string, states: StateInput[], transitions: TransitionInput[]): Promise<CreateWorkflowVersionResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../workflowsResource.ts",
+    "resourceAccessor": "workflows",
+    "methodName": "getVersion",
+    "httpVerb": "GET",
+    "pathShape": "/v1/workflows/*/versions/*",
+    "signature": "getVersion(workflowId: string, workflowVersionId: string): Promise<WorkflowVersionResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../workflowsResource.ts",
+    "resourceAccessor": "workflows",
+    "methodName": "publishVersion",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions/*/publish",
+    "signature": "publishVersion(workflowId: string, workflowVersionId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../workflowsResource.ts",
+    "resourceAccessor": "workflows",
+    "methodName": "createRule",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions/*/rules",
+    "signature": "createRule( workflowId: string, workflowVersionId: string, fromStateId: string, toStateId: string, eventTypeId: string, conditions: ConditionInput[], ): Promise<CreateRuleResult>"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../account_holders_resource.py",
+    "resourceAccessor": "account_holders",
+    "methodName": "sign_up",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/signup",
+    "signature": "def sign_up(self, email: str, password: str) -> AccountHolderTokenResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../account_holders_resource.py",
+    "resourceAccessor": "account_holders",
+    "methodName": "login",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/login",
+    "signature": "def login(self, email: str, password: str) -> AccountHolderTokenResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../account_holders_resource.py",
+    "resourceAccessor": "account_holders",
+    "methodName": "me",
+    "httpVerb": "GET",
+    "pathShape": "/v1/account-holders/me",
+    "signature": "def me(self) -> AccountHolderResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../account_holders_resource.py",
+    "resourceAccessor": "account_holders",
+    "methodName": "claim_invitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/invitations/claim",
+    "signature": "def claim_invitation(self, plain_text_token: str) -> ClaimAccountHolderInvitationResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../account_holders_resource.py",
+    "resourceAccessor": "account_holders",
+    "methodName": "sign_up_and_claim_invitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/invitations/signup-and-claim",
+    "signature": "def sign_up_and_claim_invitation(self, plain_text_token: str, email: str, password: str) -> SignUpAndClaimAccountHolderInvitationResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../accounts_resource.py",
+    "resourceAccessor": "accounts",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/accounts",
+    "signature": "def create(self, organization_id: str, external_id: str) -> CreateAccountResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../accounts_resource.py",
+    "resourceAccessor": "accounts",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/accounts",
+    "signature": "def list(self, organization_id: str) -> list[OrganizationAccountResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../accounts_resource.py",
+    "resourceAccessor": "accounts",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*",
+    "signature": "def get(self, account_id: str) -> AccountResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../accounts_resource.py",
+    "resourceAccessor": "accounts",
+    "methodName": "authorize_application",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/accounts/*/authorize-application",
+    "signature": "def authorize_application(self, organization_id: str, account_id: str, application_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../accounts_resource.py",
+    "resourceAccessor": "accounts",
+    "methodName": "freeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/freeze",
+    "signature": "def freeze(self, account_id: str, reason: str | None = None) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../accounts_resource.py",
+    "resourceAccessor": "accounts",
+    "methodName": "unfreeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/unfreeze",
+    "signature": "def unfreeze(self, account_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../accounts_resource.py",
+    "resourceAccessor": "accounts",
+    "methodName": "close",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/accounts/*",
+    "signature": "def close(self, account_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../accounts_resource.py",
+    "resourceAccessor": "accounts",
+    "methodName": "create_account_holder_invitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/account-holder-invitations",
+    "signature": "def create_account_holder_invitation(self, organization_id: str, external_id: str | None = None) -> CreateAccountHolderInvitationResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../accounts_resource.py",
+    "resourceAccessor": "accounts",
+    "methodName": "revoke_relationship",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/relationships/*/revoke",
+    "signature": "def revoke_relationship(self, organization_id: str, relationship_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../api_keys_resource.py",
+    "resourceAccessor": "api_keys",
+    "methodName": "revoke",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/api-keys/*",
+    "signature": "def revoke(self, api_key_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../api_keys_resource.py",
+    "resourceAccessor": "api_keys",
+    "methodName": "rotate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/api-keys/*/rotate",
+    "signature": "def rotate(self, api_key_id: str, overlap_window: timedelta) -> RotateApiKeyResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../applications_resource.py",
+    "resourceAccessor": "applications",
+    "methodName": "archive",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/archive",
+    "signature": "def archive(self, application_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../applications_resource.py",
+    "resourceAccessor": "applications",
+    "methodName": "suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/suspend",
+    "signature": "def suspend(self, application_id: str, reason: str | None = None) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../applications_resource.py",
+    "resourceAccessor": "applications",
+    "methodName": "reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/reactivate",
+    "signature": "def reactivate(self, application_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../applications_resource.py",
+    "resourceAccessor": "applications",
+    "methodName": "create_environment",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/environments",
+    "signature": "def create_environment(self, application_id: str, environment_type: EnumValue[int]) -> CreatedResourceResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../asset_network_catalog_resource.py",
+    "resourceAccessor": "asset_network_catalog",
+    "methodName": "list_assets",
+    "httpVerb": "GET",
+    "pathShape": "/v1/assets",
+    "signature": "def list_assets(self) -> list[AssetResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../asset_network_catalog_resource.py",
+    "resourceAccessor": "asset_network_catalog",
+    "methodName": "get_asset",
+    "httpVerb": "GET",
+    "pathShape": "/v1/assets/*",
+    "signature": "def get_asset(self, asset_id: str) -> AssetResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../asset_network_catalog_resource.py",
+    "resourceAccessor": "asset_network_catalog",
+    "methodName": "list_networks",
+    "httpVerb": "GET",
+    "pathShape": "/v1/networks",
+    "signature": "def list_networks(self) -> list[NetworkResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../asset_network_catalog_resource.py",
+    "resourceAccessor": "asset_network_catalog",
+    "methodName": "get_network",
+    "httpVerb": "GET",
+    "pathShape": "/v1/networks/*",
+    "signature": "def get_network(self, network_id: str) -> NetworkResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../asset_network_catalog_resource.py",
+    "resourceAccessor": "asset_network_catalog",
+    "methodName": "list_asset_networks",
+    "httpVerb": "GET",
+    "pathShape": "/v1/asset-networks",
+    "signature": "def list_asset_networks(self, status: EnumValue[str] | None = None) -> list[AssetNetworkResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../asset_network_catalog_resource.py",
+    "resourceAccessor": "asset_network_catalog",
+    "methodName": "get_asset_network",
+    "httpVerb": "GET",
+    "pathShape": "/v1/asset-networks/*",
+    "signature": "def get_asset_network(self, asset_network_id: str) -> AssetNetworkResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../auth_resource.py",
+    "resourceAccessor": "auth",
+    "methodName": "login",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/login",
+    "signature": "def login(self, email: str, password: str) -> TokenResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../auth_resource.py",
+    "resourceAccessor": "auth",
+    "methodName": "sign_up",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/signup",
+    "signature": "def sign_up( self, organization_name: str, email: str, password: str, idempotency_key: str | None = None ) -> SignUpResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../auth_resource.py",
+    "resourceAccessor": "auth",
+    "methodName": "refresh",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/refresh",
+    "signature": "def refresh(self, refresh_token: str) -> TokenResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../auth_resource.py",
+    "resourceAccessor": "auth",
+    "methodName": "request_password_reset",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/password-reset/request",
+    "signature": "def request_password_reset(self, email: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../auth_resource.py",
+    "resourceAccessor": "auth",
+    "methodName": "confirm_password_reset",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/password-reset/confirm",
+    "signature": "def confirm_password_reset(self, reset_token: str, new_password: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../deposits_resource.py",
+    "resourceAccessor": "deposits",
+    "methodName": "create_payment_intent",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/payment-intents",
+    "signature": "def create_payment_intent( self, organization_id: str, transaction_id: str, asset_network_id: str, amount: Decimal, expires_at: str | None = None, idempotency_key: str | None = None, ) -> CreatePaymentIntentResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../deposits_resource.py",
+    "resourceAccessor": "deposits",
+    "methodName": "get_payment_intent",
+    "httpVerb": "GET",
+    "pathShape": "/v1/payment-intents/*",
+    "signature": "def get_payment_intent(self, payment_intent_id: str) -> PaymentIntentResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../deposits_resource.py",
+    "resourceAccessor": "deposits",
+    "methodName": "get_deposit",
+    "httpVerb": "GET",
+    "pathShape": "/v1/deposits/*",
+    "signature": "def get_deposit(self, deposit_id: str) -> DepositResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../environments_resource.py",
+    "resourceAccessor": "environments",
+    "methodName": "list_api_keys",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/api-keys",
+    "signature": "def list_api_keys(self, environment_id: str) -> list[ApiKeyMetadataResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../environments_resource.py",
+    "resourceAccessor": "environments",
+    "methodName": "generate_api_key",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/api-keys",
+    "signature": "def generate_api_key(self, environment_id: str) -> GenerateApiKeyResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../event_types_resource.py",
+    "resourceAccessor": "event_types",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/event-types",
+    "signature": "def create(self, organization_id: str, name: str) -> CreateEventTypeResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../event_types_resource.py",
+    "resourceAccessor": "event_types",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/event-types",
+    "signature": "def list(self, organization_id: str) -> list[EventTypeResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../events_resource.py",
+    "resourceAccessor": "events",
+    "methodName": "ingest",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/events",
+    "signature": "def ingest( self, application_id: str, workflow_version_id: str, current_state_id: str, transaction_reference: str, event_type_id: str, event_source: EnumValue[int], payload: dict[str, str] | None = None, idempotency_key: str | None = None, ) -> EventIngestionResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../execution_destinations_resource.py",
+    "resourceAccessor": "execution_destinations",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-destinations",
+    "signature": "def register(self, organization_id: str, account_id: str, asset_network_id: str, address: str) -> RegisterExecutionDestinationResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../execution_sources_resource.py",
+    "resourceAccessor": "execution_sources",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-sources",
+    "signature": "def register( self, organization_id: str, environment_id: str, asset_network_id: str, wallet_id: str, derivation_reference: int, address: str | None, ) -> RegisterExecutionSourceResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../execution_sources_resource.py",
+    "resourceAccessor": "execution_sources",
+    "methodName": "sync_resource_stake",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-sources/*/resource-stake",
+    "signature": "def sync_resource_stake( self, organization_id: str, execution_source_id: str, available_native_amount: Decimal, available_energy: Decimal, available_bandwidth: Decimal, ) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../ledger_resource.py",
+    "resourceAccessor": "ledger",
+    "methodName": "get_balance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/balance",
+    "signature": "def get_balance(self, account_id: str, asset_network_id: str) -> BalanceResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../ledger_resource.py",
+    "resourceAccessor": "ledger",
+    "methodName": "list_entries",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/ledger-entries",
+    "signature": "def list_entries( self, account_id: str, asset_network_id: str, skip: int, take: int, nature: EnumValue[int] | None = None, date_from: str | None = None, date_to: str | None = None, ) -> list[LedgerEntryResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../members_resource.py",
+    "resourceAccessor": "members",
+    "methodName": "invite",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/members",
+    "signature": "def invite(self, organization_id: str, email: str, role: EnumValue[int]) -> InviteMemberResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../members_resource.py",
+    "resourceAccessor": "members",
+    "methodName": "accept_invite",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/accept-invite",
+    "signature": "def accept_invite(self, invite_token: str, password: str) -> TokenResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../members_resource.py",
+    "resourceAccessor": "members",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/members",
+    "signature": "def list(self, organization_id: str) -> list[MemberResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../members_resource.py",
+    "resourceAccessor": "members",
+    "methodName": "assign_role",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/role",
+    "signature": "def assign_role(self, member_id: str, new_role: EnumValue[int]) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../members_resource.py",
+    "resourceAccessor": "members",
+    "methodName": "suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/suspend",
+    "signature": "def suspend(self, member_id: str, reason: str | None = None) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../members_resource.py",
+    "resourceAccessor": "members",
+    "methodName": "reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/reactivate",
+    "signature": "def reactivate(self, member_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../members_resource.py",
+    "resourceAccessor": "members",
+    "methodName": "remove",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/members/*",
+    "signature": "def remove(self, member_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../network_cost_payer_accounts_resource.py",
+    "resourceAccessor": "network_cost_payer_accounts",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/network-cost-payer-accounts",
+    "signature": "def register(self, organization_id: str, asset_network_id: str, account_id: str) -> RegisterNetworkCostPayerAccountResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../network_cost_payer_accounts_resource.py",
+    "resourceAccessor": "network_cost_payer_accounts",
+    "methodName": "update_resource_preference",
+    "httpVerb": "PATCH",
+    "pathShape": "/v1/organizations/*/network-cost-payer-accounts/*/resource-preference",
+    "signature": "def update_resource_preference( self, organization_id: str, asset_network_id: str, resource_preference: EnumValue[int], allow_fallback_to_ishtaran_resources: bool, ) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../network_execution_resource.py",
+    "resourceAccessor": "network_execution",
+    "methodName": "quote",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/network-execution-quote",
+    "signature": "def quote( self, environment_id: str, asset_network_id: str, operations: list[NetworkExecutionOperationInput] | None, network_cost_payer: EnumValue[int], ) -> NetworkExecutionQuoteResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../organizations_resource.py",
+    "resourceAccessor": "organizations",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations",
+    "signature": "def create(self, name: str, idempotency_key: str | None = None) -> CreatedResourceResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../organizations_resource.py",
+    "resourceAccessor": "organizations",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*",
+    "signature": "def get(self, organization_id: str) -> OrganizationResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../organizations_resource.py",
+    "resourceAccessor": "organizations",
+    "methodName": "suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/suspend",
+    "signature": "def suspend(self, organization_id: str, reason: str | None = None) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../organizations_resource.py",
+    "resourceAccessor": "organizations",
+    "methodName": "reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/reactivate",
+    "signature": "def reactivate(self, organization_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../organizations_resource.py",
+    "resourceAccessor": "organizations",
+    "methodName": "list_applications",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/applications",
+    "signature": "def list_applications(self, organization_id: str) -> list[ApplicationResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../organizations_resource.py",
+    "resourceAccessor": "organizations",
+    "methodName": "create_application",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/applications",
+    "signature": "def create_application(self, organization_id: str, name: str, idempotency_key: str | None = None) -> CreatedResourceResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../payout_resource.py",
+    "resourceAccessor": "payout",
+    "methodName": "get_payable_summary",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/payable-summary",
+    "signature": "def get_payable_summary(self, account_id: str, asset_network_id: str) -> PayableSummaryResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../payout_resource.py",
+    "resourceAccessor": "payout",
+    "methodName": "create_batch",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/payout-batches",
+    "signature": "def create_batch( self, organization_id: str, environment_id: str, asset_network_id: str, explicit_owner_ids: list[str] | None = None, idempotency_key: str | None = None, ) -> CreatePayoutBatchResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../payout_resource.py",
+    "resourceAccessor": "payout",
+    "methodName": "get_batch",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/payout-batches/*",
+    "signature": "def get_batch(self, organization_id: str, payout_batch_id: str) -> PayoutBatchResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../refunds_resource.py",
+    "resourceAccessor": "refunds",
+    "methodName": "execute_refund",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/refunds",
+    "signature": "def execute_refund( self, transaction_id: str, amount: Decimal | None = None, reason: str | None = None, idempotency_key: str | None = None, ) -> ExecuteRefundResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../refunds_resource.py",
+    "resourceAccessor": "refunds",
+    "methodName": "list_by_transaction",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/refunds",
+    "signature": "def list_by_transaction(self, transaction_id: str) -> list[RefundResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../refunds_resource.py",
+    "resourceAccessor": "refunds",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/refunds/*",
+    "signature": "def get(self, refund_id: str) -> RefundResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../sandbox_resource.py",
+    "resourceAccessor": "sandbox",
+    "methodName": "faucet",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/faucet",
+    "signature": "def faucet(self, environment_id: str, deposit_address: str, asset_network_id: str, amount: Decimal) -> SandboxObservedAddressResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../sandbox_resource.py",
+    "resourceAccessor": "sandbox",
+    "methodName": "simulate_deposit",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-deposit",
+    "signature": "def simulate_deposit(self, environment_id: str, deposit_address: str, asset_network_id: str, amount: Decimal) -> SandboxObservedAddressResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../sandbox_resource.py",
+    "resourceAccessor": "sandbox",
+    "methodName": "simulate_confirmation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-confirmation",
+    "signature": "def simulate_confirmation(self, environment_id: str, sandbox_observed_address_id: str, additional_confirmations: int, is_final: bool) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../sandbox_resource.py",
+    "resourceAccessor": "sandbox",
+    "methodName": "simulate_broadcast_confirmation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-broadcast-confirmation",
+    "signature": "def simulate_broadcast_confirmation(self, environment_id: str, broadcast_attempt_id: str, additional_confirmations: int, is_final: bool) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../sandbox_resource.py",
+    "resourceAccessor": "sandbox",
+    "methodName": "simulate_withdrawal",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-withdrawal",
+    "signature": "def simulate_withdrawal( self, environment_id: str, destination_address: str, amount: Decimal, asset_network_id: str, outcome: EnumValue[int], failure_reason: str | None = None, ) -> SandboxBroadcastAttemptResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../sandbox_resource.py",
+    "resourceAccessor": "sandbox",
+    "methodName": "set_observed_treasury_balance",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/treasury-balance",
+    "signature": "def set_observed_treasury_balance(self, environment_id: str, asset_network_id: str, balance: Decimal) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../sandbox_resource.py",
+    "resourceAccessor": "sandbox",
+    "methodName": "get_treasury_balance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/treasury-balance/*",
+    "signature": "def get_treasury_balance(self, environment_id: str, asset_network_id: str) -> SandboxTreasuryObservedBalanceResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../sandbox_resource.py",
+    "resourceAccessor": "sandbox",
+    "methodName": "get_observed_address",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/observed-addresses/*",
+    "signature": "def get_observed_address(self, environment_id: str, id_: str) -> SandboxObservedAddressResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../sandbox_resource.py",
+    "resourceAccessor": "sandbox",
+    "methodName": "get_broadcast_attempt",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/broadcast-attempts/*",
+    "signature": "def get_broadcast_attempt(self, environment_id: str, id_: str) -> SandboxBroadcastAttemptResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../settlements_resource.py",
+    "resourceAccessor": "settlements",
+    "methodName": "execute_settlement",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/settlements",
+    "signature": "def execute_settlement(self, transaction_id: str, amount: Decimal | None = None, idempotency_key: str | None = None) -> ExecuteSettlementResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../settlements_resource.py",
+    "resourceAccessor": "settlements",
+    "methodName": "list_by_transaction",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/settlements",
+    "signature": "def list_by_transaction(self, transaction_id: str) -> list[SettlementResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../settlements_resource.py",
+    "resourceAccessor": "settlements",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/settlements/*",
+    "signature": "def get(self, settlement_id: str) -> SettlementResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../settlements_resource.py",
+    "resourceAccessor": "settlements",
+    "methodName": "get_summary",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/settlement-summary",
+    "signature": "def get_summary(self, transaction_id: str) -> TransactionSettlementSummaryResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../settlements_resource.py",
+    "resourceAccessor": "settlements",
+    "methodName": "release_retained_split",
+    "httpVerb": "POST",
+    "pathShape": "/v1/settlements/*/split-allocations/*/release",
+    "signature": "def release_retained_split(self, settlement_id: str, allocation_id: str, idempotency_key: str | None = None) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../signing_requests_resource.py",
+    "resourceAccessor": "signing_requests",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/signing-requests",
+    "signature": "def create( self, environment_id: str, wallet_id: str, derivation_reference: int, origin_reference: str, asset_network_id: str, source_address: str, legs: list[ExecutionLegInput], expires_at: str, idempotency_key: str | None = None, ) -> CreateSigningRequestResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../signing_requests_resource.py",
+    "resourceAccessor": "signing_requests",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/signing-requests/*",
+    "signature": "def get(self, signing_request_id: str) -> SigningRequestResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../signing_requests_resource.py",
+    "resourceAccessor": "signing_requests",
+    "methodName": "submit_signed_transaction",
+    "httpVerb": "POST",
+    "pathShape": "/v1/signing-requests/*/legs/*/submit",
+    "signature": "def submit_signed_transaction( self, signing_request_id: str, execution_leg_id: str, submitted_canonical_hash: str, signature_hex: str, ) -> SubmitSignedTransactionResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../transactions_resource.py",
+    "resourceAccessor": "transactions",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/transactions",
+    "signature": "def create( self, organization_id: str, application_id: str, workflow_version_id: str | None, asset_network_id: str, amount: Decimal, participants: list[ParticipantInput], idempotency_key: str | None = None, ) -> CreateTransactionResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../transactions_resource.py",
+    "resourceAccessor": "transactions",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*",
+    "signature": "def get(self, transaction_id: str) -> TransactionResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../transactions_resource.py",
+    "resourceAccessor": "transactions",
+    "methodName": "get_state",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/state",
+    "signature": "def get_state(self, transaction_id: str) -> TransactionStateResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../transactions_resource.py",
+    "resourceAccessor": "transactions",
+    "methodName": "reserve",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/reserve",
+    "signature": "def reserve(self, transaction_id: str) -> str:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../transactions_resource.py",
+    "resourceAccessor": "transactions",
+    "methodName": "cancel",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/cancel",
+    "signature": "def cancel(self, transaction_id: str, reason: str | None = None) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../transactions_resource.py",
+    "resourceAccessor": "transactions",
+    "methodName": "freeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/freeze",
+    "signature": "def freeze(self, transaction_id: str, reason: str | None = None) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../transactions_resource.py",
+    "resourceAccessor": "transactions",
+    "methodName": "unfreeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/unfreeze",
+    "signature": "def unfreeze(self, transaction_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../wallets_resource.py",
+    "resourceAccessor": "wallets",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/wallets",
+    "signature": "def register( self, application_id: str, network_id: str, scheme: EnumValue[int], public_derivation_material: str, idempotency_key: str | None = None, ) -> RegisterWalletResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../wallets_resource.py",
+    "resourceAccessor": "wallets",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/wallets/*",
+    "signature": "def get(self, wallet_id: str) -> WalletResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../wallets_resource.py",
+    "resourceAccessor": "wallets",
+    "methodName": "get_public_material",
+    "httpVerb": "GET",
+    "pathShape": "/v1/wallets/*/public-material",
+    "signature": "def get_public_material(self, wallet_id: str) -> WalletPublicMaterialResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../wallets_resource.py",
+    "resourceAccessor": "wallets",
+    "methodName": "allocate_deposit_address",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/wallets/deposit-addresses",
+    "signature": "def allocate_deposit_address(self, application_id: str, network_id: str) -> AllocatedDepositAddressResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../webhook_deliveries_resource.py",
+    "resourceAccessor": "webhook_deliveries",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-deliveries/*",
+    "signature": "def get(self, webhook_delivery_id: str) -> WebhookDeliveryResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../webhook_deliveries_resource.py",
+    "resourceAccessor": "webhook_deliveries",
+    "methodName": "redeliver",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-deliveries/*/redeliver",
+    "signature": "def redeliver(self, webhook_delivery_id: str) -> RedeliverWebhookResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../webhook_endpoints_resource.py",
+    "resourceAccessor": "webhook_endpoints",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/webhook-endpoints",
+    "signature": "def create(self, organization_id: str, url: str) -> ConfigureWebhookEndpointResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../webhook_endpoints_resource.py",
+    "resourceAccessor": "webhook_endpoints",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/webhook-endpoints",
+    "signature": "def list(self, organization_id: str) -> List[WebhookEndpointResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../webhook_endpoints_resource.py",
+    "resourceAccessor": "webhook_endpoints",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-endpoints/*",
+    "signature": "def get(self, webhook_endpoint_id: str) -> WebhookEndpointResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../webhook_endpoints_resource.py",
+    "resourceAccessor": "webhook_endpoints",
+    "methodName": "rotate_secret",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-endpoints/*/rotate-secret",
+    "signature": "def rotate_secret(self, webhook_endpoint_id: str) -> RotateWebhookEndpointSecretResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../webhook_endpoints_resource.py",
+    "resourceAccessor": "webhook_endpoints",
+    "methodName": "deactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-endpoints/*/deactivate",
+    "signature": "def deactivate(self, webhook_endpoint_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../webhook_endpoints_resource.py",
+    "resourceAccessor": "webhook_endpoints",
+    "methodName": "list_deliveries",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-endpoints/*/deliveries",
+    "signature": "def list_deliveries( self, webhook_endpoint_id: str, event_type: str | None = None, status: EnumValue[int] | None = None, ) -> List[WebhookDeliveryResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../withdrawals_resource.py",
+    "resourceAccessor": "withdrawals",
+    "methodName": "quote",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawals/quote",
+    "signature": "def quote( self, organization_id: str, environment_id: str, account_id: str, withdrawal_destination_id: str, asset_network_id: str, amount: Decimal, ) -> WithdrawalQuoteResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../withdrawals_resource.py",
+    "resourceAccessor": "withdrawals",
+    "methodName": "create_destination",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawal-destinations",
+    "signature": "def create_destination(self, organization_id: str, address: str, asset_network_id: str) -> CreateWithdrawalDestinationResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../withdrawals_resource.py",
+    "resourceAccessor": "withdrawals",
+    "methodName": "request",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawals",
+    "signature": "def request( self, organization_id: str, environment_id: str, account_id: str, withdrawal_destination_id: str, asset_network_id: str, amount: Decimal, idempotency_key: str | None = None, ) -> WithdrawalResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../withdrawals_resource.py",
+    "resourceAccessor": "withdrawals",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/withdrawals/*",
+    "signature": "def get(self, withdrawal_id: str) -> WithdrawalResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../withdrawals_resource.py",
+    "resourceAccessor": "withdrawals",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/withdrawals",
+    "signature": "def list( self, organization_id: str, status: EnumValue[int] | None = None, date_from: str | None = None, date_to: str | None = None, skip: int | None = None, take: int | None = None, ) -> list[WithdrawalResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../withdrawals_resource.py",
+    "resourceAccessor": "withdrawals",
+    "methodName": "cancel",
+    "httpVerb": "POST",
+    "pathShape": "/v1/withdrawals/*/cancel",
+    "signature": "def cancel(self, withdrawal_id: str, reason: str | None = None) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../withdrawals_resource.py",
+    "resourceAccessor": "withdrawals",
+    "methodName": "retry_broadcast",
+    "httpVerb": "POST",
+    "pathShape": "/v1/withdrawals/*/retry-broadcast",
+    "signature": "def retry_broadcast(self, withdrawal_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../workflows_resource.py",
+    "resourceAccessor": "workflows",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/workflows",
+    "signature": "def create(self, organization_id: str, name: str) -> CreateWorkflowResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../workflows_resource.py",
+    "resourceAccessor": "workflows",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/workflows",
+    "signature": "def list(self, organization_id: str) -> List[WorkflowResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../workflows_resource.py",
+    "resourceAccessor": "workflows",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/workflows/*",
+    "signature": "def get(self, workflow_id: str) -> WorkflowResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../workflows_resource.py",
+    "resourceAccessor": "workflows",
+    "methodName": "create_version",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions",
+    "signature": "def create_version(self, workflow_id: str, states: List[StateInput], transitions: List[TransitionInput]) -> CreateWorkflowVersionResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../workflows_resource.py",
+    "resourceAccessor": "workflows",
+    "methodName": "get_version",
+    "httpVerb": "GET",
+    "pathShape": "/v1/workflows/*/versions/*",
+    "signature": "def get_version(self, workflow_id: str, workflow_version_id: str) -> WorkflowVersionResponse:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../workflows_resource.py",
+    "resourceAccessor": "workflows",
+    "methodName": "publish_version",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions/*/publish",
+    "signature": "def publish_version(self, workflow_id: str, workflow_version_id: str) -> None:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../workflows_resource.py",
+    "resourceAccessor": "workflows",
+    "methodName": "create_rule",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions/*/rules",
+    "signature": "def create_rule( self, workflow_id: str, workflow_version_id: str, from_state_id: str, to_state_id: str, event_type_id: str, conditions: List[ConditionInput], ) -> CreateRuleResult:"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountHoldersResource.java",
+    "resourceAccessor": "accountHolders()",
+    "methodName": "signUp",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/signup",
+    "signature": "public AccountHolderTokenResult signUp(String email, String password)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountHoldersResource.java",
+    "resourceAccessor": "accountHolders()",
+    "methodName": "login",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/login",
+    "signature": "public AccountHolderTokenResult login(String email, String password)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountHoldersResource.java",
+    "resourceAccessor": "accountHolders()",
+    "methodName": "me",
+    "httpVerb": "GET",
+    "pathShape": "/v1/account-holders/me",
+    "signature": "public AccountHolderResponse me()"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountHoldersResource.java",
+    "resourceAccessor": "accountHolders()",
+    "methodName": "claimInvitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/invitations/claim",
+    "signature": "public ClaimAccountHolderInvitationResult claimInvitation(String plainTextToken)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountHoldersResource.java",
+    "resourceAccessor": "accountHolders()",
+    "methodName": "signUpAndClaimInvitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/invitations/signup-and-claim",
+    "signature": "public SignUpAndClaimAccountHolderInvitationResult signUpAndClaimInvitation(String plainTextToken, String email, String password)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountsResource.java",
+    "resourceAccessor": "accounts()",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/accounts",
+    "signature": "public CreateAccountResult create(UUID organizationId, String externalId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountsResource.java",
+    "resourceAccessor": "accounts()",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/accounts",
+    "signature": "public List<OrganizationAccountResponse> list(UUID organizationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountsResource.java",
+    "resourceAccessor": "accounts()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*",
+    "signature": "public AccountResponse get(UUID accountId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountsResource.java",
+    "resourceAccessor": "accounts()",
+    "methodName": "authorizeApplication",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/accounts/*/authorize-application",
+    "signature": "public void authorizeApplication(UUID organizationId, UUID accountId, UUID applicationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountsResource.java",
+    "resourceAccessor": "accounts()",
+    "methodName": "freeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/freeze",
+    "signature": "public void freeze(UUID accountId, String reason)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountsResource.java",
+    "resourceAccessor": "accounts()",
+    "methodName": "unfreeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/unfreeze",
+    "signature": "public void unfreeze(UUID accountId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountsResource.java",
+    "resourceAccessor": "accounts()",
+    "methodName": "close",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/accounts/*",
+    "signature": "public void close(UUID accountId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountsResource.java",
+    "resourceAccessor": "accounts()",
+    "methodName": "createAccountHolderInvitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/account-holder-invitations",
+    "signature": "public CreateAccountHolderInvitationResult createAccountHolderInvitation(UUID organizationId, String externalId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AccountsResource.java",
+    "resourceAccessor": "accounts()",
+    "methodName": "revokeRelationship",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/relationships/*/revoke",
+    "signature": "public void revokeRelationship(UUID organizationId, UUID relationshipId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../ApiKeysResource.java",
+    "resourceAccessor": "apiKeys()",
+    "methodName": "revoke",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/api-keys/*",
+    "signature": "public void revoke(UUID apiKeyId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../ApiKeysResource.java",
+    "resourceAccessor": "apiKeys()",
+    "methodName": "rotate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/api-keys/*/rotate",
+    "signature": "public RotateApiKeyResult rotate(UUID apiKeyId, Duration overlapWindow)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../ApplicationsResource.java",
+    "resourceAccessor": "applications()",
+    "methodName": "archive",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/archive",
+    "signature": "public void archive(UUID applicationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../ApplicationsResource.java",
+    "resourceAccessor": "applications()",
+    "methodName": "suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/suspend",
+    "signature": "public void suspend(UUID applicationId, String reason)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../ApplicationsResource.java",
+    "resourceAccessor": "applications()",
+    "methodName": "reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/reactivate",
+    "signature": "public void reactivate(UUID applicationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../ApplicationsResource.java",
+    "resourceAccessor": "applications()",
+    "methodName": "createEnvironment",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/environments",
+    "signature": "public CreatedResourceResponse createEnvironment(UUID applicationId, EnvironmentType type)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AssetNetworkCatalogResource.java",
+    "resourceAccessor": "assetNetworkCatalog()",
+    "methodName": "listAssets",
+    "httpVerb": "GET",
+    "pathShape": "/v1/assets",
+    "signature": "public List<AssetResponse> listAssets()"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AssetNetworkCatalogResource.java",
+    "resourceAccessor": "assetNetworkCatalog()",
+    "methodName": "getAsset",
+    "httpVerb": "GET",
+    "pathShape": "/v1/assets/*",
+    "signature": "public AssetResponse getAsset(UUID assetId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AssetNetworkCatalogResource.java",
+    "resourceAccessor": "assetNetworkCatalog()",
+    "methodName": "listNetworks",
+    "httpVerb": "GET",
+    "pathShape": "/v1/networks",
+    "signature": "public List<NetworkResponse> listNetworks()"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AssetNetworkCatalogResource.java",
+    "resourceAccessor": "assetNetworkCatalog()",
+    "methodName": "getNetwork",
+    "httpVerb": "GET",
+    "pathShape": "/v1/networks/*",
+    "signature": "public NetworkResponse getNetwork(UUID networkId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AssetNetworkCatalogResource.java",
+    "resourceAccessor": "assetNetworkCatalog()",
+    "methodName": "listAssetNetworks",
+    "httpVerb": "GET",
+    "pathShape": "/v1/asset-networks",
+    "signature": "public List<AssetNetworkResponse> listAssetNetworks(AssetNetworkStatus status)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AssetNetworkCatalogResource.java",
+    "resourceAccessor": "assetNetworkCatalog()",
+    "methodName": "getAssetNetwork",
+    "httpVerb": "GET",
+    "pathShape": "/v1/asset-networks/*",
+    "signature": "public AssetNetworkResponse getAssetNetwork(UUID assetNetworkId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AuthResource.java",
+    "resourceAccessor": "auth()",
+    "methodName": "login",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/login",
+    "signature": "public TokenResult login(String email, String password)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AuthResource.java",
+    "resourceAccessor": "auth()",
+    "methodName": "signUp",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/signup",
+    "signature": "public SignUpResponse signUp(String organizationName, String email, String password, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AuthResource.java",
+    "resourceAccessor": "auth()",
+    "methodName": "refresh",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/refresh",
+    "signature": "public TokenResult refresh(String refreshToken)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AuthResource.java",
+    "resourceAccessor": "auth()",
+    "methodName": "requestPasswordReset",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/password-reset/request",
+    "signature": "public void requestPasswordReset(String email)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../AuthResource.java",
+    "resourceAccessor": "auth()",
+    "methodName": "confirmPasswordReset",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/password-reset/confirm",
+    "signature": "public void confirmPasswordReset(String resetToken, String newPassword)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../DepositsResource.java",
+    "resourceAccessor": "deposits()",
+    "methodName": "createPaymentIntent",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/payment-intents",
+    "signature": "public CreatePaymentIntentResult createPaymentIntent(UUID organizationId, UUID transactionId, UUID assetNetworkId, BigDecimal amount, OffsetDateTime expiresAt, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../DepositsResource.java",
+    "resourceAccessor": "deposits()",
+    "methodName": "getPaymentIntent",
+    "httpVerb": "GET",
+    "pathShape": "/v1/payment-intents/*",
+    "signature": "public PaymentIntentResponse getPaymentIntent(UUID paymentIntentId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../DepositsResource.java",
+    "resourceAccessor": "deposits()",
+    "methodName": "getDeposit",
+    "httpVerb": "GET",
+    "pathShape": "/v1/deposits/*",
+    "signature": "public DepositResponse getDeposit(UUID depositId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../EnvironmentsResource.java",
+    "resourceAccessor": "environments()",
+    "methodName": "listApiKeys",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/api-keys",
+    "signature": "public List<ApiKeyMetadataResponse> listApiKeys(UUID environmentId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../EnvironmentsResource.java",
+    "resourceAccessor": "environments()",
+    "methodName": "generateApiKey",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/api-keys",
+    "signature": "public GenerateApiKeyResult generateApiKey(UUID environmentId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../EventTypesResource.java",
+    "resourceAccessor": "eventTypes()",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/event-types",
+    "signature": "public CreateEventTypeResult create(UUID organizationId, String name)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../EventTypesResource.java",
+    "resourceAccessor": "eventTypes()",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/event-types",
+    "signature": "public List<EventTypeResponse> list(UUID organizationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../EventsResource.java",
+    "resourceAccessor": "events()",
+    "methodName": "ingest",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/events",
+    "signature": "public EventIngestionResult ingest(UUID applicationId, UUID workflowVersionId, UUID currentStateId, UUID transactionReference, UUID eventTypeId, EventSource eventSource, Map<String, String> payload, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../ExecutionDestinationsResource.java",
+    "resourceAccessor": "executionDestinations()",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-destinations",
+    "signature": "public RegisterExecutionDestinationResult register(UUID organizationId, UUID accountId, UUID assetNetworkId, String address)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../ExecutionSourcesResource.java",
+    "resourceAccessor": "executionSources()",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-sources",
+    "signature": "public RegisterExecutionSourceResult register(UUID organizationId, UUID environmentId, UUID assetNetworkId, UUID walletId, long derivationReference, String address)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../ExecutionSourcesResource.java",
+    "resourceAccessor": "executionSources()",
+    "methodName": "syncResourceStake",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-sources/*/resource-stake",
+    "signature": "public void syncResourceStake(UUID organizationId, UUID executionSourceId, BigDecimal availableNativeAmount, BigDecimal availableEnergy, BigDecimal availableBandwidth)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../LedgerResource.java",
+    "resourceAccessor": "ledger()",
+    "methodName": "getBalance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/balance",
+    "signature": "public BalanceResponse getBalance(UUID accountId, UUID assetNetworkId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../LedgerResource.java",
+    "resourceAccessor": "ledger()",
+    "methodName": "listEntries",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/ledger-entries",
+    "signature": "public List<LedgerEntryResponse> listEntries(UUID accountId, UUID assetNetworkId, EntryNature nature, OffsetDateTime from, OffsetDateTime to, int skip, int take)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../MembersResource.java",
+    "resourceAccessor": "members()",
+    "methodName": "invite",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/members",
+    "signature": "public InviteMemberResult invite(UUID organizationId, String email, MemberRole role)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../MembersResource.java",
+    "resourceAccessor": "members()",
+    "methodName": "acceptInvite",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/accept-invite",
+    "signature": "public TokenResult acceptInvite(String inviteToken, String password)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../MembersResource.java",
+    "resourceAccessor": "members()",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/members",
+    "signature": "public List<MemberResponse> list(UUID organizationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../MembersResource.java",
+    "resourceAccessor": "members()",
+    "methodName": "assignRole",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/role",
+    "signature": "public void assignRole(UUID memberId, MemberRole newRole)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../MembersResource.java",
+    "resourceAccessor": "members()",
+    "methodName": "suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/suspend",
+    "signature": "public void suspend(UUID memberId, String reason)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../MembersResource.java",
+    "resourceAccessor": "members()",
+    "methodName": "reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/reactivate",
+    "signature": "public void reactivate(UUID memberId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../MembersResource.java",
+    "resourceAccessor": "members()",
+    "methodName": "remove",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/members/*",
+    "signature": "public void remove(UUID memberId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../NetworkCostPayerAccountsResource.java",
+    "resourceAccessor": "networkCostPayerAccounts()",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/network-cost-payer-accounts",
+    "signature": "public RegisterNetworkCostPayerAccountResult register(UUID organizationId, UUID assetNetworkId, UUID accountId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../NetworkCostPayerAccountsResource.java",
+    "resourceAccessor": "networkCostPayerAccounts()",
+    "methodName": "updateResourcePreference",
+    "httpVerb": "PATCH",
+    "pathShape": "/v1/organizations/*/network-cost-payer-accounts/*/resource-preference",
+    "signature": "public void updateResourcePreference(UUID organizationId, UUID assetNetworkId, NetworkResourceSource resourcePreference, boolean allowFallbackToIshtaranResources)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../NetworkExecutionResource.java",
+    "resourceAccessor": "networkExecution()",
+    "methodName": "quote",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/network-execution-quote",
+    "signature": "public NetworkExecutionQuoteResponse quote(UUID environmentId, UUID assetNetworkId, List<NetworkExecutionOperationInput> operations, NetworkCostPayer networkCostPayer)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../OrganizationsResource.java",
+    "resourceAccessor": "organizations()",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations",
+    "signature": "public CreatedResourceResponse create(String name, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../OrganizationsResource.java",
+    "resourceAccessor": "organizations()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*",
+    "signature": "public OrganizationResponse get(UUID organizationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../OrganizationsResource.java",
+    "resourceAccessor": "organizations()",
+    "methodName": "suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/suspend",
+    "signature": "public void suspend(UUID organizationId, String reason)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../OrganizationsResource.java",
+    "resourceAccessor": "organizations()",
+    "methodName": "reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/reactivate",
+    "signature": "public void reactivate(UUID organizationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../OrganizationsResource.java",
+    "resourceAccessor": "organizations()",
+    "methodName": "listApplications",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/applications",
+    "signature": "public List<ApplicationResponse> listApplications(UUID organizationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../OrganizationsResource.java",
+    "resourceAccessor": "organizations()",
+    "methodName": "createApplication",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/applications",
+    "signature": "public CreatedResourceResponse createApplication(UUID organizationId, String name, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../PayoutResource.java",
+    "resourceAccessor": "payout()",
+    "methodName": "getPayableSummary",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/payable-summary",
+    "signature": "public PayableSummaryResponse getPayableSummary(UUID accountId, UUID assetNetworkId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../PayoutResource.java",
+    "resourceAccessor": "payout()",
+    "methodName": "createBatch",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/payout-batches",
+    "signature": "public CreatePayoutBatchResult createBatch(UUID organizationId, UUID environmentId, UUID assetNetworkId, List<UUID> explicitOwnerIds, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../PayoutResource.java",
+    "resourceAccessor": "payout()",
+    "methodName": "getBatch",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/payout-batches/*",
+    "signature": "public PayoutBatchResponse getBatch(UUID organizationId, UUID payoutBatchId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../RefundsResource.java",
+    "resourceAccessor": "refunds()",
+    "methodName": "executeRefund",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/refunds",
+    "signature": "public ExecuteRefundResult executeRefund(UUID transactionId, BigDecimal amount, String reason, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../RefundsResource.java",
+    "resourceAccessor": "refunds()",
+    "methodName": "listByTransaction",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/refunds",
+    "signature": "public List<RefundResponse> listByTransaction(UUID transactionId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../RefundsResource.java",
+    "resourceAccessor": "refunds()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/refunds/*",
+    "signature": "public RefundResponse get(UUID refundId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SandboxResource.java",
+    "resourceAccessor": "sandbox()",
+    "methodName": "faucet",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/faucet",
+    "signature": "public SandboxObservedAddressResult faucet(UUID environmentId, String depositAddress, UUID assetNetworkId, BigDecimal amount)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SandboxResource.java",
+    "resourceAccessor": "sandbox()",
+    "methodName": "simulateDeposit",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-deposit",
+    "signature": "public SandboxObservedAddressResult simulateDeposit(UUID environmentId, String depositAddress, UUID assetNetworkId, BigDecimal amount)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SandboxResource.java",
+    "resourceAccessor": "sandbox()",
+    "methodName": "simulateConfirmation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-confirmation",
+    "signature": "public void simulateConfirmation(UUID environmentId, UUID sandboxObservedAddressId, int additionalConfirmations, boolean isFinal)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SandboxResource.java",
+    "resourceAccessor": "sandbox()",
+    "methodName": "simulateBroadcastConfirmation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-broadcast-confirmation",
+    "signature": "public void simulateBroadcastConfirmation(UUID environmentId, UUID broadcastAttemptId, int additionalConfirmations, boolean isFinal)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SandboxResource.java",
+    "resourceAccessor": "sandbox()",
+    "methodName": "simulateWithdrawal",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-withdrawal",
+    "signature": "public SandboxBroadcastAttemptResult simulateWithdrawal(UUID environmentId, String destinationAddress, BigDecimal amount, UUID assetNetworkId, SimulatedBroadcastOutcome outcome, String failureReason)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SandboxResource.java",
+    "resourceAccessor": "sandbox()",
+    "methodName": "setObservedTreasuryBalance",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/treasury-balance",
+    "signature": "public void setObservedTreasuryBalance(UUID environmentId, UUID assetNetworkId, BigDecimal balance)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SandboxResource.java",
+    "resourceAccessor": "sandbox()",
+    "methodName": "getTreasuryBalance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/treasury-balance/*",
+    "signature": "public SandboxTreasuryObservedBalanceResponse getTreasuryBalance(UUID environmentId, UUID assetNetworkId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SandboxResource.java",
+    "resourceAccessor": "sandbox()",
+    "methodName": "getObservedAddress",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/observed-addresses/*",
+    "signature": "public SandboxObservedAddressResponse getObservedAddress(UUID environmentId, UUID id)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SandboxResource.java",
+    "resourceAccessor": "sandbox()",
+    "methodName": "getBroadcastAttempt",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/broadcast-attempts/*",
+    "signature": "public SandboxBroadcastAttemptResponse getBroadcastAttempt(UUID environmentId, UUID id)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SettlementsResource.java",
+    "resourceAccessor": "settlements()",
+    "methodName": "executeSettlement",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/settlements",
+    "signature": "public ExecuteSettlementResult executeSettlement(UUID transactionId, BigDecimal amount, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SettlementsResource.java",
+    "resourceAccessor": "settlements()",
+    "methodName": "listByTransaction",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/settlements",
+    "signature": "public List<SettlementResponse> listByTransaction(UUID transactionId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SettlementsResource.java",
+    "resourceAccessor": "settlements()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/settlements/*",
+    "signature": "public SettlementResponse get(UUID settlementId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SettlementsResource.java",
+    "resourceAccessor": "settlements()",
+    "methodName": "getSummary",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/settlement-summary",
+    "signature": "public TransactionSettlementSummaryResponse getSummary(UUID transactionId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SettlementsResource.java",
+    "resourceAccessor": "settlements()",
+    "methodName": "releaseRetainedSplit",
+    "httpVerb": "POST",
+    "pathShape": "/v1/settlements/*/split-allocations/*/release",
+    "signature": "public void releaseRetainedSplit(UUID settlementId, UUID allocationId, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SigningRequestsResource.java",
+    "resourceAccessor": "signingRequests()",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/signing-requests",
+    "signature": "public CreateSigningRequestResult create(UUID environmentId, UUID walletId, long derivationReference, String originReference, UUID assetNetworkId, String sourceAddress, List<ExecutionLegInput> legs, OffsetDateTime expiresAt, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SigningRequestsResource.java",
+    "resourceAccessor": "signingRequests()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/signing-requests/*",
+    "signature": "public SigningRequestResponse get(UUID signingRequestId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../SigningRequestsResource.java",
+    "resourceAccessor": "signingRequests()",
+    "methodName": "submitSignedTransaction",
+    "httpVerb": "POST",
+    "pathShape": "/v1/signing-requests/*/legs/*/submit",
+    "signature": "public SubmitSignedTransactionResult submitSignedTransaction(UUID signingRequestId, UUID executionLegId, String submittedCanonicalHash, String signatureHex)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../TransactionsResource.java",
+    "resourceAccessor": "transactions()",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/transactions",
+    "signature": "public CreateTransactionResult create(UUID organizationId, UUID applicationId, UUID workflowVersionId, UUID assetNetworkId, BigDecimal amount, List<ParticipantInput> participants, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../TransactionsResource.java",
+    "resourceAccessor": "transactions()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*",
+    "signature": "public TransactionResponse get(UUID transactionId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../TransactionsResource.java",
+    "resourceAccessor": "transactions()",
+    "methodName": "getState",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/state",
+    "signature": "public TransactionStateResponse getState(UUID transactionId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../TransactionsResource.java",
+    "resourceAccessor": "transactions()",
+    "methodName": "reserve",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/reserve",
+    "signature": "public ReserveTransactionResult reserve(UUID transactionId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../TransactionsResource.java",
+    "resourceAccessor": "transactions()",
+    "methodName": "cancel",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/cancel",
+    "signature": "public void cancel(UUID transactionId, String reason)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../TransactionsResource.java",
+    "resourceAccessor": "transactions()",
+    "methodName": "freeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/freeze",
+    "signature": "public void freeze(UUID transactionId, String reason)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../TransactionsResource.java",
+    "resourceAccessor": "transactions()",
+    "methodName": "unfreeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/unfreeze",
+    "signature": "public void unfreeze(UUID transactionId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WalletsResource.java",
+    "resourceAccessor": "wallets()",
+    "methodName": "register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/wallets",
+    "signature": "public RegisterWalletResult register(UUID applicationId, UUID networkId, DerivationScheme scheme, String publicDerivationMaterial, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WalletsResource.java",
+    "resourceAccessor": "wallets()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/wallets/*",
+    "signature": "public WalletResponse get(UUID walletId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WalletsResource.java",
+    "resourceAccessor": "wallets()",
+    "methodName": "getPublicMaterial",
+    "httpVerb": "GET",
+    "pathShape": "/v1/wallets/*/public-material",
+    "signature": "public WalletPublicMaterialResult getPublicMaterial(UUID walletId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WalletsResource.java",
+    "resourceAccessor": "wallets()",
+    "methodName": "allocateDepositAddress",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/wallets/deposit-addresses",
+    "signature": "public AllocatedDepositAddressResult allocateDepositAddress(UUID applicationId, UUID networkId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WebhookDeliveriesResource.java",
+    "resourceAccessor": "webhookDeliveries()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-deliveries/*",
+    "signature": "public WebhookDeliveryResponse get(UUID webhookDeliveryId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WebhookDeliveriesResource.java",
+    "resourceAccessor": "webhookDeliveries()",
+    "methodName": "redeliver",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-deliveries/*/redeliver",
+    "signature": "public RedeliverWebhookResult redeliver(UUID webhookDeliveryId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WebhookEndpointsResource.java",
+    "resourceAccessor": "webhookEndpoints()",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/webhook-endpoints",
+    "signature": "public ConfigureWebhookEndpointResult create(UUID organizationId, String url)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WebhookEndpointsResource.java",
+    "resourceAccessor": "webhookEndpoints()",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/webhook-endpoints",
+    "signature": "public List<WebhookEndpointResponse> list(UUID organizationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WebhookEndpointsResource.java",
+    "resourceAccessor": "webhookEndpoints()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-endpoints/*",
+    "signature": "public WebhookEndpointResponse get(UUID webhookEndpointId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WebhookEndpointsResource.java",
+    "resourceAccessor": "webhookEndpoints()",
+    "methodName": "rotateSecret",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-endpoints/*/rotate-secret",
+    "signature": "public RotateWebhookEndpointSecretResult rotateSecret(UUID webhookEndpointId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WebhookEndpointsResource.java",
+    "resourceAccessor": "webhookEndpoints()",
+    "methodName": "deactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-endpoints/*/deactivate",
+    "signature": "public void deactivate(UUID webhookEndpointId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WebhookEndpointsResource.java",
+    "resourceAccessor": "webhookEndpoints()",
+    "methodName": "listDeliveries",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-endpoints/*/deliveries",
+    "signature": "public List<WebhookDeliveryResponse> listDeliveries(UUID webhookEndpointId, String eventType, WebhookDeliveryStatus status)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WithdrawalsResource.java",
+    "resourceAccessor": "withdrawals()",
+    "methodName": "quote",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawals/quote",
+    "signature": "public WithdrawalQuoteResponse quote(UUID organizationId, UUID environmentId, UUID accountId, UUID withdrawalDestinationId, UUID assetNetworkId, BigDecimal amount)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WithdrawalsResource.java",
+    "resourceAccessor": "withdrawals()",
+    "methodName": "createDestination",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawal-destinations",
+    "signature": "public CreateWithdrawalDestinationResult createDestination(UUID organizationId, String address, UUID assetNetworkId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WithdrawalsResource.java",
+    "resourceAccessor": "withdrawals()",
+    "methodName": "request",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawals",
+    "signature": "public WithdrawalResponse request(UUID organizationId, UUID environmentId, UUID accountId, UUID withdrawalDestinationId, UUID assetNetworkId, BigDecimal amount, String idempotencyKey)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WithdrawalsResource.java",
+    "resourceAccessor": "withdrawals()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/withdrawals/*",
+    "signature": "public WithdrawalResponse get(UUID withdrawalId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WithdrawalsResource.java",
+    "resourceAccessor": "withdrawals()",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/withdrawals",
+    "signature": "public List<WithdrawalResponse> list(UUID organizationId, WithdrawalStatus status, OffsetDateTime from, OffsetDateTime to, Integer skip, Integer take)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WithdrawalsResource.java",
+    "resourceAccessor": "withdrawals()",
+    "methodName": "cancel",
+    "httpVerb": "POST",
+    "pathShape": "/v1/withdrawals/*/cancel",
+    "signature": "public void cancel(UUID withdrawalId, String reason)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WithdrawalsResource.java",
+    "resourceAccessor": "withdrawals()",
+    "methodName": "retryBroadcast",
+    "httpVerb": "POST",
+    "pathShape": "/v1/withdrawals/*/retry-broadcast",
+    "signature": "public void retryBroadcast(UUID withdrawalId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WorkflowsResource.java",
+    "resourceAccessor": "workflows()",
+    "methodName": "create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/workflows",
+    "signature": "public CreateWorkflowResult create(UUID organizationId, String name)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WorkflowsResource.java",
+    "resourceAccessor": "workflows()",
+    "methodName": "list",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/workflows",
+    "signature": "public List<WorkflowResponse> list(UUID organizationId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WorkflowsResource.java",
+    "resourceAccessor": "workflows()",
+    "methodName": "get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/workflows/*",
+    "signature": "public WorkflowResponse get(UUID workflowId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WorkflowsResource.java",
+    "resourceAccessor": "workflows()",
+    "methodName": "createVersion",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions",
+    "signature": "public CreateWorkflowVersionResult createVersion(UUID workflowId, List<StateInput> states, List<TransitionInput> transitions)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WorkflowsResource.java",
+    "resourceAccessor": "workflows()",
+    "methodName": "getVersion",
+    "httpVerb": "GET",
+    "pathShape": "/v1/workflows/*/versions/*",
+    "signature": "public WorkflowVersionResponse getVersion(UUID workflowId, UUID workflowVersionId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WorkflowsResource.java",
+    "resourceAccessor": "workflows()",
+    "methodName": "publishVersion",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions/*/publish",
+    "signature": "public void publishVersion(UUID workflowId, UUID workflowVersionId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WorkflowsResource.java",
+    "resourceAccessor": "workflows()",
+    "methodName": "createRule",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions/*/rules",
+    "signature": "public CreateRuleResult createRule(UUID workflowId, UUID workflowVersionId, UUID fromStateId, UUID toStateId, UUID eventTypeId, List<ConditionInput> conditions)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_account_holders.go",
+    "resourceAccessor": "AccountHoldersResource",
+    "methodName": "SignUp",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/signup",
+    "signature": "func (r *AccountHoldersResource) SignUp(ctx context.Context, email, password string) (AccountHolderTokenResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_account_holders.go",
+    "resourceAccessor": "AccountHoldersResource",
+    "methodName": "Login",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/login",
+    "signature": "func (r *AccountHoldersResource) Login(ctx context.Context, email, password string) (AccountHolderTokenResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_account_holders.go",
+    "resourceAccessor": "AccountHoldersResource",
+    "methodName": "Me",
+    "httpVerb": "GET",
+    "pathShape": "/v1/account-holders/me",
+    "signature": "func (r *AccountHoldersResource) Me(ctx context.Context) (AccountHolderResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_account_holders.go",
+    "resourceAccessor": "AccountHoldersResource",
+    "methodName": "ClaimInvitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/invitations/claim",
+    "signature": "func (r *AccountHoldersResource) ClaimInvitation(ctx context.Context, plainTextToken string) (ClaimAccountHolderInvitationResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_account_holders.go",
+    "resourceAccessor": "AccountHoldersResource",
+    "methodName": "SignUpAndClaimInvitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/account-holders/invitations/signup-and-claim",
+    "signature": "func (r *AccountHoldersResource) SignUpAndClaimInvitation(ctx context.Context, plainTextToken, email, password string) (SignUpAndClaimAccountHolderInvitationResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_accounts.go",
+    "resourceAccessor": "AccountsResource",
+    "methodName": "Create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/accounts",
+    "signature": "func (r *AccountsResource) Create(ctx context.Context, organizationID, externalID string) (CreateAccountResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_accounts.go",
+    "resourceAccessor": "AccountsResource",
+    "methodName": "List",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/accounts",
+    "signature": "func (r *AccountsResource) List(ctx context.Context, organizationID string) ([]OrganizationAccountResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_accounts.go",
+    "resourceAccessor": "AccountsResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*",
+    "signature": "func (r *AccountsResource) Get(ctx context.Context, accountID string) (AccountResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_accounts.go",
+    "resourceAccessor": "AccountsResource",
+    "methodName": "AuthorizeApplication",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/accounts/*/authorize-application",
+    "signature": "func (r *AccountsResource) AuthorizeApplication(ctx context.Context, organizationID, accountID, applicationID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_accounts.go",
+    "resourceAccessor": "AccountsResource",
+    "methodName": "Freeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/freeze",
+    "signature": "func (r *AccountsResource) Freeze(ctx context.Context, accountID, reason string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_accounts.go",
+    "resourceAccessor": "AccountsResource",
+    "methodName": "Unfreeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/unfreeze",
+    "signature": "func (r *AccountsResource) Unfreeze(ctx context.Context, accountID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_accounts.go",
+    "resourceAccessor": "AccountsResource",
+    "methodName": "Close",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/accounts/*",
+    "signature": "func (r *AccountsResource) Close(ctx context.Context, accountID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_accounts.go",
+    "resourceAccessor": "AccountsResource",
+    "methodName": "CreateAccountHolderInvitation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/account-holder-invitations",
+    "signature": "func (r *AccountsResource) CreateAccountHolderInvitation(ctx context.Context, organizationID, externalID string) (CreateAccountHolderInvitationResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_accounts.go",
+    "resourceAccessor": "AccountsResource",
+    "methodName": "RevokeRelationship",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/relationships/*/revoke",
+    "signature": "func (r *AccountsResource) RevokeRelationship(ctx context.Context, organizationID, relationshipID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_api_keys.go",
+    "resourceAccessor": "ApiKeysResource",
+    "methodName": "Revoke",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/api-keys/*",
+    "signature": "func (r *ApiKeysResource) Revoke(ctx context.Context, apiKeyID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_api_keys.go",
+    "resourceAccessor": "ApiKeysResource",
+    "methodName": "Rotate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/api-keys/*/rotate",
+    "signature": "func (r *ApiKeysResource) Rotate(ctx context.Context, apiKeyID string, overlapWindow time.Duration) (RotateApiKeyResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_applications.go",
+    "resourceAccessor": "ApplicationsResource",
+    "methodName": "Archive",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/archive",
+    "signature": "func (r *ApplicationsResource) Archive(ctx context.Context, applicationID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_applications.go",
+    "resourceAccessor": "ApplicationsResource",
+    "methodName": "Suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/suspend",
+    "signature": "func (r *ApplicationsResource) Suspend(ctx context.Context, applicationID, reason string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_applications.go",
+    "resourceAccessor": "ApplicationsResource",
+    "methodName": "Reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/reactivate",
+    "signature": "func (r *ApplicationsResource) Reactivate(ctx context.Context, applicationID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_applications.go",
+    "resourceAccessor": "ApplicationsResource",
+    "methodName": "CreateEnvironment",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/environments",
+    "signature": "func (r *ApplicationsResource) CreateEnvironment(ctx context.Context, applicationID string, environmentType EnvironmentType) (CreatedResourceResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_asset_network_catalog.go",
+    "resourceAccessor": "AssetNetworkCatalogResource",
+    "methodName": "ListAssets",
+    "httpVerb": "GET",
+    "pathShape": "/v1/assets",
+    "signature": "func (r *AssetNetworkCatalogResource) ListAssets(ctx context.Context) ([]AssetResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_asset_network_catalog.go",
+    "resourceAccessor": "AssetNetworkCatalogResource",
+    "methodName": "GetAsset",
+    "httpVerb": "GET",
+    "pathShape": "/v1/assets/*",
+    "signature": "func (r *AssetNetworkCatalogResource) GetAsset(ctx context.Context, assetID string) (AssetResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_asset_network_catalog.go",
+    "resourceAccessor": "AssetNetworkCatalogResource",
+    "methodName": "ListNetworks",
+    "httpVerb": "GET",
+    "pathShape": "/v1/networks",
+    "signature": "func (r *AssetNetworkCatalogResource) ListNetworks(ctx context.Context) ([]NetworkResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_asset_network_catalog.go",
+    "resourceAccessor": "AssetNetworkCatalogResource",
+    "methodName": "GetNetwork",
+    "httpVerb": "GET",
+    "pathShape": "/v1/networks/*",
+    "signature": "func (r *AssetNetworkCatalogResource) GetNetwork(ctx context.Context, networkID string) (NetworkResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_asset_network_catalog.go",
+    "resourceAccessor": "AssetNetworkCatalogResource",
+    "methodName": "ListAssetNetworks",
+    "httpVerb": "GET",
+    "pathShape": "/v1/asset-networks",
+    "signature": "func (r *AssetNetworkCatalogResource) ListAssetNetworks(ctx context.Context, status AssetNetworkStatus) ([]AssetNetworkResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_asset_network_catalog.go",
+    "resourceAccessor": "AssetNetworkCatalogResource",
+    "methodName": "GetAssetNetwork",
+    "httpVerb": "GET",
+    "pathShape": "/v1/asset-networks/*",
+    "signature": "func (r *AssetNetworkCatalogResource) GetAssetNetwork(ctx context.Context, assetNetworkID string) (AssetNetworkResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_auth.go",
+    "resourceAccessor": "AuthResource",
+    "methodName": "Login",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/login",
+    "signature": "func (r *AuthResource) Login(ctx context.Context, email, password string) (TokenResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_auth.go",
+    "resourceAccessor": "AuthResource",
+    "methodName": "SignUp",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/signup",
+    "signature": "func (r *AuthResource) SignUp(ctx context.Context, organizationName, email, password string, idempotencyKey ...string) (SignUpResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_auth.go",
+    "resourceAccessor": "AuthResource",
+    "methodName": "Refresh",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/refresh",
+    "signature": "func (r *AuthResource) Refresh(ctx context.Context, refreshToken string) (TokenResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_auth.go",
+    "resourceAccessor": "AuthResource",
+    "methodName": "RequestPasswordReset",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/password-reset/request",
+    "signature": "func (r *AuthResource) RequestPasswordReset(ctx context.Context, email string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_auth.go",
+    "resourceAccessor": "AuthResource",
+    "methodName": "ConfirmPasswordReset",
+    "httpVerb": "POST",
+    "pathShape": "/v1/auth/password-reset/confirm",
+    "signature": "func (r *AuthResource) ConfirmPasswordReset(ctx context.Context, resetToken, newPassword string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_deposits.go",
+    "resourceAccessor": "DepositsResource",
+    "methodName": "CreatePaymentIntent",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/payment-intents",
+    "signature": "func (r *DepositsResource) CreatePaymentIntent( ctx context.Context, organizationID, transactionID, assetNetworkID string, amount decimal.Decimal, expiresAt *string, idempotencyKey ...string, ) (CreatePaymentIntentResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_deposits.go",
+    "resourceAccessor": "DepositsResource",
+    "methodName": "GetPaymentIntent",
+    "httpVerb": "GET",
+    "pathShape": "/v1/payment-intents/*",
+    "signature": "func (r *DepositsResource) GetPaymentIntent(ctx context.Context, paymentIntentID string) (PaymentIntentResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_deposits.go",
+    "resourceAccessor": "DepositsResource",
+    "methodName": "GetDeposit",
+    "httpVerb": "GET",
+    "pathShape": "/v1/deposits/*",
+    "signature": "func (r *DepositsResource) GetDeposit(ctx context.Context, depositID string) (DepositResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_environments.go",
+    "resourceAccessor": "EnvironmentsResource",
+    "methodName": "ListApiKeys",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/api-keys",
+    "signature": "func (r *EnvironmentsResource) ListApiKeys(ctx context.Context, environmentID string) ([]ApiKeyMetadataResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_environments.go",
+    "resourceAccessor": "EnvironmentsResource",
+    "methodName": "GenerateApiKey",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/api-keys",
+    "signature": "func (r *EnvironmentsResource) GenerateApiKey(ctx context.Context, environmentID string) (GenerateApiKeyResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_event_types.go",
+    "resourceAccessor": "EventTypesResource",
+    "methodName": "Create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/event-types",
+    "signature": "func (r *EventTypesResource) Create(ctx context.Context, organizationID, name string) (CreateEventTypeResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_event_types.go",
+    "resourceAccessor": "EventTypesResource",
+    "methodName": "List",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/event-types",
+    "signature": "func (r *EventTypesResource) List(ctx context.Context, organizationID string) ([]EventTypeResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_events.go",
+    "resourceAccessor": "EventsResource",
+    "methodName": "Ingest",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/events",
+    "signature": "func (r *EventsResource) Ingest( ctx context.Context, applicationID, workflowVersionID, currentStateID, transactionReference, eventTypeID string, eventSource EventSource, payload map[string]string, idempotencyKey ...string, ) (EventIngestionResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_execution_destinations.go",
+    "resourceAccessor": "ExecutionDestinationsResource",
+    "methodName": "Register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-destinations",
+    "signature": "func (r *ExecutionDestinationsResource) Register( ctx context.Context, organizationID, accountID, assetNetworkID, address string, ) (RegisterExecutionDestinationResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_execution_sources.go",
+    "resourceAccessor": "ExecutionSourcesResource",
+    "methodName": "Register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-sources",
+    "signature": "func (r *ExecutionSourcesResource) Register( ctx context.Context, organizationID, environmentID, assetNetworkID, walletID string, derivationReference int64, address string, ) (RegisterExecutionSourceResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_execution_sources.go",
+    "resourceAccessor": "ExecutionSourcesResource",
+    "methodName": "SyncResourceStake",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/execution-sources/*/resource-stake",
+    "signature": "func (r *ExecutionSourcesResource) SyncResourceStake( ctx context.Context, organizationID, executionSourceID string, availableNativeAmount, availableEnergy, availableBandwidth decimal.Decimal, ) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_ledger.go",
+    "resourceAccessor": "LedgerResource",
+    "methodName": "GetBalance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/balance",
+    "signature": "func (r *LedgerResource) GetBalance(ctx context.Context, accountID, assetNetworkID string) (BalanceResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_ledger.go",
+    "resourceAccessor": "LedgerResource",
+    "methodName": "ListEntries",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/ledger-entries",
+    "signature": "func (r *LedgerResource) ListEntries(ctx context.Context, accountID, assetNetworkID string, skip, take int, opts ListEntriesOptions) ([]LedgerEntryResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_members.go",
+    "resourceAccessor": "MembersResource",
+    "methodName": "Invite",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/members",
+    "signature": "func (r *MembersResource) Invite(ctx context.Context, organizationID, email string, role MemberRoleRequest) (InviteMemberResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_members.go",
+    "resourceAccessor": "MembersResource",
+    "methodName": "AcceptInvite",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/accept-invite",
+    "signature": "func (r *MembersResource) AcceptInvite(ctx context.Context, inviteToken, password string) (TokenResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_members.go",
+    "resourceAccessor": "MembersResource",
+    "methodName": "List",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/members",
+    "signature": "func (r *MembersResource) List(ctx context.Context, organizationID string) ([]MemberResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_members.go",
+    "resourceAccessor": "MembersResource",
+    "methodName": "AssignRole",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/role",
+    "signature": "func (r *MembersResource) AssignRole(ctx context.Context, memberID string, newRole MemberRoleRequest) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_members.go",
+    "resourceAccessor": "MembersResource",
+    "methodName": "Suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/suspend",
+    "signature": "func (r *MembersResource) Suspend(ctx context.Context, memberID, reason string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_members.go",
+    "resourceAccessor": "MembersResource",
+    "methodName": "Reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/members/*/reactivate",
+    "signature": "func (r *MembersResource) Reactivate(ctx context.Context, memberID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_members.go",
+    "resourceAccessor": "MembersResource",
+    "methodName": "Remove",
+    "httpVerb": "DELETE",
+    "pathShape": "/v1/members/*",
+    "signature": "func (r *MembersResource) Remove(ctx context.Context, memberID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_network_cost_payer_accounts.go",
+    "resourceAccessor": "NetworkCostPayerAccountsResource",
+    "methodName": "Register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/network-cost-payer-accounts",
+    "signature": "func (r *NetworkCostPayerAccountsResource) Register( ctx context.Context, organizationID, assetNetworkID, accountID string, ) (RegisterNetworkCostPayerAccountResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_network_cost_payer_accounts.go",
+    "resourceAccessor": "NetworkCostPayerAccountsResource",
+    "methodName": "UpdateResourcePreference",
+    "httpVerb": "PATCH",
+    "pathShape": "/v1/organizations/*/network-cost-payer-accounts/*/resource-preference",
+    "signature": "func (r *NetworkCostPayerAccountsResource) UpdateResourcePreference( ctx context.Context, organizationID, assetNetworkID string, resourcePreference NetworkResourceSource, allowFallbackToIshtaranResources bool, ) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_network_execution.go",
+    "resourceAccessor": "NetworkExecutionResource",
+    "methodName": "Quote",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/network-execution-quote",
+    "signature": "func (r *NetworkExecutionResource) Quote( ctx context.Context, environmentID, assetNetworkID string, operations []NetworkExecutionOperationInput, networkCostPayer NetworkCostPayer, ) (NetworkExecutionQuoteResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_organizations.go",
+    "resourceAccessor": "OrganizationsResource",
+    "methodName": "Create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations",
+    "signature": "func (r *OrganizationsResource) Create(ctx context.Context, name string, idempotencyKey ...string) (CreatedResourceResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_organizations.go",
+    "resourceAccessor": "OrganizationsResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*",
+    "signature": "func (r *OrganizationsResource) Get(ctx context.Context, organizationID string) (OrganizationResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_organizations.go",
+    "resourceAccessor": "OrganizationsResource",
+    "methodName": "Suspend",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/suspend",
+    "signature": "func (r *OrganizationsResource) Suspend(ctx context.Context, organizationID, reason string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_organizations.go",
+    "resourceAccessor": "OrganizationsResource",
+    "methodName": "Reactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/reactivate",
+    "signature": "func (r *OrganizationsResource) Reactivate(ctx context.Context, organizationID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_organizations.go",
+    "resourceAccessor": "OrganizationsResource",
+    "methodName": "ListApplications",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/applications",
+    "signature": "func (r *OrganizationsResource) ListApplications(ctx context.Context, organizationID string) ([]ApplicationResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_organizations.go",
+    "resourceAccessor": "OrganizationsResource",
+    "methodName": "CreateApplication",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/applications",
+    "signature": "func (r *OrganizationsResource) CreateApplication(ctx context.Context, organizationID, name string, idempotencyKey ...string) (CreatedResourceResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_payout.go",
+    "resourceAccessor": "PayoutResource",
+    "methodName": "GetPayableSummary",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/payable-summary",
+    "signature": "func (r *PayoutResource) GetPayableSummary(ctx context.Context, accountID, assetNetworkID string) (PayableSummaryResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_payout.go",
+    "resourceAccessor": "PayoutResource",
+    "methodName": "CreateBatch",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/payout-batches",
+    "signature": "func (r *PayoutResource) CreateBatch( ctx context.Context, organizationID, environmentID, assetNetworkID string, explicitOwnerIDs []string, idempotencyKey ...string, ) (CreatePayoutBatchResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_payout.go",
+    "resourceAccessor": "PayoutResource",
+    "methodName": "GetBatch",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/payout-batches/*",
+    "signature": "func (r *PayoutResource) GetBatch(ctx context.Context, organizationID, payoutBatchID string) (PayoutBatchResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_refunds.go",
+    "resourceAccessor": "RefundsResource",
+    "methodName": "ExecuteRefund",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/refunds",
+    "signature": "func (r *RefundsResource) ExecuteRefund(ctx context.Context, transactionID string, amount *decimal.Decimal, reason string, idempotencyKey ...string) (ExecuteRefundResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_refunds.go",
+    "resourceAccessor": "RefundsResource",
+    "methodName": "ListByTransaction",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/refunds",
+    "signature": "func (r *RefundsResource) ListByTransaction(ctx context.Context, transactionID string) ([]RefundResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_refunds.go",
+    "resourceAccessor": "RefundsResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/refunds/*",
+    "signature": "func (r *RefundsResource) Get(ctx context.Context, refundID string) (RefundResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_sandbox.go",
+    "resourceAccessor": "SandboxResource",
+    "methodName": "Faucet",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/faucet",
+    "signature": "func (r *SandboxResource) Faucet(ctx context.Context, environmentID, depositAddress, assetNetworkID string, amount decimal.Decimal) (SandboxObservedAddressResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_sandbox.go",
+    "resourceAccessor": "SandboxResource",
+    "methodName": "SimulateDeposit",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-deposit",
+    "signature": "func (r *SandboxResource) SimulateDeposit(ctx context.Context, environmentID, depositAddress, assetNetworkID string, amount decimal.Decimal) (SandboxObservedAddressResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_sandbox.go",
+    "resourceAccessor": "SandboxResource",
+    "methodName": "SimulateConfirmation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-confirmation",
+    "signature": "func (r *SandboxResource) SimulateConfirmation(ctx context.Context, environmentID, sandboxObservedAddressID string, additionalConfirmations int, isFinal bool) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_sandbox.go",
+    "resourceAccessor": "SandboxResource",
+    "methodName": "SimulateBroadcastConfirmation",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-broadcast-confirmation",
+    "signature": "func (r *SandboxResource) SimulateBroadcastConfirmation(ctx context.Context, environmentID, broadcastAttemptID string, additionalConfirmations int, isFinal bool) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_sandbox.go",
+    "resourceAccessor": "SandboxResource",
+    "methodName": "SimulateWithdrawal",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/simulate-withdrawal",
+    "signature": "func (r *SandboxResource) SimulateWithdrawal( ctx context.Context, environmentID, destinationAddress string, amount decimal.Decimal, assetNetworkID string, outcome SimulatedBroadcastOutcome, failureReason string, ) (SandboxBroadcastAttemptResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_sandbox.go",
+    "resourceAccessor": "SandboxResource",
+    "methodName": "SetObservedTreasuryBalance",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/treasury-balance",
+    "signature": "func (r *SandboxResource) SetObservedTreasuryBalance(ctx context.Context, environmentID, assetNetworkID string, balance decimal.Decimal) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_sandbox.go",
+    "resourceAccessor": "SandboxResource",
+    "methodName": "GetTreasuryBalance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/treasury-balance/*",
+    "signature": "func (r *SandboxResource) GetTreasuryBalance(ctx context.Context, environmentID, assetNetworkID string) (SandboxTreasuryObservedBalanceResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_sandbox.go",
+    "resourceAccessor": "SandboxResource",
+    "methodName": "GetObservedAddress",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/observed-addresses/*",
+    "signature": "func (r *SandboxResource) GetObservedAddress(ctx context.Context, environmentID, id string) (SandboxObservedAddressResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_sandbox.go",
+    "resourceAccessor": "SandboxResource",
+    "methodName": "GetBroadcastAttempt",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/broadcast-attempts/*",
+    "signature": "func (r *SandboxResource) GetBroadcastAttempt(ctx context.Context, environmentID, id string) (SandboxBroadcastAttemptResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_settlements.go",
+    "resourceAccessor": "SettlementsResource",
+    "methodName": "ExecuteSettlement",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/settlements",
+    "signature": "func (r *SettlementsResource) ExecuteSettlement(ctx context.Context, transactionID string, amount *decimal.Decimal, idempotencyKey ...string) (ExecuteSettlementResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_settlements.go",
+    "resourceAccessor": "SettlementsResource",
+    "methodName": "ListByTransaction",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/settlements",
+    "signature": "func (r *SettlementsResource) ListByTransaction(ctx context.Context, transactionID string) ([]SettlementResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_settlements.go",
+    "resourceAccessor": "SettlementsResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/settlements/*",
+    "signature": "func (r *SettlementsResource) Get(ctx context.Context, settlementID string) (SettlementResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_settlements.go",
+    "resourceAccessor": "SettlementsResource",
+    "methodName": "GetSummary",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/settlement-summary",
+    "signature": "func (r *SettlementsResource) GetSummary(ctx context.Context, transactionID string) (TransactionSettlementSummaryResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_settlements.go",
+    "resourceAccessor": "SettlementsResource",
+    "methodName": "ReleaseRetainedSplit",
+    "httpVerb": "POST",
+    "pathShape": "/v1/settlements/*/split-allocations/*/release",
+    "signature": "func (r *SettlementsResource) ReleaseRetainedSplit(ctx context.Context, settlementID, allocationID string, idempotencyKey ...string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_signing_requests.go",
+    "resourceAccessor": "SigningRequestsResource",
+    "methodName": "Create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/signing-requests",
+    "signature": "func (r *SigningRequestsResource) Create( ctx context.Context, environmentID, walletID string, derivationReference uint32, originReference, assetNetworkID, sourceAddress string, legs []ExecutionLegInput, expiresAt time.Time, idempotencyKey ...string, ) (CreateSigningRequestResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_signing_requests.go",
+    "resourceAccessor": "SigningRequestsResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/signing-requests/*",
+    "signature": "func (r *SigningRequestsResource) Get(ctx context.Context, signingRequestID string) (SigningRequestResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_signing_requests.go",
+    "resourceAccessor": "SigningRequestsResource",
+    "methodName": "SubmitSignedTransaction",
+    "httpVerb": "POST",
+    "pathShape": "/v1/signing-requests/*/legs/*/submit",
+    "signature": "func (r *SigningRequestsResource) SubmitSignedTransaction( ctx context.Context, signingRequestID, executionLegID, submittedCanonicalHash, signatureHex string, ) (SubmitSignedTransactionResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_transactions.go",
+    "resourceAccessor": "TransactionsResource",
+    "methodName": "Create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/transactions",
+    "signature": "func (r *TransactionsResource) Create( ctx context.Context, organizationID, applicationID string, workflowVersionID *string, assetNetworkID string, amount decimal.Decimal, participants []ParticipantInput, idempotencyKey ...string, ) (CreateTransactionResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_transactions.go",
+    "resourceAccessor": "TransactionsResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*",
+    "signature": "func (r *TransactionsResource) Get(ctx context.Context, transactionID string) (TransactionResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_transactions.go",
+    "resourceAccessor": "TransactionsResource",
+    "methodName": "GetState",
+    "httpVerb": "GET",
+    "pathShape": "/v1/transactions/*/state",
+    "signature": "func (r *TransactionsResource) GetState(ctx context.Context, transactionID string) (TransactionStateResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_transactions.go",
+    "resourceAccessor": "TransactionsResource",
+    "methodName": "Reserve",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/reserve",
+    "signature": "func (r *TransactionsResource) Reserve(ctx context.Context, transactionID string) (ReserveTransactionResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_transactions.go",
+    "resourceAccessor": "TransactionsResource",
+    "methodName": "Cancel",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/cancel",
+    "signature": "func (r *TransactionsResource) Cancel(ctx context.Context, transactionID, reason string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_transactions.go",
+    "resourceAccessor": "TransactionsResource",
+    "methodName": "Freeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/freeze",
+    "signature": "func (r *TransactionsResource) Freeze(ctx context.Context, transactionID, reason string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_transactions.go",
+    "resourceAccessor": "TransactionsResource",
+    "methodName": "Unfreeze",
+    "httpVerb": "POST",
+    "pathShape": "/v1/transactions/*/unfreeze",
+    "signature": "func (r *TransactionsResource) Unfreeze(ctx context.Context, transactionID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_wallets.go",
+    "resourceAccessor": "WalletsResource",
+    "methodName": "Register",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/wallets",
+    "signature": "func (r *WalletsResource) Register( ctx context.Context, applicationID, networkID string, scheme DerivationScheme, publicDerivationMaterial string, idempotencyKey ...string, ) (RegisterWalletResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_wallets.go",
+    "resourceAccessor": "WalletsResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/wallets/*",
+    "signature": "func (r *WalletsResource) Get(ctx context.Context, walletID string) (WalletResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_wallets.go",
+    "resourceAccessor": "WalletsResource",
+    "methodName": "GetPublicMaterial",
+    "httpVerb": "GET",
+    "pathShape": "/v1/wallets/*/public-material",
+    "signature": "func (r *WalletsResource) GetPublicMaterial(ctx context.Context, walletID string) (WalletPublicMaterialResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_wallets.go",
+    "resourceAccessor": "WalletsResource",
+    "methodName": "AllocateDepositAddress",
+    "httpVerb": "POST",
+    "pathShape": "/v1/applications/*/wallets/deposit-addresses",
+    "signature": "func (r *WalletsResource) AllocateDepositAddress(ctx context.Context, applicationID, networkID string) (AllocatedDepositAddressResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_webhook_deliveries.go",
+    "resourceAccessor": "WebhookDeliveriesResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-deliveries/*",
+    "signature": "func (r *WebhookDeliveriesResource) Get(ctx context.Context, webhookDeliveryID string) (WebhookDeliveryResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_webhook_deliveries.go",
+    "resourceAccessor": "WebhookDeliveriesResource",
+    "methodName": "Redeliver",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-deliveries/*/redeliver",
+    "signature": "func (r *WebhookDeliveriesResource) Redeliver(ctx context.Context, webhookDeliveryID string) (RedeliverWebhookResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_webhook_endpoints.go",
+    "resourceAccessor": "WebhookEndpointsResource",
+    "methodName": "Create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/webhook-endpoints",
+    "signature": "func (r *WebhookEndpointsResource) Create(ctx context.Context, organizationID, endpointURL string) (ConfigureWebhookEndpointResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_webhook_endpoints.go",
+    "resourceAccessor": "WebhookEndpointsResource",
+    "methodName": "List",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/webhook-endpoints",
+    "signature": "func (r *WebhookEndpointsResource) List(ctx context.Context, organizationID string) ([]WebhookEndpointResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_webhook_endpoints.go",
+    "resourceAccessor": "WebhookEndpointsResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-endpoints/*",
+    "signature": "func (r *WebhookEndpointsResource) Get(ctx context.Context, webhookEndpointID string) (WebhookEndpointResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_webhook_endpoints.go",
+    "resourceAccessor": "WebhookEndpointsResource",
+    "methodName": "RotateSecret",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-endpoints/*/rotate-secret",
+    "signature": "func (r *WebhookEndpointsResource) RotateSecret(ctx context.Context, webhookEndpointID string) (RotateWebhookEndpointSecretResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_webhook_endpoints.go",
+    "resourceAccessor": "WebhookEndpointsResource",
+    "methodName": "Deactivate",
+    "httpVerb": "POST",
+    "pathShape": "/v1/webhook-endpoints/*/deactivate",
+    "signature": "func (r *WebhookEndpointsResource) Deactivate(ctx context.Context, webhookEndpointID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_webhook_endpoints.go",
+    "resourceAccessor": "WebhookEndpointsResource",
+    "methodName": "ListDeliveries",
+    "httpVerb": "GET",
+    "pathShape": "/v1/webhook-endpoints/*/deliveries",
+    "signature": "func (r *WebhookEndpointsResource) ListDeliveries(ctx context.Context, webhookEndpointID, eventType string, status *WebhookDeliveryStatus) ([]WebhookDeliveryResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_withdrawals.go",
+    "resourceAccessor": "WithdrawalsResource",
+    "methodName": "Quote",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawals/quote",
+    "signature": "func (r *WithdrawalsResource) Quote(ctx context.Context, organizationID, environmentID, accountID, withdrawalDestinationID, assetNetworkID string, amount decimal.Decimal) (WithdrawalQuoteResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_withdrawals.go",
+    "resourceAccessor": "WithdrawalsResource",
+    "methodName": "CreateDestination",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawal-destinations",
+    "signature": "func (r *WithdrawalsResource) CreateDestination(ctx context.Context, organizationID, address, assetNetworkID string) (CreateWithdrawalDestinationResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_withdrawals.go",
+    "resourceAccessor": "WithdrawalsResource",
+    "methodName": "Request",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/withdrawals",
+    "signature": "func (r *WithdrawalsResource) Request( ctx context.Context, organizationID, environmentID, accountID, withdrawalDestinationID, assetNetworkID string, amount decimal.Decimal, idempotencyKey ...string, ) (WithdrawalResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_withdrawals.go",
+    "resourceAccessor": "WithdrawalsResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/withdrawals/*",
+    "signature": "func (r *WithdrawalsResource) Get(ctx context.Context, withdrawalID string) (WithdrawalResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_withdrawals.go",
+    "resourceAccessor": "WithdrawalsResource",
+    "methodName": "List",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/withdrawals",
+    "signature": "func (r *WithdrawalsResource) List(ctx context.Context, organizationID string, opts ListWithdrawalsOptions) ([]WithdrawalResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_withdrawals.go",
+    "resourceAccessor": "WithdrawalsResource",
+    "methodName": "ListAll",
+    "httpVerb": "POST",
+    "pathShape": "/v1/withdrawals/*/cancel",
+    "signature": "func (r *WithdrawalsResource) ListAll(ctx context.Context, organizationID string, pageSize int, opts ListWithdrawalsOptions) iter.Seq2[WithdrawalResponse, error]"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_withdrawals.go",
+    "resourceAccessor": "WithdrawalsResource",
+    "methodName": "Cancel",
+    "httpVerb": "POST",
+    "pathShape": "/v1/withdrawals/*/cancel",
+    "signature": "func (r *WithdrawalsResource) Cancel(ctx context.Context, withdrawalID, reason string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_withdrawals.go",
+    "resourceAccessor": "WithdrawalsResource",
+    "methodName": "RetryBroadcast",
+    "httpVerb": "POST",
+    "pathShape": "/v1/withdrawals/*/retry-broadcast",
+    "signature": "func (r *WithdrawalsResource) RetryBroadcast(ctx context.Context, withdrawalID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_workflows.go",
+    "resourceAccessor": "WorkflowsResource",
+    "methodName": "Create",
+    "httpVerb": "POST",
+    "pathShape": "/v1/organizations/*/workflows",
+    "signature": "func (r *WorkflowsResource) Create(ctx context.Context, organizationID, name string) (CreateWorkflowResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_workflows.go",
+    "resourceAccessor": "WorkflowsResource",
+    "methodName": "List",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/workflows",
+    "signature": "func (r *WorkflowsResource) List(ctx context.Context, organizationID string) ([]WorkflowResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_workflows.go",
+    "resourceAccessor": "WorkflowsResource",
+    "methodName": "Get",
+    "httpVerb": "GET",
+    "pathShape": "/v1/workflows/*",
+    "signature": "func (r *WorkflowsResource) Get(ctx context.Context, workflowID string) (WorkflowResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_workflows.go",
+    "resourceAccessor": "WorkflowsResource",
+    "methodName": "CreateVersion",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions",
+    "signature": "func (r *WorkflowsResource) CreateVersion(ctx context.Context, workflowID string, states []StateInput, transitions []TransitionInput) (CreateWorkflowVersionResult, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_workflows.go",
+    "resourceAccessor": "WorkflowsResource",
+    "methodName": "GetVersion",
+    "httpVerb": "GET",
+    "pathShape": "/v1/workflows/*/versions/*",
+    "signature": "func (r *WorkflowsResource) GetVersion(ctx context.Context, workflowID, workflowVersionID string) (WorkflowVersionResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_workflows.go",
+    "resourceAccessor": "WorkflowsResource",
+    "methodName": "PublishVersion",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions/*/publish",
+    "signature": "func (r *WorkflowsResource) PublishVersion(ctx context.Context, workflowID, workflowVersionID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_workflows.go",
+    "resourceAccessor": "WorkflowsResource",
+    "methodName": "CreateRule",
+    "httpVerb": "POST",
+    "pathShape": "/v1/workflows/*/versions/*/rules",
+    "signature": "func (r *WorkflowsResource) CreateRule(ctx context.Context, workflowID, workflowVersionID, fromStateID, toStateID, eventTypeID string, conditions []ConditionInput) (CreateRuleResult, error)"
+  }
+]

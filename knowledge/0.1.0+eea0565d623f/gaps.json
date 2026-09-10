@@ -1,0 +1,81 @@
+[
+  {
+    "id": "list-environments-sdk-gap",
+    "status": "KNOWN_GAP",
+    "capability": "ListEnvironments",
+    "description": "GET /v1/applications/{applicationId}/environments exists in the public OpenAPI contract but has no corresponding method in any of the 4 official SDKs (TypeScript, Python, Java, Go) -- confirmed by direct grep across all 4 SDK source trees, not just an extraction-tool miss.",
+    "evidence": "mcp/build/sources/sdkExtract.ts match run, 2026-09-09: 116/117 public operations matched; ListEnvironments is the sole gap in all 4 languages simultaneously.",
+    "affects": [
+      "sdks/typescript",
+      "sdks/python",
+      "sdks/java",
+      "sdks/go"
+    ]
+  },
+  {
+    "id": "withdrawal-status-enum-incomplete",
+    "status": "KNOWN_GAP",
+    "capability": "WithdrawalStatus",
+    "description": "The WithdrawalStatus enum is missing 2 named values across all 4 SDKs relative to the real set of statuses the backend can return -- discovered during the public-docs closure audit earlier this session.",
+    "evidence": "Docs-closure session audit, 2026-09-09.",
+    "affects": [
+      "sdks/typescript",
+      "sdks/python",
+      "sdks/java",
+      "sdks/go"
+    ]
+  },
+  {
+    "id": "webhook-event-type-not-in-delivery",
+    "status": "KNOWN_GAP",
+    "capability": "Webhooks",
+    "description": "Webhook deliveries carry no event-type field anywhere in the HTTP request (no header, no body field) -- receivers must call GET /v1/webhook-deliveries/{id} to learn the real EventType. Pre-existing, known before this session; now formally documented.",
+    "evidence": "website/docs/webhooks.md; WebhookSignatureCalculator.cs / HttpWebhookDeliveryPort.cs verified this session.",
+    "affects": [
+      "webhooks"
+    ]
+  },
+  {
+    "id": "payout-policy-threshold-scheduled-unsupported",
+    "status": "NOT_SUPPORTED",
+    "capability": "PayoutPolicy",
+    "description": "THRESHOLD and SCHEDULED PayoutPolicy modes are not publicly supported -- only IMMEDIATE and MANUAL. Requests for the other two are rejected with PAYOUT_POLICY_MODE_NOT_SUPPORTED.",
+    "evidence": "website/docs/errors.md.",
+    "affects": [
+      "payout"
+    ]
+  },
+  {
+    "id": "production-not-active",
+    "status": "NOT_SUPPORTED",
+    "capability": "Production environment",
+    "description": "Production is not an active environment for real crypto flows today; Sandbox is the current live-integration surface.",
+    "evidence": "website/docs/getting-started.md; project state confirmed this session.",
+    "affects": [
+      "environments"
+    ]
+  },
+  {
+    "id": "withdrawal-multi-source-unsupported",
+    "status": "NOT_SUPPORTED",
+    "capability": "Withdrawal",
+    "description": "A single Withdrawal cannot aggregate balance across multiple source Accounts -- one Account per Withdrawal request.",
+    "evidence": "openapi/ishtaran-api.json RequestWithdrawal schema.",
+    "affects": [
+      "withdrawal"
+    ]
+  },
+  {
+    "id": "managed-custody-unavailable",
+    "status": "NOT_SUPPORTED",
+    "capability": "ManagedCustody",
+    "description": "ManagedCustody is preserved architecturally in the codebase but is not an available/operating custody mode. SELF_CUSTODY is the only operating mode.",
+    "evidence": "docs/architecture/CUSTODY-EXECUTION-MODES.md.",
+    "affects": [
+      "custody",
+      "settlement",
+      "withdrawal",
+      "refund"
+    ]
+  }
+]

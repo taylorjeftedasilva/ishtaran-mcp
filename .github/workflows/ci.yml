@@ -1,0 +1,83 @@
+# Every push/PR to main runs the full local gate: typecheck, all test suites (unit/contract/
+# golden/anti-pattern/marketplace/update), package build, a pack dry-run, and a secret/admin-leak
+# scan over the committed Knowledge Bundle. This job never publishes anything -- see release.yml
+# for the tag-gated, manually-approved npm publish.
+#
+# NOTE: this repo does NOT regenerate the Knowledge Bundle (no `npm run build:knowledge` step).
+# That build pipeline (mcp/build/ in the source monorepo) cross-references the live OpenAPI
+# contract and all 4 official SDKs' source trees, none of which exist in this standalone repo --
+# the Knowledge Bundle here is committed, pre-built data, regenerated and published from the
+# Ishtaran monorepo. The contract tests below skip their live-OpenAPI cross-check accordingly and
+# instead validate the shipped bundle is internally consistent.
+
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Typecheck, test, pack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      - run: npm run typecheck
+
+      - name: Unit tests
+        run: npm run test:unit
+
+      - name: Contract tests (public/admin partition, SDK signature quality -- never a fixed route count)
+        run: npm run test:contract
+
+      - name: Golden tests
+        run: npm run test:golden
+
+      - name: Anti-pattern tests
+        run: npm run test:antipattern
+
+      - name: Marketplace scenario test
+        run: npm run test:marketplace
+
+      - name: Knowledge-update flow tests
+        run: npm run test:update
+
+      - name: Build engine
+        run: npm run build
+
+      - name: Package pack dry-run
+        run: npm pack --dry-run
+
+      # Same grep pattern as the monorepo's scripts/sync-to-repo.sh -- fails the job (not just
+      # warns) if a Platform-Owner/admin path, secret-shaped string, or infra reference ever
+      # ends up in the generated Knowledge Bundle. AdminConfigurePricingPolicy is intentionally
+      # exempted: it appears only as explanatory prose (glossary.json/recipes.json) stating that
+      # route is Platform-Owner-only and NOT publicly callable -- never as a queryable operation.
+      - name: Secret / admin-leak scan (Knowledge Bundle)
+        run: |
+          set -e
+          MATCHES=$(grep -rniE "platformowner|terraform|cloud sql|BEGIN (RSA|EC|PRIVATE|OPENSSH) KEY|connectionstring|/v1/platform|sk_live|ghp_[a-zA-Z0-9]{20}|AKIA[0-9A-Z]{16}" knowledge/ | grep -v "AdminConfigurePricingPolicy" || true)
+          if [ -n "$MATCHES" ]; then
+            echo "$MATCHES"
+            echo "::error::Possible secret or Platform-Owner leak found in the Knowledge Bundle -- see above."
+            exit 1
+          fi
+          ADMIN_ROUTES=$(grep -rn "/v1/admin" knowledge/ | grep -v "AdminConfigurePricingPolicy" || true)
+          if [ -n "$ADMIN_ROUTES" ]; then
+            echo "$ADMIN_ROUTES"
+            echo "::error::An unreviewed /v1/admin reference leaked into the Knowledge Bundle."
+            exit 1
+          fi
+          echo "No secrets or admin leaks found."

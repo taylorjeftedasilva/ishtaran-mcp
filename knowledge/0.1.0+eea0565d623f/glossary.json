@@ -1,0 +1,138 @@
+[
+  {
+    "term": "Settlement",
+    "contrastsWith": "Payout",
+    "definition": "The act of releasing a Transaction's reserved balance to its participants' Accounts (full or partial), applying the Platform Fee and any Split. It is an internal Ledger movement between Accounts -- it does not itself move funds on-chain.",
+    "commonConfusion": "Settlement != Payout. A Settlement can complete with zero on-chain activity; the resulting Account balance only leaves the platform later, via a separate Payout or Withdrawal.",
+    "sources": [
+      "docs/concepts/transactions-settlements.md"
+    ]
+  },
+  {
+    "term": "Payout",
+    "contrastsWith": "Withdrawal",
+    "definition": "An organization-configured, policy-driven mechanism (PayoutPolicy: IMMEDIATE or MANUAL) that moves an Account's available balance out on-chain to a registered WithdrawalDestination on the organization's behalf.",
+    "commonConfusion": "Payout != Withdrawal. Payout is the organization-level, policy-driven flow (CreatePayoutBatch); Withdrawal is the lower-level primitive (RequestWithdrawal) that Payout uses internally, and that end-user-facing wallet apps call directly.",
+    "sources": [
+      "docs/concepts/self-custody.md"
+    ]
+  },
+  {
+    "term": "obrigação econômica (economic obligation)",
+    "contrastsWith": "saldo on-chain (on-chain balance)",
+    "definition": "The Ledger balance an Account holds is an internal accounting obligation the platform owes that Account -- it is not itself a specific on-chain UTXO/token sitting in a specific wallet. On-chain balance is a property of the custody wallets; Ledger balance is a property of the Account.",
+    "commonConfusion": "Never assume 1 unit of Ledger balance corresponds to 1 specific coin held in reserve for that Account -- custody is pooled, Ledger entries are the source of truth for who owns what economically.",
+    "sources": [
+      "docs/architecture/CUSTODY-EXECUTION-MODES.md"
+    ]
+  },
+  {
+    "term": "PlatformFee",
+    "contrastsWith": "NetworkExecutionFee",
+    "definition": "The fee the platform (Organization) charges on a Settlement, per its PricingPolicy.",
+    "commonConfusion": "PlatformFee != NetworkExecutionFee. PlatformFee is a business/revenue fee taken from the Transaction amount; NetworkExecutionFee is the real blockchain network cost (gas/energy/bandwidth) charged separately to a registered NetworkCostPayerAccount, unrelated to platform revenue.",
+    "sources": [
+      "docs/concepts/network-execution.md"
+    ]
+  },
+  {
+    "term": "PricingPolicy configuration",
+    "contrastsWith": "Transaction participant splitPercentage",
+    "definition": "PricingPolicy (the rate behind PlatformFee) is configured exclusively via AdminConfigurePricingPolicy (POST /v1/admin/pricing-policy) -- a Platform-Owner-only route with no public equivalent (no public GET or write route exists for it at all).",
+    "commonConfusion": "An integrating Organization cannot self-serve its own PlatformFee rate through the public API -- that is set by/with the platform owner. This is different from the Seller/marketplace revenue split (e.g. 90/10 between buyer-funded proceeds and a seller), which IS publicly configurable, per-Transaction, via `splitPercentage` on each ParticipantInput at CreateTransaction time -- never a parameter of ExecuteSettlement, which only accepts an optional partial `amount`.",
+    "sources": [
+      "openapi/ishtaran-api.json (AdminConfigurePricingPolicy, CreateTransaction/ParticipantInput schemas)"
+    ]
+  },
+  {
+    "term": "SelfCustody",
+    "contrastsWith": "ManagedCustody",
+    "definition": "The only operating custody/execution mode today. The platform holds keys and signs on behalf of Organizations under platform-controlled policy.",
+    "commonConfusion": "ManagedCustody is preserved architecturally in the codebase (e.g. some Treasury/Ledger-only vocabulary) but is NOT available/operating -- never present it as a real customer-facing option. See docs/architecture/CUSTODY-EXECUTION-MODES.md, which is required reading before touching Ledger/Settlement/Refund/Withdrawal/ExecutionCustody/Deposits/Treasury/blockchain-adapter code.",
+    "sources": [
+      "docs/architecture/CUSTODY-EXECUTION-MODES.md"
+    ]
+  },
+  {
+    "term": "NetworkCostPayerAccount",
+    "contrastsWith": "NetworkResourceReserve",
+    "definition": "The registered Account (per Organization + AssetNetwork) that pays the real blockchain execution fee (gas/energy) for that network's operations, under ISHTARAN_RESOURCES or CUSTOMER_RESOURCES billing mode.",
+    "commonConfusion": "NetworkCostPayerAccount != NetworkResourceReserve. The payer account holds the balance that gets debited for fees; the resource reserve is the platform-owned pool of on-chain resources (e.g. energy/bandwidth on resource-metered networks) that execution can draw from under ISHTARAN_RESOURCES mode.",
+    "sources": [
+      "docs/concepts/network-execution.md"
+    ]
+  },
+  {
+    "term": "CUSTOMER_RESOURCES",
+    "contrastsWith": "ISHTARAN_RESOURCES",
+    "definition": "A network-execution billing mode where the Organization's own registered ExecutionSource must have sufficient declared on-chain resource capacity (e.g. staked energy) for the operation to execute -- fails closed with CUSTOMER_NETWORK_RESOURCE_INSUFFICIENT if not, unless allowFallbackToIshtaranResources is explicitly set.",
+    "commonConfusion": "CUSTOMER_RESOURCES != ISHTARAN_RESOURCES. Under ISHTARAN_RESOURCES, the platform's own resource reserve covers execution and the NetworkCostPayerAccount is simply billed the fee -- no customer-side resource staking is required.",
+    "sources": [
+      "docs/concepts/network-execution.md"
+    ]
+  },
+  {
+    "term": "ExecutionSource",
+    "contrastsWith": "ExecutionDestination",
+    "definition": "A registered Wallet/AssetNetwork pair authorized as the origin of a network execution (e.g. the address whose stake is checked under CUSTOMER_RESOURCES).",
+    "commonConfusion": "ExecutionSource != ExecutionDestination. ExecutionDestination is the registered Account/AssetNetwork pair that receives on-chain funds (e.g. for a Withdrawal); the source is about where resources/authorization come from, the destination is about where value goes.",
+    "sources": [
+      "docs/concepts/network-execution.md"
+    ]
+  },
+  {
+    "term": "API Key",
+    "contrastsWith": "Member JWT / AccountHolder JWT",
+    "definition": "A long-lived, Environment-scoped server-to-server credential (Organization -> Application -> Environment) used for backend-to-backend calls. Must never ship in a mobile app, browser bundle, or any client the end user controls.",
+    "commonConfusion": "API Key != Member JWT != AccountHolder JWT. A Member JWT authenticates a human operator of the Organization's own dashboard/API session; an AccountHolder JWT authenticates an end user of the integrating application acting on their own Account. None of the three are interchangeable, and only the JWTs are appropriate for anything running on a device the end user controls.",
+    "sources": [
+      "docs/concepts/authentication.md"
+    ]
+  },
+  {
+    "term": "Deposit",
+    "contrastsWith": "Settlement",
+    "definition": "An on-chain inbound transfer detected, confirmed, and credited against a PaymentIntent, funding a Transaction.",
+    "commonConfusion": "Deposit != Settlement. A Deposit funds a Transaction inbound; a Settlement releases the already-reserved balance outbound to participants -- opposite ends of the same Transaction's lifecycle.",
+    "sources": [
+      "docs/concepts/transactions-settlements.md"
+    ]
+  },
+  {
+    "term": "Withdrawal multi-source",
+    "definition": "A single Withdrawal draws from exactly one Account -- it is NOT SUPPORTED for a Withdrawal to aggregate balance across multiple source Accounts in one request.",
+    "commonConfusion": "Do not confuse this with Settlement, where multi-source aggregation (multiple Transaction participants funding one Settlement) IS supported.",
+    "sources": [
+      "docs/concepts/self-custody.md",
+      "openapi/ishtaran-api.json"
+    ]
+  },
+  {
+    "term": "Settlement multi-source",
+    "definition": "A Settlement CAN aggregate and distribute funds sourced from multiple participants' reserved contributions to a Transaction in one Settlement -- this is a normal, supported pattern (e.g. marketplace Split).",
+    "sources": [
+      "docs/concepts/transactions-settlements.md"
+    ]
+  },
+  {
+    "term": "ManagedCustody availability",
+    "definition": "ManagedCustody is NOT AVAILABLE today -- it exists only as a preserved architectural mode in the codebase, never operable, never offerable to a customer.",
+    "sources": [
+      "docs/architecture/CUSTODY-EXECUTION-MODES.md"
+    ]
+  },
+  {
+    "term": "PayoutPolicy (public modes)",
+    "definition": "Publicly supported PayoutPolicy modes are IMMEDIATE and MANUAL only. THRESHOLD and SCHEDULED are rejected with PAYOUT_POLICY_MODE_NOT_SUPPORTED -- never present them as available.",
+    "sources": [
+      "docs/errors.md"
+    ]
+  },
+  {
+    "term": "Production readiness",
+    "definition": "Production is not an active environment with real crypto flows today -- Sandbox is the current live-integration surface. Never tell an integrating developer that Production is available for real transactions unless the platform's public status pages/docs say otherwise at query time.",
+    "sources": [
+      "docs/getting-started.md"
+    ]
+  }
+]

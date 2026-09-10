@@ -1,0 +1,4962 @@
+{
+  "CreateAccountHolderInvitation": {
+    "operationId": "CreateAccountHolderInvitation",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/account-holder-invitations",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AccountHolders"
+    ],
+    "capability": "accountholders",
+    "sdk": {
+      "typescript": {
+        "method": "createAccountHolderInvitation",
+        "resource": "accounts",
+        "signature": "createAccountHolderInvitation(organizationId: string, externalId?: string): Promise<CreateAccountHolderInvitationResult>"
+      },
+      "java": {
+        "method": "createAccountHolderInvitation",
+        "resource": "accounts()",
+        "signature": "public CreateAccountHolderInvitationResult createAccountHolderInvitation(UUID organizationId, String externalId)"
+      },
+      "python": {
+        "method": "create_account_holder_invitation",
+        "resource": "accounts",
+        "signature": "def create_account_holder_invitation(self, organization_id: str, external_id: str | None = None) -> CreateAccountHolderInvitationResult:"
+      },
+      "go": {
+        "method": "CreateAccountHolderInvitation",
+        "resource": "AccountsResource",
+        "signature": "func (r *AccountsResource) CreateAccountHolderInvitation(ctx context.Context, organizationID, externalID string) (CreateAccountHolderInvitationResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RevokeRelationship": {
+    "operationId": "RevokeRelationship",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/relationships/{relationshipId}/revoke",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AccountHolders"
+    ],
+    "capability": "accountholders",
+    "sdk": {
+      "typescript": {
+        "method": "revokeRelationship",
+        "resource": "accounts",
+        "signature": "revokeRelationship(organizationId: string, relationshipId: string): Promise<void>"
+      },
+      "java": {
+        "method": "revokeRelationship",
+        "resource": "accounts()",
+        "signature": "public void revokeRelationship(UUID organizationId, UUID relationshipId)"
+      },
+      "python": {
+        "method": "revoke_relationship",
+        "resource": "accounts",
+        "signature": "def revoke_relationship(self, organization_id: str, relationship_id: str) -> None:"
+      },
+      "go": {
+        "method": "RevokeRelationship",
+        "resource": "AccountsResource",
+        "signature": "func (r *AccountsResource) RevokeRelationship(ctx context.Context, organizationID, relationshipID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SignUpAccountHolder": {
+    "operationId": "SignUpAccountHolder",
+    "method": "POST",
+    "path": "/v1/account-holders/signup",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AccountHolders"
+    ],
+    "capability": "accountholders",
+    "sdk": {
+      "typescript": {
+        "method": "signUp",
+        "resource": "accountHolders",
+        "signature": "async signUp(email: string, password: string): Promise<AccountHolderTokenResult>"
+      },
+      "java": {
+        "method": "signUp",
+        "resource": "accountHolders()",
+        "signature": "public AccountHolderTokenResult signUp(String email, String password)"
+      },
+      "python": {
+        "method": "sign_up",
+        "resource": "account_holders",
+        "signature": "def sign_up(self, email: str, password: str) -> AccountHolderTokenResult:"
+      },
+      "go": {
+        "method": "SignUp",
+        "resource": "AccountHoldersResource",
+        "signature": "func (r *AccountHoldersResource) SignUp(ctx context.Context, email, password string) (AccountHolderTokenResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "LoginAccountHolder": {
+    "operationId": "LoginAccountHolder",
+    "method": "POST",
+    "path": "/v1/account-holders/login",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AccountHolders"
+    ],
+    "capability": "accountholders",
+    "sdk": {
+      "typescript": {
+        "method": "login",
+        "resource": "accountHolders",
+        "signature": "async login(email: string, password: string): Promise<AccountHolderTokenResult>"
+      },
+      "java": {
+        "method": "login",
+        "resource": "accountHolders()",
+        "signature": "public AccountHolderTokenResult login(String email, String password)"
+      },
+      "python": {
+        "method": "login",
+        "resource": "account_holders",
+        "signature": "def login(self, email: str, password: str) -> AccountHolderTokenResult:"
+      },
+      "go": {
+        "method": "Login",
+        "resource": "AccountHoldersResource",
+        "signature": "func (r *AccountHoldersResource) Login(ctx context.Context, email, password string) (AccountHolderTokenResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetAccountHolderMe": {
+    "operationId": "GetAccountHolderMe",
+    "method": "GET",
+    "path": "/v1/account-holders/me",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AccountHolders"
+    ],
+    "capability": "accountholders",
+    "sdk": {
+      "typescript": {
+        "method": "me",
+        "resource": "accountHolders",
+        "signature": "me(): Promise<AccountHolderResponse>"
+      },
+      "java": {
+        "method": "me",
+        "resource": "accountHolders()",
+        "signature": "public AccountHolderResponse me()"
+      },
+      "python": {
+        "method": "me",
+        "resource": "account_holders",
+        "signature": "def me(self) -> AccountHolderResponse:"
+      },
+      "go": {
+        "method": "Me",
+        "resource": "AccountHoldersResource",
+        "signature": "func (r *AccountHoldersResource) Me(ctx context.Context) (AccountHolderResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ClaimAccountHolderInvitation": {
+    "operationId": "ClaimAccountHolderInvitation",
+    "method": "POST",
+    "path": "/v1/account-holders/invitations/claim",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AccountHolders"
+    ],
+    "capability": "accountholders",
+    "sdk": {
+      "typescript": {
+        "method": "claimInvitation",
+        "resource": "accountHolders",
+        "signature": "claimInvitation(plainTextToken: string): Promise<ClaimAccountHolderInvitationResult>"
+      },
+      "java": {
+        "method": "claimInvitation",
+        "resource": "accountHolders()",
+        "signature": "public ClaimAccountHolderInvitationResult claimInvitation(String plainTextToken)"
+      },
+      "python": {
+        "method": "claim_invitation",
+        "resource": "account_holders",
+        "signature": "def claim_invitation(self, plain_text_token: str) -> ClaimAccountHolderInvitationResult:"
+      },
+      "go": {
+        "method": "ClaimInvitation",
+        "resource": "AccountHoldersResource",
+        "signature": "func (r *AccountHoldersResource) ClaimInvitation(ctx context.Context, plainTextToken string) (ClaimAccountHolderInvitationResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SignUpAndClaimAccountHolderInvitation": {
+    "operationId": "SignUpAndClaimAccountHolderInvitation",
+    "method": "POST",
+    "path": "/v1/account-holders/invitations/signup-and-claim",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AccountHolders"
+    ],
+    "capability": "accountholders",
+    "sdk": {
+      "typescript": {
+        "method": "signUpAndClaimInvitation",
+        "resource": "accountHolders",
+        "signature": "async signUpAndClaimInvitation( plainTextToken: string, email: string, password: string, ): Promise<SignUpAndClaimAccountHolderInvitationResult>"
+      },
+      "java": {
+        "method": "signUpAndClaimInvitation",
+        "resource": "accountHolders()",
+        "signature": "public SignUpAndClaimAccountHolderInvitationResult signUpAndClaimInvitation(String plainTextToken, String email, String password)"
+      },
+      "python": {
+        "method": "sign_up_and_claim_invitation",
+        "resource": "account_holders",
+        "signature": "def sign_up_and_claim_invitation(self, plain_text_token: str, email: str, password: str) -> SignUpAndClaimAccountHolderInvitationResult:"
+      },
+      "go": {
+        "method": "SignUpAndClaimInvitation",
+        "resource": "AccountHoldersResource",
+        "signature": "func (r *AccountHoldersResource) SignUpAndClaimInvitation(ctx context.Context, plainTextToken, email, password string) (SignUpAndClaimAccountHolderInvitationResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ListAccountsByOrganization": {
+    "operationId": "ListAccountsByOrganization",
+    "method": "GET",
+    "path": "/v1/organizations/{organizationId}/accounts",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Accounts"
+    ],
+    "capability": "accounts",
+    "sdk": {
+      "typescript": {
+        "method": "list",
+        "resource": "accounts",
+        "signature": "list(organizationId: string): Promise<OrganizationAccountResponse[]>"
+      },
+      "java": {
+        "method": "list",
+        "resource": "accounts()",
+        "signature": "public List<OrganizationAccountResponse> list(UUID organizationId)"
+      },
+      "python": {
+        "method": "list",
+        "resource": "accounts",
+        "signature": "def list(self, organization_id: str) -> list[OrganizationAccountResponse]:"
+      },
+      "go": {
+        "method": "List",
+        "resource": "AccountsResource",
+        "signature": "func (r *AccountsResource) List(ctx context.Context, organizationID string) ([]OrganizationAccountResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateAccount": {
+    "operationId": "CreateAccount",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/accounts",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Accounts"
+    ],
+    "capability": "accounts",
+    "sdk": {
+      "typescript": {
+        "method": "create",
+        "resource": "accounts",
+        "signature": "create(organizationId: string, externalId: string): Promise<CreateAccountResult>"
+      },
+      "java": {
+        "method": "create",
+        "resource": "accounts()",
+        "signature": "public CreateAccountResult create(UUID organizationId, String externalId)"
+      },
+      "python": {
+        "method": "create",
+        "resource": "accounts",
+        "signature": "def create(self, organization_id: str, external_id: str) -> CreateAccountResult:"
+      },
+      "go": {
+        "method": "Create",
+        "resource": "AccountsResource",
+        "signature": "func (r *AccountsResource) Create(ctx context.Context, organizationID, externalID string) (CreateAccountResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "AuthorizeAccountForApplication": {
+    "operationId": "AuthorizeAccountForApplication",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/accounts/{accountId}/authorize-application",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Accounts"
+    ],
+    "capability": "accounts",
+    "sdk": {
+      "typescript": {
+        "method": "authorizeApplication",
+        "resource": "accounts",
+        "signature": "authorizeApplication(organizationId: string, accountId: string, applicationId: string): Promise<void>"
+      },
+      "java": {
+        "method": "authorizeApplication",
+        "resource": "accounts()",
+        "signature": "public void authorizeApplication(UUID organizationId, UUID accountId, UUID applicationId)"
+      },
+      "python": {
+        "method": "authorize_application",
+        "resource": "accounts",
+        "signature": "def authorize_application(self, organization_id: str, account_id: str, application_id: str) -> None:"
+      },
+      "go": {
+        "method": "AuthorizeApplication",
+        "resource": "AccountsResource",
+        "signature": "func (r *AccountsResource) AuthorizeApplication(ctx context.Context, organizationID, accountID, applicationID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetAccount": {
+    "operationId": "GetAccount",
+    "method": "GET",
+    "path": "/v1/accounts/{accountId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Accounts"
+    ],
+    "capability": "accounts",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "accounts",
+        "signature": "get(accountId: string): Promise<AccountResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "accounts()",
+        "signature": "public AccountResponse get(UUID accountId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "accounts",
+        "signature": "def get(self, account_id: str) -> AccountResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "AccountsResource",
+        "signature": "func (r *AccountsResource) Get(ctx context.Context, accountID string) (AccountResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CloseAccount": {
+    "operationId": "CloseAccount",
+    "method": "DELETE",
+    "path": "/v1/accounts/{accountId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Accounts"
+    ],
+    "capability": "accounts",
+    "sdk": {
+      "typescript": {
+        "method": "close",
+        "resource": "accounts",
+        "signature": "close(accountId: string): Promise<void>"
+      },
+      "java": {
+        "method": "close",
+        "resource": "accounts()",
+        "signature": "public void close(UUID accountId)"
+      },
+      "python": {
+        "method": "close",
+        "resource": "accounts",
+        "signature": "def close(self, account_id: str) -> None:"
+      },
+      "go": {
+        "method": "Close",
+        "resource": "AccountsResource",
+        "signature": "func (r *AccountsResource) Close(ctx context.Context, accountID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "FreezeAccount": {
+    "operationId": "FreezeAccount",
+    "method": "POST",
+    "path": "/v1/accounts/{accountId}/freeze",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Accounts"
+    ],
+    "capability": "accounts",
+    "sdk": {
+      "typescript": {
+        "method": "freeze",
+        "resource": "accounts",
+        "signature": "freeze(accountId: string, reason?: string): Promise<void>"
+      },
+      "java": {
+        "method": "freeze",
+        "resource": "accounts()",
+        "signature": "public void freeze(UUID accountId, String reason)"
+      },
+      "python": {
+        "method": "freeze",
+        "resource": "accounts",
+        "signature": "def freeze(self, account_id: str, reason: str | None = None) -> None:"
+      },
+      "go": {
+        "method": "Freeze",
+        "resource": "AccountsResource",
+        "signature": "func (r *AccountsResource) Freeze(ctx context.Context, accountID, reason string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "UnfreezeAccount": {
+    "operationId": "UnfreezeAccount",
+    "method": "POST",
+    "path": "/v1/accounts/{accountId}/unfreeze",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Accounts"
+    ],
+    "capability": "accounts",
+    "sdk": {
+      "typescript": {
+        "method": "unfreeze",
+        "resource": "accounts",
+        "signature": "unfreeze(accountId: string): Promise<void>"
+      },
+      "java": {
+        "method": "unfreeze",
+        "resource": "accounts()",
+        "signature": "public void unfreeze(UUID accountId)"
+      },
+      "python": {
+        "method": "unfreeze",
+        "resource": "accounts",
+        "signature": "def unfreeze(self, account_id: str) -> None:"
+      },
+      "go": {
+        "method": "Unfreeze",
+        "resource": "AccountsResource",
+        "signature": "func (r *AccountsResource) Unfreeze(ctx context.Context, accountID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RotateApiKey": {
+    "operationId": "RotateApiKey",
+    "method": "POST",
+    "path": "/v1/api-keys/{apiKeyId}/rotate",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ApiKeys"
+    ],
+    "capability": "apikeys",
+    "sdk": {
+      "typescript": {
+        "method": "rotate",
+        "resource": "apiKeys",
+        "signature": "rotate(apiKeyId: string, overlapWindowMs: number): Promise<RotateApiKeyResult>"
+      },
+      "java": {
+        "method": "rotate",
+        "resource": "apiKeys()",
+        "signature": "public RotateApiKeyResult rotate(UUID apiKeyId, Duration overlapWindow)"
+      },
+      "python": {
+        "method": "rotate",
+        "resource": "api_keys",
+        "signature": "def rotate(self, api_key_id: str, overlap_window: timedelta) -> RotateApiKeyResult:"
+      },
+      "go": {
+        "method": "Rotate",
+        "resource": "ApiKeysResource",
+        "signature": "func (r *ApiKeysResource) Rotate(ctx context.Context, apiKeyID string, overlapWindow time.Duration) (RotateApiKeyResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RevokeApiKey": {
+    "operationId": "RevokeApiKey",
+    "method": "DELETE",
+    "path": "/v1/api-keys/{apiKeyId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ApiKeys"
+    ],
+    "capability": "apikeys",
+    "sdk": {
+      "typescript": {
+        "method": "revoke",
+        "resource": "apiKeys",
+        "signature": "revoke(apiKeyId: string): Promise<void>"
+      },
+      "java": {
+        "method": "revoke",
+        "resource": "apiKeys()",
+        "signature": "public void revoke(UUID apiKeyId)"
+      },
+      "python": {
+        "method": "revoke",
+        "resource": "api_keys",
+        "signature": "def revoke(self, api_key_id: str) -> None:"
+      },
+      "go": {
+        "method": "Revoke",
+        "resource": "ApiKeysResource",
+        "signature": "func (r *ApiKeysResource) Revoke(ctx context.Context, apiKeyID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ListEnvironments": {
+    "operationId": "ListEnvironments",
+    "method": "GET",
+    "path": "/v1/applications/{applicationId}/environments",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Applications"
+    ],
+    "capability": "applications",
+    "sdk": {},
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateEnvironment": {
+    "operationId": "CreateEnvironment",
+    "method": "POST",
+    "path": "/v1/applications/{applicationId}/environments",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Applications"
+    ],
+    "capability": "applications",
+    "sdk": {
+      "typescript": {
+        "method": "createEnvironment",
+        "resource": "applications",
+        "signature": "createEnvironment(applicationId: string, type: EnumValue<number>): Promise<CreatedResourceResponse>"
+      },
+      "java": {
+        "method": "createEnvironment",
+        "resource": "applications()",
+        "signature": "public CreatedResourceResponse createEnvironment(UUID applicationId, EnvironmentType type)"
+      },
+      "python": {
+        "method": "create_environment",
+        "resource": "applications",
+        "signature": "def create_environment(self, application_id: str, environment_type: EnumValue[int]) -> CreatedResourceResponse:"
+      },
+      "go": {
+        "method": "CreateEnvironment",
+        "resource": "ApplicationsResource",
+        "signature": "func (r *ApplicationsResource) CreateEnvironment(ctx context.Context, applicationID string, environmentType EnvironmentType) (CreatedResourceResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ArchiveApplication": {
+    "operationId": "ArchiveApplication",
+    "method": "POST",
+    "path": "/v1/applications/{applicationId}/archive",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Applications"
+    ],
+    "capability": "applications",
+    "sdk": {
+      "typescript": {
+        "method": "archive",
+        "resource": "applications",
+        "signature": "archive(applicationId: string): Promise<void>"
+      },
+      "java": {
+        "method": "archive",
+        "resource": "applications()",
+        "signature": "public void archive(UUID applicationId)"
+      },
+      "python": {
+        "method": "archive",
+        "resource": "applications",
+        "signature": "def archive(self, application_id: str) -> None:"
+      },
+      "go": {
+        "method": "Archive",
+        "resource": "ApplicationsResource",
+        "signature": "func (r *ApplicationsResource) Archive(ctx context.Context, applicationID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SuspendApplication": {
+    "operationId": "SuspendApplication",
+    "method": "POST",
+    "path": "/v1/applications/{applicationId}/suspend",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Applications"
+    ],
+    "capability": "applications",
+    "sdk": {
+      "typescript": {
+        "method": "suspend",
+        "resource": "applications",
+        "signature": "suspend(applicationId: string, reason?: string): Promise<void>"
+      },
+      "java": {
+        "method": "suspend",
+        "resource": "applications()",
+        "signature": "public void suspend(UUID applicationId, String reason)"
+      },
+      "python": {
+        "method": "suspend",
+        "resource": "applications",
+        "signature": "def suspend(self, application_id: str, reason: str | None = None) -> None:"
+      },
+      "go": {
+        "method": "Suspend",
+        "resource": "ApplicationsResource",
+        "signature": "func (r *ApplicationsResource) Suspend(ctx context.Context, applicationID, reason string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ReactivateApplication": {
+    "operationId": "ReactivateApplication",
+    "method": "POST",
+    "path": "/v1/applications/{applicationId}/reactivate",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Applications"
+    ],
+    "capability": "applications",
+    "sdk": {
+      "typescript": {
+        "method": "reactivate",
+        "resource": "applications",
+        "signature": "reactivate(applicationId: string): Promise<void>"
+      },
+      "java": {
+        "method": "reactivate",
+        "resource": "applications()",
+        "signature": "public void reactivate(UUID applicationId)"
+      },
+      "python": {
+        "method": "reactivate",
+        "resource": "applications",
+        "signature": "def reactivate(self, application_id: str) -> None:"
+      },
+      "go": {
+        "method": "Reactivate",
+        "resource": "ApplicationsResource",
+        "signature": "func (r *ApplicationsResource) Reactivate(ctx context.Context, applicationID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ListAssets": {
+    "operationId": "ListAssets",
+    "method": "GET",
+    "path": "/v1/assets",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AssetNetworkCatalog"
+    ],
+    "capability": "assetnetworkcatalog",
+    "sdk": {
+      "typescript": {
+        "method": "listAssets",
+        "resource": "assetNetworkCatalog",
+        "signature": "listAssets(): Promise<AssetResponse[]>"
+      },
+      "java": {
+        "method": "listAssets",
+        "resource": "assetNetworkCatalog()",
+        "signature": "public List<AssetResponse> listAssets()"
+      },
+      "python": {
+        "method": "list_assets",
+        "resource": "asset_network_catalog",
+        "signature": "def list_assets(self) -> list[AssetResponse]:"
+      },
+      "go": {
+        "method": "ListAssets",
+        "resource": "AssetNetworkCatalogResource",
+        "signature": "func (r *AssetNetworkCatalogResource) ListAssets(ctx context.Context) ([]AssetResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetAsset": {
+    "operationId": "GetAsset",
+    "method": "GET",
+    "path": "/v1/assets/{assetId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AssetNetworkCatalog"
+    ],
+    "capability": "assetnetworkcatalog",
+    "sdk": {
+      "typescript": {
+        "method": "getAsset",
+        "resource": "assetNetworkCatalog",
+        "signature": "getAsset(assetId: string): Promise<AssetResponse>"
+      },
+      "java": {
+        "method": "getAsset",
+        "resource": "assetNetworkCatalog()",
+        "signature": "public AssetResponse getAsset(UUID assetId)"
+      },
+      "python": {
+        "method": "get_asset",
+        "resource": "asset_network_catalog",
+        "signature": "def get_asset(self, asset_id: str) -> AssetResponse:"
+      },
+      "go": {
+        "method": "GetAsset",
+        "resource": "AssetNetworkCatalogResource",
+        "signature": "func (r *AssetNetworkCatalogResource) GetAsset(ctx context.Context, assetID string) (AssetResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ListNetworks": {
+    "operationId": "ListNetworks",
+    "method": "GET",
+    "path": "/v1/networks",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AssetNetworkCatalog"
+    ],
+    "capability": "assetnetworkcatalog",
+    "sdk": {
+      "typescript": {
+        "method": "listNetworks",
+        "resource": "assetNetworkCatalog",
+        "signature": "listNetworks(): Promise<NetworkResponse[]>"
+      },
+      "java": {
+        "method": "listNetworks",
+        "resource": "assetNetworkCatalog()",
+        "signature": "public List<NetworkResponse> listNetworks()"
+      },
+      "python": {
+        "method": "list_networks",
+        "resource": "asset_network_catalog",
+        "signature": "def list_networks(self) -> list[NetworkResponse]:"
+      },
+      "go": {
+        "method": "ListNetworks",
+        "resource": "AssetNetworkCatalogResource",
+        "signature": "func (r *AssetNetworkCatalogResource) ListNetworks(ctx context.Context) ([]NetworkResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetNetwork": {
+    "operationId": "GetNetwork",
+    "method": "GET",
+    "path": "/v1/networks/{networkId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AssetNetworkCatalog"
+    ],
+    "capability": "assetnetworkcatalog",
+    "sdk": {
+      "typescript": {
+        "method": "getNetwork",
+        "resource": "assetNetworkCatalog",
+        "signature": "getNetwork(networkId: string): Promise<NetworkResponse>"
+      },
+      "java": {
+        "method": "getNetwork",
+        "resource": "assetNetworkCatalog()",
+        "signature": "public NetworkResponse getNetwork(UUID networkId)"
+      },
+      "python": {
+        "method": "get_network",
+        "resource": "asset_network_catalog",
+        "signature": "def get_network(self, network_id: str) -> NetworkResponse:"
+      },
+      "go": {
+        "method": "GetNetwork",
+        "resource": "AssetNetworkCatalogResource",
+        "signature": "func (r *AssetNetworkCatalogResource) GetNetwork(ctx context.Context, networkID string) (NetworkResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ListAssetNetworks": {
+    "operationId": "ListAssetNetworks",
+    "method": "GET",
+    "path": "/v1/asset-networks",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AssetNetworkCatalog"
+    ],
+    "capability": "assetnetworkcatalog",
+    "sdk": {
+      "typescript": {
+        "method": "listAssetNetworks",
+        "resource": "assetNetworkCatalog",
+        "signature": "listAssetNetworks(status?: EnumValue<string>): Promise<AssetNetworkResponse[]>"
+      },
+      "java": {
+        "method": "listAssetNetworks",
+        "resource": "assetNetworkCatalog()",
+        "signature": "public List<AssetNetworkResponse> listAssetNetworks(AssetNetworkStatus status)"
+      },
+      "python": {
+        "method": "list_asset_networks",
+        "resource": "asset_network_catalog",
+        "signature": "def list_asset_networks(self, status: EnumValue[str] | None = None) -> list[AssetNetworkResponse]:"
+      },
+      "go": {
+        "method": "ListAssetNetworks",
+        "resource": "AssetNetworkCatalogResource",
+        "signature": "func (r *AssetNetworkCatalogResource) ListAssetNetworks(ctx context.Context, status AssetNetworkStatus) ([]AssetNetworkResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetAssetNetwork": {
+    "operationId": "GetAssetNetwork",
+    "method": "GET",
+    "path": "/v1/asset-networks/{assetNetworkId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "AssetNetworkCatalog"
+    ],
+    "capability": "assetnetworkcatalog",
+    "sdk": {
+      "typescript": {
+        "method": "getAssetNetwork",
+        "resource": "assetNetworkCatalog",
+        "signature": "getAssetNetwork(assetNetworkId: string): Promise<AssetNetworkResponse>"
+      },
+      "java": {
+        "method": "getAssetNetwork",
+        "resource": "assetNetworkCatalog()",
+        "signature": "public AssetNetworkResponse getAssetNetwork(UUID assetNetworkId)"
+      },
+      "python": {
+        "method": "get_asset_network",
+        "resource": "asset_network_catalog",
+        "signature": "def get_asset_network(self, asset_network_id: str) -> AssetNetworkResponse:"
+      },
+      "go": {
+        "method": "GetAssetNetwork",
+        "resource": "AssetNetworkCatalogResource",
+        "signature": "func (r *AssetNetworkCatalogResource) GetAssetNetwork(ctx context.Context, assetNetworkID string) (AssetNetworkResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "Login": {
+    "operationId": "Login",
+    "method": "POST",
+    "path": "/v1/auth/login",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Auth"
+    ],
+    "capability": "auth",
+    "sdk": {
+      "typescript": {
+        "method": "login",
+        "resource": "auth",
+        "signature": "async login(email: string, password: string): Promise<TokenResult>"
+      },
+      "java": {
+        "method": "login",
+        "resource": "auth()",
+        "signature": "public TokenResult login(String email, String password)"
+      },
+      "python": {
+        "method": "login",
+        "resource": "auth",
+        "signature": "def login(self, email: str, password: str) -> TokenResult:"
+      },
+      "go": {
+        "method": "Login",
+        "resource": "AuthResource",
+        "signature": "func (r *AuthResource) Login(ctx context.Context, email, password string) (TokenResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RefreshToken": {
+    "operationId": "RefreshToken",
+    "method": "POST",
+    "path": "/v1/auth/refresh",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Auth"
+    ],
+    "capability": "auth",
+    "sdk": {
+      "typescript": {
+        "method": "refresh",
+        "resource": "auth",
+        "signature": "async refresh(refreshToken: string): Promise<TokenResult>"
+      },
+      "java": {
+        "method": "refresh",
+        "resource": "auth()",
+        "signature": "public TokenResult refresh(String refreshToken)"
+      },
+      "python": {
+        "method": "refresh",
+        "resource": "auth",
+        "signature": "def refresh(self, refresh_token: str) -> TokenResult:"
+      },
+      "go": {
+        "method": "Refresh",
+        "resource": "AuthResource",
+        "signature": "func (r *AuthResource) Refresh(ctx context.Context, refreshToken string) (TokenResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RequestPasswordReset": {
+    "operationId": "RequestPasswordReset",
+    "method": "POST",
+    "path": "/v1/auth/password-reset/request",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Auth"
+    ],
+    "capability": "auth",
+    "sdk": {
+      "typescript": {
+        "method": "requestPasswordReset",
+        "resource": "auth",
+        "signature": "async requestPasswordReset(email: string): Promise<void>"
+      },
+      "java": {
+        "method": "requestPasswordReset",
+        "resource": "auth()",
+        "signature": "public void requestPasswordReset(String email)"
+      },
+      "python": {
+        "method": "request_password_reset",
+        "resource": "auth",
+        "signature": "def request_password_reset(self, email: str) -> None:"
+      },
+      "go": {
+        "method": "RequestPasswordReset",
+        "resource": "AuthResource",
+        "signature": "func (r *AuthResource) RequestPasswordReset(ctx context.Context, email string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ConfirmPasswordReset": {
+    "operationId": "ConfirmPasswordReset",
+    "method": "POST",
+    "path": "/v1/auth/password-reset/confirm",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Auth"
+    ],
+    "capability": "auth",
+    "sdk": {
+      "typescript": {
+        "method": "confirmPasswordReset",
+        "resource": "auth",
+        "signature": "async confirmPasswordReset(resetToken: string, newPassword: string): Promise<void>"
+      },
+      "java": {
+        "method": "confirmPasswordReset",
+        "resource": "auth()",
+        "signature": "public void confirmPasswordReset(String resetToken, String newPassword)"
+      },
+      "python": {
+        "method": "confirm_password_reset",
+        "resource": "auth",
+        "signature": "def confirm_password_reset(self, reset_token: str, new_password: str) -> None:"
+      },
+      "go": {
+        "method": "ConfirmPasswordReset",
+        "resource": "AuthResource",
+        "signature": "func (r *AuthResource) ConfirmPasswordReset(ctx context.Context, resetToken, newPassword string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SignUp": {
+    "operationId": "SignUp",
+    "method": "POST",
+    "path": "/v1/auth/signup",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Auth"
+    ],
+    "capability": "auth",
+    "sdk": {
+      "typescript": {
+        "method": "signUp",
+        "resource": "auth",
+        "signature": "async signUp(organizationName: string, email: string, password: string, idempotencyKey?: string): Promise<SignUpResponse>"
+      },
+      "java": {
+        "method": "signUp",
+        "resource": "auth()",
+        "signature": "public SignUpResponse signUp(String organizationName, String email, String password, String idempotencyKey)"
+      },
+      "python": {
+        "method": "sign_up",
+        "resource": "auth",
+        "signature": "def sign_up( self, organization_name: str, email: str, password: str, idempotency_key: str | None = None ) -> SignUpResponse:"
+      },
+      "go": {
+        "method": "SignUp",
+        "resource": "AuthResource",
+        "signature": "func (r *AuthResource) SignUp(ctx context.Context, organizationName, email, password string, idempotencyKey ...string) (SignUpResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreatePaymentIntent": {
+    "operationId": "CreatePaymentIntent",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/payment-intents",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Deposits"
+    ],
+    "capability": "deposits",
+    "sdk": {
+      "typescript": {
+        "method": "createPaymentIntent",
+        "resource": "deposits",
+        "signature": "createPaymentIntent( organizationId: string, transactionId: string, assetNetworkId: string, amount: string, expiresAt: string | undefined, idempotencyKey?: string, ): Promise<CreatePaymentIntentResult>"
+      },
+      "java": {
+        "method": "createPaymentIntent",
+        "resource": "deposits()",
+        "signature": "public CreatePaymentIntentResult createPaymentIntent(UUID organizationId, UUID transactionId, UUID assetNetworkId, BigDecimal amount, OffsetDateTime expiresAt, String idempotencyKey)"
+      },
+      "python": {
+        "method": "create_payment_intent",
+        "resource": "deposits",
+        "signature": "def create_payment_intent( self, organization_id: str, transaction_id: str, asset_network_id: str, amount: Decimal, expires_at: str | None = None, idempotency_key: str | None = None, ) -> CreatePaymentIntentResult:"
+      },
+      "go": {
+        "method": "CreatePaymentIntent",
+        "resource": "DepositsResource",
+        "signature": "func (r *DepositsResource) CreatePaymentIntent( ctx context.Context, organizationID, transactionID, assetNetworkID string, amount decimal.Decimal, expiresAt *string, idempotencyKey ...string, ) (CreatePaymentIntentResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetPaymentIntent": {
+    "operationId": "GetPaymentIntent",
+    "method": "GET",
+    "path": "/v1/payment-intents/{paymentIntentId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Deposits"
+    ],
+    "capability": "deposits",
+    "sdk": {
+      "typescript": {
+        "method": "getPaymentIntent",
+        "resource": "deposits",
+        "signature": "getPaymentIntent(paymentIntentId: string): Promise<PaymentIntentResponse>"
+      },
+      "java": {
+        "method": "getPaymentIntent",
+        "resource": "deposits()",
+        "signature": "public PaymentIntentResponse getPaymentIntent(UUID paymentIntentId)"
+      },
+      "python": {
+        "method": "get_payment_intent",
+        "resource": "deposits",
+        "signature": "def get_payment_intent(self, payment_intent_id: str) -> PaymentIntentResponse:"
+      },
+      "go": {
+        "method": "GetPaymentIntent",
+        "resource": "DepositsResource",
+        "signature": "func (r *DepositsResource) GetPaymentIntent(ctx context.Context, paymentIntentID string) (PaymentIntentResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetDeposit": {
+    "operationId": "GetDeposit",
+    "method": "GET",
+    "path": "/v1/deposits/{depositId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Deposits"
+    ],
+    "capability": "deposits",
+    "sdk": {
+      "typescript": {
+        "method": "getDeposit",
+        "resource": "deposits",
+        "signature": "getDeposit(depositId: string): Promise<DepositResponse>"
+      },
+      "java": {
+        "method": "getDeposit",
+        "resource": "deposits()",
+        "signature": "public DepositResponse getDeposit(UUID depositId)"
+      },
+      "python": {
+        "method": "get_deposit",
+        "resource": "deposits",
+        "signature": "def get_deposit(self, deposit_id: str) -> DepositResponse:"
+      },
+      "go": {
+        "method": "GetDeposit",
+        "resource": "DepositsResource",
+        "signature": "func (r *DepositsResource) GetDeposit(ctx context.Context, depositID string) (DepositResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ListApiKeys": {
+    "operationId": "ListApiKeys",
+    "method": "GET",
+    "path": "/v1/environments/{environmentId}/api-keys",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Environments"
+    ],
+    "capability": "environments",
+    "sdk": {
+      "typescript": {
+        "method": "listApiKeys",
+        "resource": "environments",
+        "signature": "listApiKeys(environmentId: string): Promise<ApiKeyMetadataResponse[]>"
+      },
+      "java": {
+        "method": "listApiKeys",
+        "resource": "environments()",
+        "signature": "public List<ApiKeyMetadataResponse> listApiKeys(UUID environmentId)"
+      },
+      "python": {
+        "method": "list_api_keys",
+        "resource": "environments",
+        "signature": "def list_api_keys(self, environment_id: str) -> list[ApiKeyMetadataResponse]:"
+      },
+      "go": {
+        "method": "ListApiKeys",
+        "resource": "EnvironmentsResource",
+        "signature": "func (r *EnvironmentsResource) ListApiKeys(ctx context.Context, environmentID string) ([]ApiKeyMetadataResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GenerateApiKey": {
+    "operationId": "GenerateApiKey",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/api-keys",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Environments"
+    ],
+    "capability": "environments",
+    "sdk": {
+      "typescript": {
+        "method": "generateApiKey",
+        "resource": "environments",
+        "signature": "generateApiKey(environmentId: string): Promise<GenerateApiKeyResult>"
+      },
+      "java": {
+        "method": "generateApiKey",
+        "resource": "environments()",
+        "signature": "public GenerateApiKeyResult generateApiKey(UUID environmentId)"
+      },
+      "python": {
+        "method": "generate_api_key",
+        "resource": "environments",
+        "signature": "def generate_api_key(self, environment_id: str) -> GenerateApiKeyResult:"
+      },
+      "go": {
+        "method": "GenerateApiKey",
+        "resource": "EnvironmentsResource",
+        "signature": "func (r *EnvironmentsResource) GenerateApiKey(ctx context.Context, environmentID string) (GenerateApiKeyResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RegisterWallet": {
+    "operationId": "RegisterWallet",
+    "method": "POST",
+    "path": "/v1/applications/{applicationId}/wallets",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "register",
+        "resource": "wallets",
+        "signature": "register( applicationId: string, networkId: string, scheme: EnumValue<number>, publicDerivationMaterial: string, idempotencyKey?: string, ): Promise<RegisterWalletResult>"
+      },
+      "java": {
+        "method": "register",
+        "resource": "wallets()",
+        "signature": "public RegisterWalletResult register(UUID applicationId, UUID networkId, DerivationScheme scheme, String publicDerivationMaterial, String idempotencyKey)"
+      },
+      "python": {
+        "method": "register",
+        "resource": "wallets",
+        "signature": "def register( self, application_id: str, network_id: str, scheme: EnumValue[int], public_derivation_material: str, idempotency_key: str | None = None, ) -> RegisterWalletResult:"
+      },
+      "go": {
+        "method": "Register",
+        "resource": "WalletsResource",
+        "signature": "func (r *WalletsResource) Register( ctx context.Context, applicationID, networkID string, scheme DerivationScheme, publicDerivationMaterial string, idempotencyKey ...string, ) (RegisterWalletResult, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "AllocateDepositAddress": {
+    "operationId": "AllocateDepositAddress",
+    "method": "POST",
+    "path": "/v1/applications/{applicationId}/wallets/deposit-addresses",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "allocateDepositAddress",
+        "resource": "wallets",
+        "signature": "allocateDepositAddress(applicationId: string, networkId: string): Promise<AllocatedDepositAddressResult>"
+      },
+      "java": {
+        "method": "allocateDepositAddress",
+        "resource": "wallets()",
+        "signature": "public AllocatedDepositAddressResult allocateDepositAddress(UUID applicationId, UUID networkId)"
+      },
+      "python": {
+        "method": "allocate_deposit_address",
+        "resource": "wallets",
+        "signature": "def allocate_deposit_address(self, application_id: str, network_id: str) -> AllocatedDepositAddressResult:"
+      },
+      "go": {
+        "method": "AllocateDepositAddress",
+        "resource": "WalletsResource",
+        "signature": "func (r *WalletsResource) AllocateDepositAddress(ctx context.Context, applicationID, networkID string) (AllocatedDepositAddressResult, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetWallet": {
+    "operationId": "GetWallet",
+    "method": "GET",
+    "path": "/v1/wallets/{walletId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "wallets",
+        "signature": "get(walletId: string): Promise<WalletResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "wallets()",
+        "signature": "public WalletResponse get(UUID walletId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "wallets",
+        "signature": "def get(self, wallet_id: str) -> WalletResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "WalletsResource",
+        "signature": "func (r *WalletsResource) Get(ctx context.Context, walletID string) (WalletResponse, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetWalletPublicMaterial": {
+    "operationId": "GetWalletPublicMaterial",
+    "method": "GET",
+    "path": "/v1/wallets/{walletId}/public-material",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "getPublicMaterial",
+        "resource": "wallets",
+        "signature": "getPublicMaterial(walletId: string): Promise<WalletPublicMaterialResult>"
+      },
+      "java": {
+        "method": "getPublicMaterial",
+        "resource": "wallets()",
+        "signature": "public WalletPublicMaterialResult getPublicMaterial(UUID walletId)"
+      },
+      "python": {
+        "method": "get_public_material",
+        "resource": "wallets",
+        "signature": "def get_public_material(self, wallet_id: str) -> WalletPublicMaterialResult:"
+      },
+      "go": {
+        "method": "GetPublicMaterial",
+        "resource": "WalletsResource",
+        "signature": "func (r *WalletsResource) GetPublicMaterial(ctx context.Context, walletID string) (WalletPublicMaterialResult, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateSigningRequest": {
+    "operationId": "CreateSigningRequest",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/signing-requests",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "create",
+        "resource": "signingRequests",
+        "signature": "create( environmentId: string, walletId: string, derivationReference: number, originReference: string, assetNetworkId: string, sourceAddress: string, legs: ExecutionLegInput[], expiresAt: string, idempotencyKey?: string, ): Promise<CreateSigningRequestResult>"
+      },
+      "java": {
+        "method": "create",
+        "resource": "signingRequests()",
+        "signature": "public CreateSigningRequestResult create(UUID environmentId, UUID walletId, long derivationReference, String originReference, UUID assetNetworkId, String sourceAddress, List<ExecutionLegInput> legs, OffsetDateTime expiresAt, String idempotencyKey)"
+      },
+      "python": {
+        "method": "create",
+        "resource": "signing_requests",
+        "signature": "def create( self, environment_id: str, wallet_id: str, derivation_reference: int, origin_reference: str, asset_network_id: str, source_address: str, legs: list[ExecutionLegInput], expires_at: str, idempotency_key: str | None = None, ) -> CreateSigningRequestResult:"
+      },
+      "go": {
+        "method": "Create",
+        "resource": "SigningRequestsResource",
+        "signature": "func (r *SigningRequestsResource) Create( ctx context.Context, environmentID, walletID string, derivationReference uint32, originReference, assetNetworkID, sourceAddress string, legs []ExecutionLegInput, expiresAt time.Time, idempotencyKey ...string, ) (CreateSigningRequestResult, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetNetworkExecutionQuote": {
+    "operationId": "GetNetworkExecutionQuote",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/network-execution-quote",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "quote",
+        "resource": "networkExecution",
+        "signature": "quote( environmentId: string, assetNetworkId: string, operations: NetworkExecutionOperationInput[] | null, networkCostPayer: EnumValue<number>, ): Promise<NetworkExecutionQuoteResponse>"
+      },
+      "java": {
+        "method": "quote",
+        "resource": "networkExecution()",
+        "signature": "public NetworkExecutionQuoteResponse quote(UUID environmentId, UUID assetNetworkId, List<NetworkExecutionOperationInput> operations, NetworkCostPayer networkCostPayer)"
+      },
+      "python": {
+        "method": "quote",
+        "resource": "network_execution",
+        "signature": "def quote( self, environment_id: str, asset_network_id: str, operations: list[NetworkExecutionOperationInput] | None, network_cost_payer: EnumValue[int], ) -> NetworkExecutionQuoteResponse:"
+      },
+      "go": {
+        "method": "Quote",
+        "resource": "NetworkExecutionResource",
+        "signature": "func (r *NetworkExecutionResource) Quote( ctx context.Context, environmentID, assetNetworkID string, operations []NetworkExecutionOperationInput, networkCostPayer NetworkCostPayer, ) (NetworkExecutionQuoteResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetSigningRequest": {
+    "operationId": "GetSigningRequest",
+    "method": "GET",
+    "path": "/v1/signing-requests/{signingRequestId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "signingRequests",
+        "signature": "get(signingRequestId: string): Promise<SigningRequestResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "signingRequests()",
+        "signature": "public SigningRequestResponse get(UUID signingRequestId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "signing_requests",
+        "signature": "def get(self, signing_request_id: str) -> SigningRequestResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "SigningRequestsResource",
+        "signature": "func (r *SigningRequestsResource) Get(ctx context.Context, signingRequestID string) (SigningRequestResponse, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SubmitSignedTransaction": {
+    "operationId": "SubmitSignedTransaction",
+    "method": "POST",
+    "path": "/v1/signing-requests/{signingRequestId}/legs/{executionLegId}/submit",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "submitSignedTransaction",
+        "resource": "signingRequests",
+        "signature": "submitSignedTransaction( signingRequestId: string, executionLegId: string, submittedCanonicalHash: string, signatureHex: string, ): Promise<SubmitSignedTransactionResult>"
+      },
+      "java": {
+        "method": "submitSignedTransaction",
+        "resource": "signingRequests()",
+        "signature": "public SubmitSignedTransactionResult submitSignedTransaction(UUID signingRequestId, UUID executionLegId, String submittedCanonicalHash, String signatureHex)"
+      },
+      "python": {
+        "method": "submit_signed_transaction",
+        "resource": "signing_requests",
+        "signature": "def submit_signed_transaction( self, signing_request_id: str, execution_leg_id: str, submitted_canonical_hash: str, signature_hex: str, ) -> SubmitSignedTransactionResult:"
+      },
+      "go": {
+        "method": "SubmitSignedTransaction",
+        "resource": "SigningRequestsResource",
+        "signature": "func (r *SigningRequestsResource) SubmitSignedTransaction( ctx context.Context, signingRequestID, executionLegID, submittedCanonicalHash, signatureHex string, ) (SubmitSignedTransactionResult, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RegisterExecutionDestination": {
+    "operationId": "RegisterExecutionDestination",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/execution-destinations",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "register",
+        "resource": "executionDestinations",
+        "signature": "register(organizationId: string, accountId: string, assetNetworkId: string, address: string): Promise<RegisterExecutionDestinationResult>"
+      },
+      "java": {
+        "method": "register",
+        "resource": "executionDestinations()",
+        "signature": "public RegisterExecutionDestinationResult register(UUID organizationId, UUID accountId, UUID assetNetworkId, String address)"
+      },
+      "python": {
+        "method": "register",
+        "resource": "execution_destinations",
+        "signature": "def register(self, organization_id: str, account_id: str, asset_network_id: str, address: str) -> RegisterExecutionDestinationResult:"
+      },
+      "go": {
+        "method": "Register",
+        "resource": "ExecutionDestinationsResource",
+        "signature": "func (r *ExecutionDestinationsResource) Register( ctx context.Context, organizationID, accountID, assetNetworkID, address string, ) (RegisterExecutionDestinationResult, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RegisterExecutionSource": {
+    "operationId": "RegisterExecutionSource",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/execution-sources",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "register",
+        "resource": "executionSources",
+        "signature": "register( organizationId: string, environmentId: string, assetNetworkId: string, walletId: string, derivationReference: number, address: string | null, ): Promise<RegisterExecutionSourceResult>"
+      },
+      "java": {
+        "method": "register",
+        "resource": "executionSources()",
+        "signature": "public RegisterExecutionSourceResult register(UUID organizationId, UUID environmentId, UUID assetNetworkId, UUID walletId, long derivationReference, String address)"
+      },
+      "python": {
+        "method": "register",
+        "resource": "execution_sources",
+        "signature": "def register( self, organization_id: str, environment_id: str, asset_network_id: str, wallet_id: str, derivation_reference: int, address: str | None, ) -> RegisterExecutionSourceResult:"
+      },
+      "go": {
+        "method": "Register",
+        "resource": "ExecutionSourcesResource",
+        "signature": "func (r *ExecutionSourcesResource) Register( ctx context.Context, organizationID, environmentID, assetNetworkID, walletID string, derivationReference int64, address string, ) (RegisterExecutionSourceResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SyncCustomerResourceStake": {
+    "operationId": "SyncCustomerResourceStake",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/execution-sources/{executionSourceId}/resource-stake",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "syncResourceStake",
+        "resource": "executionSources",
+        "signature": "syncResourceStake( organizationId: string, executionSourceId: string, availableNativeAmount: string, availableEnergy: string, availableBandwidth: string, ): Promise<void>"
+      },
+      "java": {
+        "method": "syncResourceStake",
+        "resource": "executionSources()",
+        "signature": "public void syncResourceStake(UUID organizationId, UUID executionSourceId, BigDecimal availableNativeAmount, BigDecimal availableEnergy, BigDecimal availableBandwidth)"
+      },
+      "python": {
+        "method": "sync_resource_stake",
+        "resource": "execution_sources",
+        "signature": "def sync_resource_stake( self, organization_id: str, execution_source_id: str, available_native_amount: Decimal, available_energy: Decimal, available_bandwidth: Decimal, ) -> None:"
+      },
+      "go": {
+        "method": "SyncResourceStake",
+        "resource": "ExecutionSourcesResource",
+        "signature": "func (r *ExecutionSourcesResource) SyncResourceStake( ctx context.Context, organizationID, executionSourceID string, availableNativeAmount, availableEnergy, availableBandwidth decimal.Decimal, ) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RegisterNetworkCostPayerAccount": {
+    "operationId": "RegisterNetworkCostPayerAccount",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/network-cost-payer-accounts",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "register",
+        "resource": "networkCostPayerAccounts",
+        "signature": "register(organizationId: string, assetNetworkId: string, accountId: string): Promise<RegisterNetworkCostPayerAccountResult>"
+      },
+      "java": {
+        "method": "register",
+        "resource": "networkCostPayerAccounts()",
+        "signature": "public RegisterNetworkCostPayerAccountResult register(UUID organizationId, UUID assetNetworkId, UUID accountId)"
+      },
+      "python": {
+        "method": "register",
+        "resource": "network_cost_payer_accounts",
+        "signature": "def register(self, organization_id: str, asset_network_id: str, account_id: str) -> RegisterNetworkCostPayerAccountResult:"
+      },
+      "go": {
+        "method": "Register",
+        "resource": "NetworkCostPayerAccountsResource",
+        "signature": "func (r *NetworkCostPayerAccountsResource) Register( ctx context.Context, organizationID, assetNetworkID, accountID string, ) (RegisterNetworkCostPayerAccountResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "UpdateNetworkResourcePreference": {
+    "operationId": "UpdateNetworkResourcePreference",
+    "method": "PATCH",
+    "path": "/v1/organizations/{organizationId}/network-cost-payer-accounts/{assetNetworkId}/resource-preference",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "ExecutionCustody"
+    ],
+    "capability": "executioncustody",
+    "sdk": {
+      "typescript": {
+        "method": "updateResourcePreference",
+        "resource": "networkCostPayerAccounts",
+        "signature": "updateResourcePreference( organizationId: string, assetNetworkId: string, resourcePreference: EnumValue<number>, allowFallbackToIshtaranResources: boolean, ): Promise<void>"
+      },
+      "java": {
+        "method": "updateResourcePreference",
+        "resource": "networkCostPayerAccounts()",
+        "signature": "public void updateResourcePreference(UUID organizationId, UUID assetNetworkId, NetworkResourceSource resourcePreference, boolean allowFallbackToIshtaranResources)"
+      },
+      "python": {
+        "method": "update_resource_preference",
+        "resource": "network_cost_payer_accounts",
+        "signature": "def update_resource_preference( self, organization_id: str, asset_network_id: str, resource_preference: EnumValue[int], allow_fallback_to_ishtaran_resources: bool, ) -> None:"
+      },
+      "go": {
+        "method": "UpdateResourcePreference",
+        "resource": "NetworkCostPayerAccountsResource",
+        "signature": "func (r *NetworkCostPayerAccountsResource) UpdateResourcePreference( ctx context.Context, organizationID, assetNetworkID string, resourcePreference NetworkResourceSource, allowFallbackToIshtaranResources bool, ) error"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetAccountBalance": {
+    "operationId": "GetAccountBalance",
+    "method": "GET",
+    "path": "/v1/accounts/{accountId}/balance",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Ledger"
+    ],
+    "capability": "ledger",
+    "sdk": {
+      "typescript": {
+        "method": "getBalance",
+        "resource": "ledger",
+        "signature": "getBalance(accountId: string, assetNetworkId: string): Promise<BalanceResponse>"
+      },
+      "java": {
+        "method": "getBalance",
+        "resource": "ledger()",
+        "signature": "public BalanceResponse getBalance(UUID accountId, UUID assetNetworkId)"
+      },
+      "python": {
+        "method": "get_balance",
+        "resource": "ledger",
+        "signature": "def get_balance(self, account_id: str, asset_network_id: str) -> BalanceResponse:"
+      },
+      "go": {
+        "method": "GetBalance",
+        "resource": "LedgerResource",
+        "signature": "func (r *LedgerResource) GetBalance(ctx context.Context, accountID, assetNetworkID string) (BalanceResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetAccountLedgerEntries": {
+    "operationId": "GetAccountLedgerEntries",
+    "method": "GET",
+    "path": "/v1/accounts/{accountId}/ledger-entries",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Ledger"
+    ],
+    "capability": "ledger",
+    "sdk": {
+      "typescript": {
+        "method": "listEntries",
+        "resource": "ledger",
+        "signature": "listEntries( accountId: string, assetNetworkId: string, options: { nature?: EnumValue<number>; from?: string; to?: string; skip: number; take: number }, ): Promise<LedgerEntryResponse[]>"
+      },
+      "java": {
+        "method": "listEntries",
+        "resource": "ledger()",
+        "signature": "public List<LedgerEntryResponse> listEntries(UUID accountId, UUID assetNetworkId, EntryNature nature, OffsetDateTime from, OffsetDateTime to, int skip, int take)"
+      },
+      "python": {
+        "method": "list_entries",
+        "resource": "ledger",
+        "signature": "def list_entries( self, account_id: str, asset_network_id: str, skip: int, take: int, nature: EnumValue[int] | None = None, date_from: str | None = None, date_to: str | None = None, ) -> list[LedgerEntryResponse]:"
+      },
+      "go": {
+        "method": "ListEntries",
+        "resource": "LedgerResource",
+        "signature": "func (r *LedgerResource) ListEntries(ctx context.Context, accountID, assetNetworkID string, skip, take int, opts ListEntriesOptions) ([]LedgerEntryResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "AcceptInvite": {
+    "operationId": "AcceptInvite",
+    "method": "POST",
+    "path": "/v1/members/accept-invite",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Members"
+    ],
+    "capability": "members",
+    "sdk": {
+      "typescript": {
+        "method": "acceptInvite",
+        "resource": "members",
+        "signature": "acceptInvite(inviteToken: string, password: string): Promise<TokenResult>"
+      },
+      "java": {
+        "method": "acceptInvite",
+        "resource": "members()",
+        "signature": "public TokenResult acceptInvite(String inviteToken, String password)"
+      },
+      "python": {
+        "method": "accept_invite",
+        "resource": "members",
+        "signature": "def accept_invite(self, invite_token: str, password: str) -> TokenResult:"
+      },
+      "go": {
+        "method": "AcceptInvite",
+        "resource": "MembersResource",
+        "signature": "func (r *MembersResource) AcceptInvite(ctx context.Context, inviteToken, password string) (TokenResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ListMembers": {
+    "operationId": "ListMembers",
+    "method": "GET",
+    "path": "/v1/organizations/{organizationId}/members",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Members"
+    ],
+    "capability": "members",
+    "sdk": {
+      "typescript": {
+        "method": "list",
+        "resource": "members",
+        "signature": "list(organizationId: string): Promise<MemberResponse[]>"
+      },
+      "java": {
+        "method": "list",
+        "resource": "members()",
+        "signature": "public List<MemberResponse> list(UUID organizationId)"
+      },
+      "python": {
+        "method": "list",
+        "resource": "members",
+        "signature": "def list(self, organization_id: str) -> list[MemberResponse]:"
+      },
+      "go": {
+        "method": "List",
+        "resource": "MembersResource",
+        "signature": "func (r *MembersResource) List(ctx context.Context, organizationID string) ([]MemberResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "InviteMember": {
+    "operationId": "InviteMember",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/members",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Members"
+    ],
+    "capability": "members",
+    "sdk": {
+      "typescript": {
+        "method": "invite",
+        "resource": "members",
+        "signature": "invite(organizationId: string, email: string, role: EnumValue<number>): Promise<InviteMemberResult>"
+      },
+      "java": {
+        "method": "invite",
+        "resource": "members()",
+        "signature": "public InviteMemberResult invite(UUID organizationId, String email, MemberRole role)"
+      },
+      "python": {
+        "method": "invite",
+        "resource": "members",
+        "signature": "def invite(self, organization_id: str, email: str, role: EnumValue[int]) -> InviteMemberResult:"
+      },
+      "go": {
+        "method": "Invite",
+        "resource": "MembersResource",
+        "signature": "func (r *MembersResource) Invite(ctx context.Context, organizationID, email string, role MemberRoleRequest) (InviteMemberResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "AssignMemberRole": {
+    "operationId": "AssignMemberRole",
+    "method": "POST",
+    "path": "/v1/members/{memberId}/role",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Members"
+    ],
+    "capability": "members",
+    "sdk": {
+      "typescript": {
+        "method": "assignRole",
+        "resource": "members",
+        "signature": "assignRole(memberId: string, newRole: EnumValue<number>): Promise<void>"
+      },
+      "java": {
+        "method": "assignRole",
+        "resource": "members()",
+        "signature": "public void assignRole(UUID memberId, MemberRole newRole)"
+      },
+      "python": {
+        "method": "assign_role",
+        "resource": "members",
+        "signature": "def assign_role(self, member_id: str, new_role: EnumValue[int]) -> None:"
+      },
+      "go": {
+        "method": "AssignRole",
+        "resource": "MembersResource",
+        "signature": "func (r *MembersResource) AssignRole(ctx context.Context, memberID string, newRole MemberRoleRequest) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SuspendMember": {
+    "operationId": "SuspendMember",
+    "method": "POST",
+    "path": "/v1/members/{memberId}/suspend",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Members"
+    ],
+    "capability": "members",
+    "sdk": {
+      "typescript": {
+        "method": "suspend",
+        "resource": "members",
+        "signature": "suspend(memberId: string, reason?: string): Promise<void>"
+      },
+      "java": {
+        "method": "suspend",
+        "resource": "members()",
+        "signature": "public void suspend(UUID memberId, String reason)"
+      },
+      "python": {
+        "method": "suspend",
+        "resource": "members",
+        "signature": "def suspend(self, member_id: str, reason: str | None = None) -> None:"
+      },
+      "go": {
+        "method": "Suspend",
+        "resource": "MembersResource",
+        "signature": "func (r *MembersResource) Suspend(ctx context.Context, memberID, reason string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ReactivateMember": {
+    "operationId": "ReactivateMember",
+    "method": "POST",
+    "path": "/v1/members/{memberId}/reactivate",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Members"
+    ],
+    "capability": "members",
+    "sdk": {
+      "typescript": {
+        "method": "reactivate",
+        "resource": "members",
+        "signature": "reactivate(memberId: string): Promise<void>"
+      },
+      "java": {
+        "method": "reactivate",
+        "resource": "members()",
+        "signature": "public void reactivate(UUID memberId)"
+      },
+      "python": {
+        "method": "reactivate",
+        "resource": "members",
+        "signature": "def reactivate(self, member_id: str) -> None:"
+      },
+      "go": {
+        "method": "Reactivate",
+        "resource": "MembersResource",
+        "signature": "func (r *MembersResource) Reactivate(ctx context.Context, memberID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RemoveMember": {
+    "operationId": "RemoveMember",
+    "method": "DELETE",
+    "path": "/v1/members/{memberId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Members"
+    ],
+    "capability": "members",
+    "sdk": {
+      "typescript": {
+        "method": "remove",
+        "resource": "members",
+        "signature": "remove(memberId: string): Promise<void>"
+      },
+      "java": {
+        "method": "remove",
+        "resource": "members()",
+        "signature": "public void remove(UUID memberId)"
+      },
+      "python": {
+        "method": "remove",
+        "resource": "members",
+        "signature": "def remove(self, member_id: str) -> None:"
+      },
+      "go": {
+        "method": "Remove",
+        "resource": "MembersResource",
+        "signature": "func (r *MembersResource) Remove(ctx context.Context, memberID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SearchWebhookEndpoints": {
+    "operationId": "SearchWebhookEndpoints",
+    "method": "GET",
+    "path": "/v1/organizations/{organizationId}/webhook-endpoints",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Notifications"
+    ],
+    "capability": "notifications",
+    "sdk": {
+      "typescript": {
+        "method": "list",
+        "resource": "webhookEndpoints",
+        "signature": "list(organizationId: string): Promise<WebhookEndpointResponse[]>"
+      },
+      "java": {
+        "method": "list",
+        "resource": "webhookEndpoints()",
+        "signature": "public List<WebhookEndpointResponse> list(UUID organizationId)"
+      },
+      "python": {
+        "method": "list",
+        "resource": "webhook_endpoints",
+        "signature": "def list(self, organization_id: str) -> List[WebhookEndpointResponse]:"
+      },
+      "go": {
+        "method": "List",
+        "resource": "WebhookEndpointsResource",
+        "signature": "func (r *WebhookEndpointsResource) List(ctx context.Context, organizationID string) ([]WebhookEndpointResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ConfigureWebhookEndpoint": {
+    "operationId": "ConfigureWebhookEndpoint",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/webhook-endpoints",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Notifications"
+    ],
+    "capability": "notifications",
+    "sdk": {
+      "typescript": {
+        "method": "create",
+        "resource": "webhookEndpoints",
+        "signature": "create(organizationId: string, url: string): Promise<ConfigureWebhookEndpointResult>"
+      },
+      "java": {
+        "method": "create",
+        "resource": "webhookEndpoints()",
+        "signature": "public ConfigureWebhookEndpointResult create(UUID organizationId, String url)"
+      },
+      "python": {
+        "method": "create",
+        "resource": "webhook_endpoints",
+        "signature": "def create(self, organization_id: str, url: str) -> ConfigureWebhookEndpointResult:"
+      },
+      "go": {
+        "method": "Create",
+        "resource": "WebhookEndpointsResource",
+        "signature": "func (r *WebhookEndpointsResource) Create(ctx context.Context, organizationID, endpointURL string) (ConfigureWebhookEndpointResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetWebhookEndpoint": {
+    "operationId": "GetWebhookEndpoint",
+    "method": "GET",
+    "path": "/v1/webhook-endpoints/{webhookEndpointId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Notifications"
+    ],
+    "capability": "notifications",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "webhookEndpoints",
+        "signature": "get(webhookEndpointId: string): Promise<WebhookEndpointResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "webhookEndpoints()",
+        "signature": "public WebhookEndpointResponse get(UUID webhookEndpointId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "webhook_endpoints",
+        "signature": "def get(self, webhook_endpoint_id: str) -> WebhookEndpointResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "WebhookEndpointsResource",
+        "signature": "func (r *WebhookEndpointsResource) Get(ctx context.Context, webhookEndpointID string) (WebhookEndpointResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RotateWebhookEndpointSecret": {
+    "operationId": "RotateWebhookEndpointSecret",
+    "method": "POST",
+    "path": "/v1/webhook-endpoints/{webhookEndpointId}/rotate-secret",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Notifications"
+    ],
+    "capability": "notifications",
+    "sdk": {
+      "typescript": {
+        "method": "rotateSecret",
+        "resource": "webhookEndpoints",
+        "signature": "rotateSecret(webhookEndpointId: string): Promise<RotateWebhookEndpointSecretResult>"
+      },
+      "java": {
+        "method": "rotateSecret",
+        "resource": "webhookEndpoints()",
+        "signature": "public RotateWebhookEndpointSecretResult rotateSecret(UUID webhookEndpointId)"
+      },
+      "python": {
+        "method": "rotate_secret",
+        "resource": "webhook_endpoints",
+        "signature": "def rotate_secret(self, webhook_endpoint_id: str) -> RotateWebhookEndpointSecretResult:"
+      },
+      "go": {
+        "method": "RotateSecret",
+        "resource": "WebhookEndpointsResource",
+        "signature": "func (r *WebhookEndpointsResource) RotateSecret(ctx context.Context, webhookEndpointID string) (RotateWebhookEndpointSecretResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "DeactivateWebhookEndpoint": {
+    "operationId": "DeactivateWebhookEndpoint",
+    "method": "POST",
+    "path": "/v1/webhook-endpoints/{webhookEndpointId}/deactivate",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Notifications"
+    ],
+    "capability": "notifications",
+    "sdk": {
+      "typescript": {
+        "method": "deactivate",
+        "resource": "webhookEndpoints",
+        "signature": "deactivate(webhookEndpointId: string): Promise<void>"
+      },
+      "java": {
+        "method": "deactivate",
+        "resource": "webhookEndpoints()",
+        "signature": "public void deactivate(UUID webhookEndpointId)"
+      },
+      "python": {
+        "method": "deactivate",
+        "resource": "webhook_endpoints",
+        "signature": "def deactivate(self, webhook_endpoint_id: str) -> None:"
+      },
+      "go": {
+        "method": "Deactivate",
+        "resource": "WebhookEndpointsResource",
+        "signature": "func (r *WebhookEndpointsResource) Deactivate(ctx context.Context, webhookEndpointID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SearchWebhookDeliveries": {
+    "operationId": "SearchWebhookDeliveries",
+    "method": "GET",
+    "path": "/v1/webhook-endpoints/{webhookEndpointId}/deliveries",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Notifications"
+    ],
+    "capability": "notifications",
+    "sdk": {
+      "typescript": {
+        "method": "listDeliveries",
+        "resource": "webhookEndpoints",
+        "signature": "listDeliveries(webhookEndpointId: string, eventType: string | undefined, status: EnumValue<number> | undefined): Promise<WebhookDeliveryResponse[]>"
+      },
+      "java": {
+        "method": "listDeliveries",
+        "resource": "webhookEndpoints()",
+        "signature": "public List<WebhookDeliveryResponse> listDeliveries(UUID webhookEndpointId, String eventType, WebhookDeliveryStatus status)"
+      },
+      "python": {
+        "method": "list_deliveries",
+        "resource": "webhook_endpoints",
+        "signature": "def list_deliveries( self, webhook_endpoint_id: str, event_type: str | None = None, status: EnumValue[int] | None = None, ) -> List[WebhookDeliveryResponse]:"
+      },
+      "go": {
+        "method": "ListDeliveries",
+        "resource": "WebhookEndpointsResource",
+        "signature": "func (r *WebhookEndpointsResource) ListDeliveries(ctx context.Context, webhookEndpointID, eventType string, status *WebhookDeliveryStatus) ([]WebhookDeliveryResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetWebhookDelivery": {
+    "operationId": "GetWebhookDelivery",
+    "method": "GET",
+    "path": "/v1/webhook-deliveries/{webhookDeliveryId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Notifications"
+    ],
+    "capability": "notifications",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "webhookDeliveries",
+        "signature": "get(webhookDeliveryId: string): Promise<WebhookDeliveryResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "webhookDeliveries()",
+        "signature": "public WebhookDeliveryResponse get(UUID webhookDeliveryId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "webhook_deliveries",
+        "signature": "def get(self, webhook_delivery_id: str) -> WebhookDeliveryResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "WebhookDeliveriesResource",
+        "signature": "func (r *WebhookDeliveriesResource) Get(ctx context.Context, webhookDeliveryID string) (WebhookDeliveryResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RedeliverWebhook": {
+    "operationId": "RedeliverWebhook",
+    "method": "POST",
+    "path": "/v1/webhook-deliveries/{webhookDeliveryId}/redeliver",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Notifications"
+    ],
+    "capability": "notifications",
+    "sdk": {
+      "typescript": {
+        "method": "redeliver",
+        "resource": "webhookDeliveries",
+        "signature": "redeliver(webhookDeliveryId: string): Promise<RedeliverWebhookResult>"
+      },
+      "java": {
+        "method": "redeliver",
+        "resource": "webhookDeliveries()",
+        "signature": "public RedeliverWebhookResult redeliver(UUID webhookDeliveryId)"
+      },
+      "python": {
+        "method": "redeliver",
+        "resource": "webhook_deliveries",
+        "signature": "def redeliver(self, webhook_delivery_id: str) -> RedeliverWebhookResult:"
+      },
+      "go": {
+        "method": "Redeliver",
+        "resource": "WebhookDeliveriesResource",
+        "signature": "func (r *WebhookDeliveriesResource) Redeliver(ctx context.Context, webhookDeliveryID string) (RedeliverWebhookResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateOrganization": {
+    "operationId": "CreateOrganization",
+    "method": "POST",
+    "path": "/v1/organizations",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Organizations"
+    ],
+    "capability": "organizations",
+    "sdk": {
+      "typescript": {
+        "method": "create",
+        "resource": "organizations",
+        "signature": "create(name: string, idempotencyKey?: string): Promise<CreatedResourceResponse>"
+      },
+      "java": {
+        "method": "create",
+        "resource": "organizations()",
+        "signature": "public CreatedResourceResponse create(String name, String idempotencyKey)"
+      },
+      "python": {
+        "method": "create",
+        "resource": "organizations",
+        "signature": "def create(self, name: str, idempotency_key: str | None = None) -> CreatedResourceResponse:"
+      },
+      "go": {
+        "method": "Create",
+        "resource": "OrganizationsResource",
+        "signature": "func (r *OrganizationsResource) Create(ctx context.Context, name string, idempotencyKey ...string) (CreatedResourceResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetOrganization": {
+    "operationId": "GetOrganization",
+    "method": "GET",
+    "path": "/v1/organizations/{organizationId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Organizations"
+    ],
+    "capability": "organizations",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "organizations",
+        "signature": "get(organizationId: string): Promise<OrganizationResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "organizations()",
+        "signature": "public OrganizationResponse get(UUID organizationId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "organizations",
+        "signature": "def get(self, organization_id: str) -> OrganizationResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "OrganizationsResource",
+        "signature": "func (r *OrganizationsResource) Get(ctx context.Context, organizationID string) (OrganizationResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SuspendOrganization": {
+    "operationId": "SuspendOrganization",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/suspend",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Organizations"
+    ],
+    "capability": "organizations",
+    "sdk": {
+      "typescript": {
+        "method": "suspend",
+        "resource": "organizations",
+        "signature": "suspend(organizationId: string, reason?: string): Promise<void>"
+      },
+      "java": {
+        "method": "suspend",
+        "resource": "organizations()",
+        "signature": "public void suspend(UUID organizationId, String reason)"
+      },
+      "python": {
+        "method": "suspend",
+        "resource": "organizations",
+        "signature": "def suspend(self, organization_id: str, reason: str | None = None) -> None:"
+      },
+      "go": {
+        "method": "Suspend",
+        "resource": "OrganizationsResource",
+        "signature": "func (r *OrganizationsResource) Suspend(ctx context.Context, organizationID, reason string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ReactivateOrganization": {
+    "operationId": "ReactivateOrganization",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/reactivate",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Organizations"
+    ],
+    "capability": "organizations",
+    "sdk": {
+      "typescript": {
+        "method": "reactivate",
+        "resource": "organizations",
+        "signature": "reactivate(organizationId: string): Promise<void>"
+      },
+      "java": {
+        "method": "reactivate",
+        "resource": "organizations()",
+        "signature": "public void reactivate(UUID organizationId)"
+      },
+      "python": {
+        "method": "reactivate",
+        "resource": "organizations",
+        "signature": "def reactivate(self, organization_id: str) -> None:"
+      },
+      "go": {
+        "method": "Reactivate",
+        "resource": "OrganizationsResource",
+        "signature": "func (r *OrganizationsResource) Reactivate(ctx context.Context, organizationID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ListApplications": {
+    "operationId": "ListApplications",
+    "method": "GET",
+    "path": "/v1/organizations/{organizationId}/applications",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Organizations"
+    ],
+    "capability": "organizations",
+    "sdk": {
+      "typescript": {
+        "method": "listApplications",
+        "resource": "organizations",
+        "signature": "listApplications(organizationId: string): Promise<ApplicationResponse[]>"
+      },
+      "java": {
+        "method": "listApplications",
+        "resource": "organizations()",
+        "signature": "public List<ApplicationResponse> listApplications(UUID organizationId)"
+      },
+      "python": {
+        "method": "list_applications",
+        "resource": "organizations",
+        "signature": "def list_applications(self, organization_id: str) -> list[ApplicationResponse]:"
+      },
+      "go": {
+        "method": "ListApplications",
+        "resource": "OrganizationsResource",
+        "signature": "func (r *OrganizationsResource) ListApplications(ctx context.Context, organizationID string) ([]ApplicationResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateApplication": {
+    "operationId": "CreateApplication",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/applications",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Organizations"
+    ],
+    "capability": "organizations",
+    "sdk": {
+      "typescript": {
+        "method": "createApplication",
+        "resource": "organizations",
+        "signature": "createApplication(organizationId: string, name: string, idempotencyKey?: string): Promise<CreatedResourceResponse>"
+      },
+      "java": {
+        "method": "createApplication",
+        "resource": "organizations()",
+        "signature": "public CreatedResourceResponse createApplication(UUID organizationId, String name, String idempotencyKey)"
+      },
+      "python": {
+        "method": "create_application",
+        "resource": "organizations",
+        "signature": "def create_application(self, organization_id: str, name: str, idempotency_key: str | None = None) -> CreatedResourceResponse:"
+      },
+      "go": {
+        "method": "CreateApplication",
+        "resource": "OrganizationsResource",
+        "signature": "func (r *OrganizationsResource) CreateApplication(ctx context.Context, organizationID, name string, idempotencyKey ...string) (CreatedResourceResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetPayableSummary": {
+    "operationId": "GetPayableSummary",
+    "method": "GET",
+    "path": "/v1/accounts/{accountId}/payable-summary",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Payout"
+    ],
+    "capability": "payout",
+    "sdk": {
+      "typescript": {
+        "method": "getPayableSummary",
+        "resource": "payout",
+        "signature": "getPayableSummary(accountId: string, assetNetworkId: string): Promise<PayableSummaryResponse>"
+      },
+      "java": {
+        "method": "getPayableSummary",
+        "resource": "payout()",
+        "signature": "public PayableSummaryResponse getPayableSummary(UUID accountId, UUID assetNetworkId)"
+      },
+      "python": {
+        "method": "get_payable_summary",
+        "resource": "payout",
+        "signature": "def get_payable_summary(self, account_id: str, asset_network_id: str) -> PayableSummaryResponse:"
+      },
+      "go": {
+        "method": "GetPayableSummary",
+        "resource": "PayoutResource",
+        "signature": "func (r *PayoutResource) GetPayableSummary(ctx context.Context, accountID, assetNetworkID string) (PayableSummaryResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreatePayoutBatch": {
+    "operationId": "CreatePayoutBatch",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/payout-batches",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Payout"
+    ],
+    "capability": "payout",
+    "sdk": {
+      "typescript": {
+        "method": "createBatch",
+        "resource": "payout",
+        "signature": "async createBatch( organizationId: string, environmentId: string, assetNetworkId: string, explicitOwnerIds: string[] | null, idempotencyKey?: string, ): Promise<CreatePayoutBatchResult>"
+      },
+      "java": {
+        "method": "createBatch",
+        "resource": "payout()",
+        "signature": "public CreatePayoutBatchResult createBatch(UUID organizationId, UUID environmentId, UUID assetNetworkId, List<UUID> explicitOwnerIds, String idempotencyKey)"
+      },
+      "python": {
+        "method": "create_batch",
+        "resource": "payout",
+        "signature": "def create_batch( self, organization_id: str, environment_id: str, asset_network_id: str, explicit_owner_ids: list[str] | None = None, idempotency_key: str | None = None, ) -> CreatePayoutBatchResult:"
+      },
+      "go": {
+        "method": "CreateBatch",
+        "resource": "PayoutResource",
+        "signature": "func (r *PayoutResource) CreateBatch( ctx context.Context, organizationID, environmentID, assetNetworkID string, explicitOwnerIDs []string, idempotencyKey ...string, ) (CreatePayoutBatchResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetPayoutBatch": {
+    "operationId": "GetPayoutBatch",
+    "method": "GET",
+    "path": "/v1/organizations/{organizationId}/payout-batches/{payoutBatchId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Payout"
+    ],
+    "capability": "payout",
+    "sdk": {
+      "typescript": {
+        "method": "getBatch",
+        "resource": "payout",
+        "signature": "getBatch(organizationId: string, payoutBatchId: string): Promise<PayoutBatchResponse>"
+      },
+      "java": {
+        "method": "getBatch",
+        "resource": "payout()",
+        "signature": "public PayoutBatchResponse getBatch(UUID organizationId, UUID payoutBatchId)"
+      },
+      "python": {
+        "method": "get_batch",
+        "resource": "payout",
+        "signature": "def get_batch(self, organization_id: str, payout_batch_id: str) -> PayoutBatchResponse:"
+      },
+      "go": {
+        "method": "GetBatch",
+        "resource": "PayoutResource",
+        "signature": "func (r *PayoutResource) GetBatch(ctx context.Context, organizationID, payoutBatchID string) (PayoutBatchResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SandboxFaucet": {
+    "operationId": "SandboxFaucet",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/sandbox/faucet",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "faucet",
+        "resource": "sandbox",
+        "signature": "faucet(environmentId: string, depositAddress: string, assetNetworkId: string, amount: string): Promise<SandboxObservedAddressResult>"
+      },
+      "java": {
+        "method": "faucet",
+        "resource": "sandbox()",
+        "signature": "public SandboxObservedAddressResult faucet(UUID environmentId, String depositAddress, UUID assetNetworkId, BigDecimal amount)"
+      },
+      "python": {
+        "method": "faucet",
+        "resource": "sandbox",
+        "signature": "def faucet(self, environment_id: str, deposit_address: str, asset_network_id: str, amount: Decimal) -> SandboxObservedAddressResult:"
+      },
+      "go": {
+        "method": "Faucet",
+        "resource": "SandboxResource",
+        "signature": "func (r *SandboxResource) Faucet(ctx context.Context, environmentID, depositAddress, assetNetworkID string, amount decimal.Decimal) (SandboxObservedAddressResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SandboxSimulateDeposit": {
+    "operationId": "SandboxSimulateDeposit",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/sandbox/simulate-deposit",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "simulateDeposit",
+        "resource": "sandbox",
+        "signature": "simulateDeposit(environmentId: string, depositAddress: string, assetNetworkId: string, amount: string): Promise<SandboxObservedAddressResult>"
+      },
+      "java": {
+        "method": "simulateDeposit",
+        "resource": "sandbox()",
+        "signature": "public SandboxObservedAddressResult simulateDeposit(UUID environmentId, String depositAddress, UUID assetNetworkId, BigDecimal amount)"
+      },
+      "python": {
+        "method": "simulate_deposit",
+        "resource": "sandbox",
+        "signature": "def simulate_deposit(self, environment_id: str, deposit_address: str, asset_network_id: str, amount: Decimal) -> SandboxObservedAddressResult:"
+      },
+      "go": {
+        "method": "SimulateDeposit",
+        "resource": "SandboxResource",
+        "signature": "func (r *SandboxResource) SimulateDeposit(ctx context.Context, environmentID, depositAddress, assetNetworkID string, amount decimal.Decimal) (SandboxObservedAddressResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SandboxSimulateConfirmation": {
+    "operationId": "SandboxSimulateConfirmation",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/sandbox/simulate-confirmation",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "simulateConfirmation",
+        "resource": "sandbox",
+        "signature": "simulateConfirmation(environmentId: string, sandboxObservedAddressId: string, additionalConfirmations: number, isFinal: boolean): Promise<void>"
+      },
+      "java": {
+        "method": "simulateConfirmation",
+        "resource": "sandbox()",
+        "signature": "public void simulateConfirmation(UUID environmentId, UUID sandboxObservedAddressId, int additionalConfirmations, boolean isFinal)"
+      },
+      "python": {
+        "method": "simulate_confirmation",
+        "resource": "sandbox",
+        "signature": "def simulate_confirmation(self, environment_id: str, sandbox_observed_address_id: str, additional_confirmations: int, is_final: bool) -> None:"
+      },
+      "go": {
+        "method": "SimulateConfirmation",
+        "resource": "SandboxResource",
+        "signature": "func (r *SandboxResource) SimulateConfirmation(ctx context.Context, environmentID, sandboxObservedAddressID string, additionalConfirmations int, isFinal bool) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SandboxSimulateBroadcastConfirmation": {
+    "operationId": "SandboxSimulateBroadcastConfirmation",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/sandbox/simulate-broadcast-confirmation",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "simulateBroadcastConfirmation",
+        "resource": "sandbox",
+        "signature": "simulateBroadcastConfirmation(environmentId: string, broadcastAttemptId: string, additionalConfirmations: number, isFinal: boolean): Promise<void>"
+      },
+      "java": {
+        "method": "simulateBroadcastConfirmation",
+        "resource": "sandbox()",
+        "signature": "public void simulateBroadcastConfirmation(UUID environmentId, UUID broadcastAttemptId, int additionalConfirmations, boolean isFinal)"
+      },
+      "python": {
+        "method": "simulate_broadcast_confirmation",
+        "resource": "sandbox",
+        "signature": "def simulate_broadcast_confirmation(self, environment_id: str, broadcast_attempt_id: str, additional_confirmations: int, is_final: bool) -> None:"
+      },
+      "go": {
+        "method": "SimulateBroadcastConfirmation",
+        "resource": "SandboxResource",
+        "signature": "func (r *SandboxResource) SimulateBroadcastConfirmation(ctx context.Context, environmentID, broadcastAttemptID string, additionalConfirmations int, isFinal bool) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SandboxSimulateWithdrawal": {
+    "operationId": "SandboxSimulateWithdrawal",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/sandbox/simulate-withdrawal",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "simulateWithdrawal",
+        "resource": "sandbox",
+        "signature": "simulateWithdrawal( environmentId: string, destinationAddress: string, amount: string, assetNetworkId: string, outcome: EnumValue<number>, failureReason: string | undefined, ): Promise<SandboxBroadcastAttemptResult>"
+      },
+      "java": {
+        "method": "simulateWithdrawal",
+        "resource": "sandbox()",
+        "signature": "public SandboxBroadcastAttemptResult simulateWithdrawal(UUID environmentId, String destinationAddress, BigDecimal amount, UUID assetNetworkId, SimulatedBroadcastOutcome outcome, String failureReason)"
+      },
+      "python": {
+        "method": "simulate_withdrawal",
+        "resource": "sandbox",
+        "signature": "def simulate_withdrawal( self, environment_id: str, destination_address: str, amount: Decimal, asset_network_id: str, outcome: EnumValue[int], failure_reason: str | None = None, ) -> SandboxBroadcastAttemptResult:"
+      },
+      "go": {
+        "method": "SimulateWithdrawal",
+        "resource": "SandboxResource",
+        "signature": "func (r *SandboxResource) SimulateWithdrawal( ctx context.Context, environmentID, destinationAddress string, amount decimal.Decimal, assetNetworkID string, outcome SimulatedBroadcastOutcome, failureReason string, ) (SandboxBroadcastAttemptResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SandboxSetObservedTreasuryBalance": {
+    "operationId": "SandboxSetObservedTreasuryBalance",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/sandbox/treasury-balance",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "setObservedTreasuryBalance",
+        "resource": "sandbox",
+        "signature": "setObservedTreasuryBalance(environmentId: string, assetNetworkId: string, balance: string): Promise<void>"
+      },
+      "java": {
+        "method": "setObservedTreasuryBalance",
+        "resource": "sandbox()",
+        "signature": "public void setObservedTreasuryBalance(UUID environmentId, UUID assetNetworkId, BigDecimal balance)"
+      },
+      "python": {
+        "method": "set_observed_treasury_balance",
+        "resource": "sandbox",
+        "signature": "def set_observed_treasury_balance(self, environment_id: str, asset_network_id: str, balance: Decimal) -> None:"
+      },
+      "go": {
+        "method": "SetObservedTreasuryBalance",
+        "resource": "SandboxResource",
+        "signature": "func (r *SandboxResource) SetObservedTreasuryBalance(ctx context.Context, environmentID, assetNetworkID string, balance decimal.Decimal) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetSandboxObservedTreasuryBalance": {
+    "operationId": "GetSandboxObservedTreasuryBalance",
+    "method": "GET",
+    "path": "/v1/environments/{environmentId}/sandbox/treasury-balance/{assetNetworkId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "getTreasuryBalance",
+        "resource": "sandbox",
+        "signature": "getTreasuryBalance(environmentId: string, assetNetworkId: string): Promise<SandboxTreasuryObservedBalanceResponse>"
+      },
+      "java": {
+        "method": "getTreasuryBalance",
+        "resource": "sandbox()",
+        "signature": "public SandboxTreasuryObservedBalanceResponse getTreasuryBalance(UUID environmentId, UUID assetNetworkId)"
+      },
+      "python": {
+        "method": "get_treasury_balance",
+        "resource": "sandbox",
+        "signature": "def get_treasury_balance(self, environment_id: str, asset_network_id: str) -> SandboxTreasuryObservedBalanceResponse:"
+      },
+      "go": {
+        "method": "GetTreasuryBalance",
+        "resource": "SandboxResource",
+        "signature": "func (r *SandboxResource) GetTreasuryBalance(ctx context.Context, environmentID, assetNetworkID string) (SandboxTreasuryObservedBalanceResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetSandboxObservedAddress": {
+    "operationId": "GetSandboxObservedAddress",
+    "method": "GET",
+    "path": "/v1/environments/{environmentId}/sandbox/observed-addresses/{id}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "getObservedAddress",
+        "resource": "sandbox",
+        "signature": "getObservedAddress(environmentId: string, id: string): Promise<SandboxObservedAddressResponse>"
+      },
+      "java": {
+        "method": "getObservedAddress",
+        "resource": "sandbox()",
+        "signature": "public SandboxObservedAddressResponse getObservedAddress(UUID environmentId, UUID id)"
+      },
+      "python": {
+        "method": "get_observed_address",
+        "resource": "sandbox",
+        "signature": "def get_observed_address(self, environment_id: str, id_: str) -> SandboxObservedAddressResponse:"
+      },
+      "go": {
+        "method": "GetObservedAddress",
+        "resource": "SandboxResource",
+        "signature": "func (r *SandboxResource) GetObservedAddress(ctx context.Context, environmentID, id string) (SandboxObservedAddressResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetSandboxBroadcastAttempt": {
+    "operationId": "GetSandboxBroadcastAttempt",
+    "method": "GET",
+    "path": "/v1/environments/{environmentId}/sandbox/broadcast-attempts/{id}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "getBroadcastAttempt",
+        "resource": "sandbox",
+        "signature": "getBroadcastAttempt(environmentId: string, id: string): Promise<SandboxBroadcastAttemptResponse>"
+      },
+      "java": {
+        "method": "getBroadcastAttempt",
+        "resource": "sandbox()",
+        "signature": "public SandboxBroadcastAttemptResponse getBroadcastAttempt(UUID environmentId, UUID id)"
+      },
+      "python": {
+        "method": "get_broadcast_attempt",
+        "resource": "sandbox",
+        "signature": "def get_broadcast_attempt(self, environment_id: str, id_: str) -> SandboxBroadcastAttemptResponse:"
+      },
+      "go": {
+        "method": "GetBroadcastAttempt",
+        "resource": "SandboxResource",
+        "signature": "func (r *SandboxResource) GetBroadcastAttempt(ctx context.Context, environmentID, id string) (SandboxBroadcastAttemptResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SearchSettlements": {
+    "operationId": "SearchSettlements",
+    "method": "GET",
+    "path": "/v1/transactions/{transactionId}/settlements",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Settlement"
+    ],
+    "capability": "settlement",
+    "sdk": {
+      "typescript": {
+        "method": "listByTransaction",
+        "resource": "settlements",
+        "signature": "listByTransaction(transactionId: string): Promise<SettlementResponse[]>"
+      },
+      "java": {
+        "method": "listByTransaction",
+        "resource": "settlements()",
+        "signature": "public List<SettlementResponse> listByTransaction(UUID transactionId)"
+      },
+      "python": {
+        "method": "list_by_transaction",
+        "resource": "settlements",
+        "signature": "def list_by_transaction(self, transaction_id: str) -> list[SettlementResponse]:"
+      },
+      "go": {
+        "method": "ListByTransaction",
+        "resource": "SettlementsResource",
+        "signature": "func (r *SettlementsResource) ListByTransaction(ctx context.Context, transactionID string) ([]SettlementResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ExecuteSettlement": {
+    "operationId": "ExecuteSettlement",
+    "method": "POST",
+    "path": "/v1/transactions/{transactionId}/settlements",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Settlement"
+    ],
+    "capability": "settlement",
+    "sdk": {
+      "typescript": {
+        "method": "executeSettlement",
+        "resource": "settlements",
+        "signature": "executeSettlement(transactionId: string, amount?: string, idempotencyKey?: string): Promise<ExecuteSettlementResult>"
+      },
+      "java": {
+        "method": "executeSettlement",
+        "resource": "settlements()",
+        "signature": "public ExecuteSettlementResult executeSettlement(UUID transactionId, BigDecimal amount, String idempotencyKey)"
+      },
+      "python": {
+        "method": "execute_settlement",
+        "resource": "settlements",
+        "signature": "def execute_settlement(self, transaction_id: str, amount: Decimal | None = None, idempotency_key: str | None = None) -> ExecuteSettlementResult:"
+      },
+      "go": {
+        "method": "ExecuteSettlement",
+        "resource": "SettlementsResource",
+        "signature": "func (r *SettlementsResource) ExecuteSettlement(ctx context.Context, transactionID string, amount *decimal.Decimal, idempotencyKey ...string) (ExecuteSettlementResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetSettlement": {
+    "operationId": "GetSettlement",
+    "method": "GET",
+    "path": "/v1/settlements/{settlementId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Settlement"
+    ],
+    "capability": "settlement",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "settlements",
+        "signature": "get(settlementId: string): Promise<SettlementResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "settlements()",
+        "signature": "public SettlementResponse get(UUID settlementId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "settlements",
+        "signature": "def get(self, settlement_id: str) -> SettlementResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "SettlementsResource",
+        "signature": "func (r *SettlementsResource) Get(ctx context.Context, settlementID string) (SettlementResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ReleaseRetainedSplit": {
+    "operationId": "ReleaseRetainedSplit",
+    "method": "POST",
+    "path": "/v1/settlements/{settlementId}/split-allocations/{allocationId}/release",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Settlement"
+    ],
+    "capability": "settlement",
+    "sdk": {
+      "typescript": {
+        "method": "releaseRetainedSplit",
+        "resource": "settlements",
+        "signature": "releaseRetainedSplit(settlementId: string, allocationId: string, idempotencyKey?: string): Promise<void>"
+      },
+      "java": {
+        "method": "releaseRetainedSplit",
+        "resource": "settlements()",
+        "signature": "public void releaseRetainedSplit(UUID settlementId, UUID allocationId, String idempotencyKey)"
+      },
+      "python": {
+        "method": "release_retained_split",
+        "resource": "settlements",
+        "signature": "def release_retained_split(self, settlement_id: str, allocation_id: str, idempotency_key: str | None = None) -> None:"
+      },
+      "go": {
+        "method": "ReleaseRetainedSplit",
+        "resource": "SettlementsResource",
+        "signature": "func (r *SettlementsResource) ReleaseRetainedSplit(ctx context.Context, settlementID, allocationID string, idempotencyKey ...string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SearchRefunds": {
+    "operationId": "SearchRefunds",
+    "method": "GET",
+    "path": "/v1/transactions/{transactionId}/refunds",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Settlement"
+    ],
+    "capability": "settlement",
+    "sdk": {
+      "typescript": {
+        "method": "listByTransaction",
+        "resource": "refunds",
+        "signature": "listByTransaction(transactionId: string): Promise<RefundResponse[]>"
+      },
+      "java": {
+        "method": "listByTransaction",
+        "resource": "refunds()",
+        "signature": "public List<RefundResponse> listByTransaction(UUID transactionId)"
+      },
+      "python": {
+        "method": "list_by_transaction",
+        "resource": "refunds",
+        "signature": "def list_by_transaction(self, transaction_id: str) -> list[RefundResponse]:"
+      },
+      "go": {
+        "method": "ListByTransaction",
+        "resource": "RefundsResource",
+        "signature": "func (r *RefundsResource) ListByTransaction(ctx context.Context, transactionID string) ([]RefundResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ExecuteRefund": {
+    "operationId": "ExecuteRefund",
+    "method": "POST",
+    "path": "/v1/transactions/{transactionId}/refunds",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Settlement"
+    ],
+    "capability": "settlement",
+    "sdk": {
+      "typescript": {
+        "method": "executeRefund",
+        "resource": "refunds",
+        "signature": "executeRefund(transactionId: string, amount: string | undefined, reason: string | undefined, idempotencyKey?: string): Promise<ExecuteRefundResult>"
+      },
+      "java": {
+        "method": "executeRefund",
+        "resource": "refunds()",
+        "signature": "public ExecuteRefundResult executeRefund(UUID transactionId, BigDecimal amount, String reason, String idempotencyKey)"
+      },
+      "python": {
+        "method": "execute_refund",
+        "resource": "refunds",
+        "signature": "def execute_refund( self, transaction_id: str, amount: Decimal | None = None, reason: str | None = None, idempotency_key: str | None = None, ) -> ExecuteRefundResult:"
+      },
+      "go": {
+        "method": "ExecuteRefund",
+        "resource": "RefundsResource",
+        "signature": "func (r *RefundsResource) ExecuteRefund(ctx context.Context, transactionID string, amount *decimal.Decimal, reason string, idempotencyKey ...string) (ExecuteRefundResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetRefund": {
+    "operationId": "GetRefund",
+    "method": "GET",
+    "path": "/v1/refunds/{refundId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Settlement"
+    ],
+    "capability": "settlement",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "refunds",
+        "signature": "get(refundId: string): Promise<RefundResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "refunds()",
+        "signature": "public RefundResponse get(UUID refundId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "refunds",
+        "signature": "def get(self, refund_id: str) -> RefundResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "RefundsResource",
+        "signature": "func (r *RefundsResource) Get(ctx context.Context, refundID string) (RefundResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetTransactionSettlementSummary": {
+    "operationId": "GetTransactionSettlementSummary",
+    "method": "GET",
+    "path": "/v1/transactions/{transactionId}/settlement-summary",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Settlement"
+    ],
+    "capability": "settlement",
+    "sdk": {
+      "typescript": {
+        "method": "getSummary",
+        "resource": "settlements",
+        "signature": "getSummary(transactionId: string): Promise<TransactionSettlementSummaryResponse>"
+      },
+      "java": {
+        "method": "getSummary",
+        "resource": "settlements()",
+        "signature": "public TransactionSettlementSummaryResponse getSummary(UUID transactionId)"
+      },
+      "python": {
+        "method": "get_summary",
+        "resource": "settlements",
+        "signature": "def get_summary(self, transaction_id: str) -> TransactionSettlementSummaryResponse:"
+      },
+      "go": {
+        "method": "GetSummary",
+        "resource": "SettlementsResource",
+        "signature": "func (r *SettlementsResource) GetSummary(ctx context.Context, transactionID string) (TransactionSettlementSummaryResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateTransaction": {
+    "operationId": "CreateTransaction",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/transactions",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Transactions"
+    ],
+    "capability": "transactions",
+    "sdk": {
+      "typescript": {
+        "method": "create",
+        "resource": "transactions",
+        "signature": "create( organizationId: string, applicationId: string, environmentId: string, workflowVersionId: string | null, assetNetworkId: string, amount: string, participants: ParticipantInput[], idempotencyKey?: string, ): Promise<CreateTransactionResult>"
+      },
+      "java": {
+        "method": "create",
+        "resource": "transactions()",
+        "signature": "public CreateTransactionResult create(UUID organizationId, UUID applicationId, UUID workflowVersionId, UUID assetNetworkId, BigDecimal amount, List<ParticipantInput> participants, String idempotencyKey)"
+      },
+      "python": {
+        "method": "create",
+        "resource": "transactions",
+        "signature": "def create( self, organization_id: str, application_id: str, workflow_version_id: str | None, asset_network_id: str, amount: Decimal, participants: list[ParticipantInput], idempotency_key: str | None = None, ) -> CreateTransactionResult:"
+      },
+      "go": {
+        "method": "Create",
+        "resource": "TransactionsResource",
+        "signature": "func (r *TransactionsResource) Create( ctx context.Context, organizationID, applicationID string, workflowVersionID *string, assetNetworkID string, amount decimal.Decimal, participants []ParticipantInput, idempotencyKey ...string, ) (CreateTransactionResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetTransaction": {
+    "operationId": "GetTransaction",
+    "method": "GET",
+    "path": "/v1/transactions/{transactionId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Transactions"
+    ],
+    "capability": "transactions",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "transactions",
+        "signature": "get(transactionId: string): Promise<TransactionResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "transactions()",
+        "signature": "public TransactionResponse get(UUID transactionId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "transactions",
+        "signature": "def get(self, transaction_id: str) -> TransactionResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "TransactionsResource",
+        "signature": "func (r *TransactionsResource) Get(ctx context.Context, transactionID string) (TransactionResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetTransactionState": {
+    "operationId": "GetTransactionState",
+    "method": "GET",
+    "path": "/v1/transactions/{transactionId}/state",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Transactions"
+    ],
+    "capability": "transactions",
+    "sdk": {
+      "typescript": {
+        "method": "getState",
+        "resource": "transactions",
+        "signature": "getState(transactionId: string): Promise<TransactionStatusResponse>"
+      },
+      "java": {
+        "method": "getState",
+        "resource": "transactions()",
+        "signature": "public TransactionStateResponse getState(UUID transactionId)"
+      },
+      "python": {
+        "method": "get_state",
+        "resource": "transactions",
+        "signature": "def get_state(self, transaction_id: str) -> TransactionStateResponse:"
+      },
+      "go": {
+        "method": "GetState",
+        "resource": "TransactionsResource",
+        "signature": "func (r *TransactionsResource) GetState(ctx context.Context, transactionID string) (TransactionStateResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ReserveTransactionBalance": {
+    "operationId": "ReserveTransactionBalance",
+    "method": "POST",
+    "path": "/v1/transactions/{transactionId}/reserve",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Transactions"
+    ],
+    "capability": "transactions",
+    "sdk": {
+      "typescript": {
+        "method": "reserve",
+        "resource": "transactions",
+        "signature": "async reserve(transactionId: string): Promise<"
+      },
+      "java": {
+        "method": "reserve",
+        "resource": "transactions()",
+        "signature": "public ReserveTransactionResult reserve(UUID transactionId)"
+      },
+      "python": {
+        "method": "reserve",
+        "resource": "transactions",
+        "signature": "def reserve(self, transaction_id: str) -> str:"
+      },
+      "go": {
+        "method": "Reserve",
+        "resource": "TransactionsResource",
+        "signature": "func (r *TransactionsResource) Reserve(ctx context.Context, transactionID string) (ReserveTransactionResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CancelTransaction": {
+    "operationId": "CancelTransaction",
+    "method": "POST",
+    "path": "/v1/transactions/{transactionId}/cancel",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Transactions"
+    ],
+    "capability": "transactions",
+    "sdk": {
+      "typescript": {
+        "method": "cancel",
+        "resource": "transactions",
+        "signature": "cancel(transactionId: string, reason?: string): Promise<void>"
+      },
+      "java": {
+        "method": "cancel",
+        "resource": "transactions()",
+        "signature": "public void cancel(UUID transactionId, String reason)"
+      },
+      "python": {
+        "method": "cancel",
+        "resource": "transactions",
+        "signature": "def cancel(self, transaction_id: str, reason: str | None = None) -> None:"
+      },
+      "go": {
+        "method": "Cancel",
+        "resource": "TransactionsResource",
+        "signature": "func (r *TransactionsResource) Cancel(ctx context.Context, transactionID, reason string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "FreezeTransaction": {
+    "operationId": "FreezeTransaction",
+    "method": "POST",
+    "path": "/v1/transactions/{transactionId}/freeze",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Transactions"
+    ],
+    "capability": "transactions",
+    "sdk": {
+      "typescript": {
+        "method": "freeze",
+        "resource": "transactions",
+        "signature": "freeze(transactionId: string, reason?: string): Promise<void>"
+      },
+      "java": {
+        "method": "freeze",
+        "resource": "transactions()",
+        "signature": "public void freeze(UUID transactionId, String reason)"
+      },
+      "python": {
+        "method": "freeze",
+        "resource": "transactions",
+        "signature": "def freeze(self, transaction_id: str, reason: str | None = None) -> None:"
+      },
+      "go": {
+        "method": "Freeze",
+        "resource": "TransactionsResource",
+        "signature": "func (r *TransactionsResource) Freeze(ctx context.Context, transactionID, reason string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "UnfreezeTransaction": {
+    "operationId": "UnfreezeTransaction",
+    "method": "POST",
+    "path": "/v1/transactions/{transactionId}/unfreeze",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Transactions"
+    ],
+    "capability": "transactions",
+    "sdk": {
+      "typescript": {
+        "method": "unfreeze",
+        "resource": "transactions",
+        "signature": "unfreeze(transactionId: string): Promise<void>"
+      },
+      "java": {
+        "method": "unfreeze",
+        "resource": "transactions()",
+        "signature": "public void unfreeze(UUID transactionId)"
+      },
+      "python": {
+        "method": "unfreeze",
+        "resource": "transactions",
+        "signature": "def unfreeze(self, transaction_id: str) -> None:"
+      },
+      "go": {
+        "method": "Unfreeze",
+        "resource": "TransactionsResource",
+        "signature": "func (r *TransactionsResource) Unfreeze(ctx context.Context, transactionID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateWithdrawalDestination": {
+    "operationId": "CreateWithdrawalDestination",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/withdrawal-destinations",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Withdrawals"
+    ],
+    "capability": "withdrawals",
+    "sdk": {
+      "typescript": {
+        "method": "createDestination",
+        "resource": "withdrawals",
+        "signature": "createDestination(organizationId: string, address: string, assetNetworkId: string): Promise<CreateWithdrawalDestinationResult>"
+      },
+      "java": {
+        "method": "createDestination",
+        "resource": "withdrawals()",
+        "signature": "public CreateWithdrawalDestinationResult createDestination(UUID organizationId, String address, UUID assetNetworkId)"
+      },
+      "python": {
+        "method": "create_destination",
+        "resource": "withdrawals",
+        "signature": "def create_destination(self, organization_id: str, address: str, asset_network_id: str) -> CreateWithdrawalDestinationResult:"
+      },
+      "go": {
+        "method": "CreateDestination",
+        "resource": "WithdrawalsResource",
+        "signature": "func (r *WithdrawalsResource) CreateDestination(ctx context.Context, organizationID, address, assetNetworkID string) (CreateWithdrawalDestinationResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SearchWithdrawals": {
+    "operationId": "SearchWithdrawals",
+    "method": "GET",
+    "path": "/v1/organizations/{organizationId}/withdrawals",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Withdrawals"
+    ],
+    "capability": "withdrawals",
+    "sdk": {
+      "typescript": {
+        "method": "list",
+        "resource": "withdrawals",
+        "signature": "list( organizationId: string, options: { status?: EnumValue<number>; from?: string; to?: string; skip?: number; take?: number } = {}, ): Promise<WithdrawalResponse[]>"
+      },
+      "java": {
+        "method": "list",
+        "resource": "withdrawals()",
+        "signature": "public List<WithdrawalResponse> list(UUID organizationId, WithdrawalStatus status, OffsetDateTime from, OffsetDateTime to, Integer skip, Integer take)"
+      },
+      "python": {
+        "method": "list",
+        "resource": "withdrawals",
+        "signature": "def list( self, organization_id: str, status: EnumValue[int] | None = None, date_from: str | None = None, date_to: str | None = None, skip: int | None = None, take: int | None = None, ) -> list[WithdrawalResponse]:"
+      },
+      "go": {
+        "method": "List",
+        "resource": "WithdrawalsResource",
+        "signature": "func (r *WithdrawalsResource) List(ctx context.Context, organizationID string, opts ListWithdrawalsOptions) ([]WithdrawalResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RequestWithdrawal": {
+    "operationId": "RequestWithdrawal",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/withdrawals",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Withdrawals"
+    ],
+    "capability": "withdrawals",
+    "sdk": {
+      "typescript": {
+        "method": "request",
+        "resource": "withdrawals",
+        "signature": "request( organizationId: string, environmentId: string, accountId: string, withdrawalDestinationId: string, assetNetworkId: string, amount: string, idempotencyKey?: string, ): Promise<WithdrawalResponse>"
+      },
+      "java": {
+        "method": "request",
+        "resource": "withdrawals()",
+        "signature": "public WithdrawalResponse request(UUID organizationId, UUID environmentId, UUID accountId, UUID withdrawalDestinationId, UUID assetNetworkId, BigDecimal amount, String idempotencyKey)"
+      },
+      "python": {
+        "method": "request",
+        "resource": "withdrawals",
+        "signature": "def request( self, organization_id: str, environment_id: str, account_id: str, withdrawal_destination_id: str, asset_network_id: str, amount: Decimal, idempotency_key: str | None = None, ) -> WithdrawalResponse:"
+      },
+      "go": {
+        "method": "Request",
+        "resource": "WithdrawalsResource",
+        "signature": "func (r *WithdrawalsResource) Request( ctx context.Context, organizationID, environmentID, accountID, withdrawalDestinationID, assetNetworkID string, amount decimal.Decimal, idempotencyKey ...string, ) (WithdrawalResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetWithdrawalQuote": {
+    "operationId": "GetWithdrawalQuote",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/withdrawals/quote",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Withdrawals"
+    ],
+    "capability": "withdrawals",
+    "sdk": {
+      "typescript": {
+        "method": "quote",
+        "resource": "withdrawals",
+        "signature": "quote( organizationId: string, environmentId: string, accountId: string, withdrawalDestinationId: string, assetNetworkId: string, amount: string, ): Promise<WithdrawalQuoteResponse>"
+      },
+      "java": {
+        "method": "quote",
+        "resource": "withdrawals()",
+        "signature": "public WithdrawalQuoteResponse quote(UUID organizationId, UUID environmentId, UUID accountId, UUID withdrawalDestinationId, UUID assetNetworkId, BigDecimal amount)"
+      },
+      "python": {
+        "method": "quote",
+        "resource": "withdrawals",
+        "signature": "def quote( self, organization_id: str, environment_id: str, account_id: str, withdrawal_destination_id: str, asset_network_id: str, amount: Decimal, ) -> WithdrawalQuoteResponse:"
+      },
+      "go": {
+        "method": "Quote",
+        "resource": "WithdrawalsResource",
+        "signature": "func (r *WithdrawalsResource) Quote(ctx context.Context, organizationID, environmentID, accountID, withdrawalDestinationID, assetNetworkID string, amount decimal.Decimal) (WithdrawalQuoteResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetWithdrawal": {
+    "operationId": "GetWithdrawal",
+    "method": "GET",
+    "path": "/v1/withdrawals/{withdrawalId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Withdrawals"
+    ],
+    "capability": "withdrawals",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "withdrawals",
+        "signature": "get(withdrawalId: string): Promise<WithdrawalResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "withdrawals()",
+        "signature": "public WithdrawalResponse get(UUID withdrawalId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "withdrawals",
+        "signature": "def get(self, withdrawal_id: str) -> WithdrawalResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "WithdrawalsResource",
+        "signature": "func (r *WithdrawalsResource) Get(ctx context.Context, withdrawalID string) (WithdrawalResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CancelWithdrawal": {
+    "operationId": "CancelWithdrawal",
+    "method": "POST",
+    "path": "/v1/withdrawals/{withdrawalId}/cancel",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Withdrawals"
+    ],
+    "capability": "withdrawals",
+    "sdk": {
+      "typescript": {
+        "method": "cancel",
+        "resource": "withdrawals",
+        "signature": "cancel(withdrawalId: string, reason?: string): Promise<void>"
+      },
+      "java": {
+        "method": "cancel",
+        "resource": "withdrawals()",
+        "signature": "public void cancel(UUID withdrawalId, String reason)"
+      },
+      "python": {
+        "method": "cancel",
+        "resource": "withdrawals",
+        "signature": "def cancel(self, withdrawal_id: str, reason: str | None = None) -> None:"
+      },
+      "go": {
+        "method": "ListAll",
+        "resource": "WithdrawalsResource",
+        "signature": "func (r *WithdrawalsResource) ListAll(ctx context.Context, organizationID string, pageSize int, opts ListWithdrawalsOptions) iter.Seq2[WithdrawalResponse, error]"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RetryWithdrawalBroadcast": {
+    "operationId": "RetryWithdrawalBroadcast",
+    "method": "POST",
+    "path": "/v1/withdrawals/{withdrawalId}/retry-broadcast",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Withdrawals"
+    ],
+    "capability": "withdrawals",
+    "sdk": {
+      "typescript": {
+        "method": "retryBroadcast",
+        "resource": "withdrawals",
+        "signature": "retryBroadcast(withdrawalId: string): Promise<void>"
+      },
+      "java": {
+        "method": "retryBroadcast",
+        "resource": "withdrawals()",
+        "signature": "public void retryBroadcast(UUID withdrawalId)"
+      },
+      "python": {
+        "method": "retry_broadcast",
+        "resource": "withdrawals",
+        "signature": "def retry_broadcast(self, withdrawal_id: str) -> None:"
+      },
+      "go": {
+        "method": "RetryBroadcast",
+        "resource": "WithdrawalsResource",
+        "signature": "func (r *WithdrawalsResource) RetryBroadcast(ctx context.Context, withdrawalID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ListWorkflowsByOrganization": {
+    "operationId": "ListWorkflowsByOrganization",
+    "method": "GET",
+    "path": "/v1/organizations/{organizationId}/workflows",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WorkflowRules"
+    ],
+    "capability": "workflowrules",
+    "sdk": {
+      "typescript": {
+        "method": "list",
+        "resource": "workflows",
+        "signature": "list(organizationId: string): Promise<WorkflowResponse[]>"
+      },
+      "java": {
+        "method": "list",
+        "resource": "workflows()",
+        "signature": "public List<WorkflowResponse> list(UUID organizationId)"
+      },
+      "python": {
+        "method": "list",
+        "resource": "workflows",
+        "signature": "def list(self, organization_id: str) -> List[WorkflowResponse]:"
+      },
+      "go": {
+        "method": "List",
+        "resource": "WorkflowsResource",
+        "signature": "func (r *WorkflowsResource) List(ctx context.Context, organizationID string) ([]WorkflowResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateWorkflow": {
+    "operationId": "CreateWorkflow",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/workflows",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WorkflowRules"
+    ],
+    "capability": "workflowrules",
+    "sdk": {
+      "typescript": {
+        "method": "create",
+        "resource": "workflows",
+        "signature": "create(organizationId: string, name: string): Promise<CreateWorkflowResult>"
+      },
+      "java": {
+        "method": "create",
+        "resource": "workflows()",
+        "signature": "public CreateWorkflowResult create(UUID organizationId, String name)"
+      },
+      "python": {
+        "method": "create",
+        "resource": "workflows",
+        "signature": "def create(self, organization_id: str, name: str) -> CreateWorkflowResult:"
+      },
+      "go": {
+        "method": "Create",
+        "resource": "WorkflowsResource",
+        "signature": "func (r *WorkflowsResource) Create(ctx context.Context, organizationID, name string) (CreateWorkflowResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetWorkflow": {
+    "operationId": "GetWorkflow",
+    "method": "GET",
+    "path": "/v1/workflows/{workflowId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WorkflowRules"
+    ],
+    "capability": "workflowrules",
+    "sdk": {
+      "typescript": {
+        "method": "get",
+        "resource": "workflows",
+        "signature": "get(workflowId: string): Promise<WorkflowResponse>"
+      },
+      "java": {
+        "method": "get",
+        "resource": "workflows()",
+        "signature": "public WorkflowResponse get(UUID workflowId)"
+      },
+      "python": {
+        "method": "get",
+        "resource": "workflows",
+        "signature": "def get(self, workflow_id: str) -> WorkflowResponse:"
+      },
+      "go": {
+        "method": "Get",
+        "resource": "WorkflowsResource",
+        "signature": "func (r *WorkflowsResource) Get(ctx context.Context, workflowID string) (WorkflowResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateWorkflowVersion": {
+    "operationId": "CreateWorkflowVersion",
+    "method": "POST",
+    "path": "/v1/workflows/{workflowId}/versions",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WorkflowRules"
+    ],
+    "capability": "workflowrules",
+    "sdk": {
+      "typescript": {
+        "method": "createVersion",
+        "resource": "workflows",
+        "signature": "createVersion(workflowId: string, states: StateInput[], transitions: TransitionInput[]): Promise<CreateWorkflowVersionResult>"
+      },
+      "java": {
+        "method": "createVersion",
+        "resource": "workflows()",
+        "signature": "public CreateWorkflowVersionResult createVersion(UUID workflowId, List<StateInput> states, List<TransitionInput> transitions)"
+      },
+      "python": {
+        "method": "create_version",
+        "resource": "workflows",
+        "signature": "def create_version(self, workflow_id: str, states: List[StateInput], transitions: List[TransitionInput]) -> CreateWorkflowVersionResult:"
+      },
+      "go": {
+        "method": "CreateVersion",
+        "resource": "WorkflowsResource",
+        "signature": "func (r *WorkflowsResource) CreateVersion(ctx context.Context, workflowID string, states []StateInput, transitions []TransitionInput) (CreateWorkflowVersionResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetWorkflowVersion": {
+    "operationId": "GetWorkflowVersion",
+    "method": "GET",
+    "path": "/v1/workflows/{workflowId}/versions/{workflowVersionId}",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WorkflowRules"
+    ],
+    "capability": "workflowrules",
+    "sdk": {
+      "typescript": {
+        "method": "getVersion",
+        "resource": "workflows",
+        "signature": "getVersion(workflowId: string, workflowVersionId: string): Promise<WorkflowVersionResponse>"
+      },
+      "java": {
+        "method": "getVersion",
+        "resource": "workflows()",
+        "signature": "public WorkflowVersionResponse getVersion(UUID workflowId, UUID workflowVersionId)"
+      },
+      "python": {
+        "method": "get_version",
+        "resource": "workflows",
+        "signature": "def get_version(self, workflow_id: str, workflow_version_id: str) -> WorkflowVersionResponse:"
+      },
+      "go": {
+        "method": "GetVersion",
+        "resource": "WorkflowsResource",
+        "signature": "func (r *WorkflowsResource) GetVersion(ctx context.Context, workflowID, workflowVersionID string) (WorkflowVersionResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "PublishWorkflowVersion": {
+    "operationId": "PublishWorkflowVersion",
+    "method": "POST",
+    "path": "/v1/workflows/{workflowId}/versions/{workflowVersionId}/publish",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WorkflowRules"
+    ],
+    "capability": "workflowrules",
+    "sdk": {
+      "typescript": {
+        "method": "publishVersion",
+        "resource": "workflows",
+        "signature": "publishVersion(workflowId: string, workflowVersionId: string): Promise<void>"
+      },
+      "java": {
+        "method": "publishVersion",
+        "resource": "workflows()",
+        "signature": "public void publishVersion(UUID workflowId, UUID workflowVersionId)"
+      },
+      "python": {
+        "method": "publish_version",
+        "resource": "workflows",
+        "signature": "def publish_version(self, workflow_id: str, workflow_version_id: str) -> None:"
+      },
+      "go": {
+        "method": "PublishVersion",
+        "resource": "WorkflowsResource",
+        "signature": "func (r *WorkflowsResource) PublishVersion(ctx context.Context, workflowID, workflowVersionID string) error"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateRule": {
+    "operationId": "CreateRule",
+    "method": "POST",
+    "path": "/v1/workflows/{workflowId}/versions/{workflowVersionId}/rules",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WorkflowRules"
+    ],
+    "capability": "workflowrules",
+    "sdk": {
+      "typescript": {
+        "method": "createRule",
+        "resource": "workflows",
+        "signature": "createRule( workflowId: string, workflowVersionId: string, fromStateId: string, toStateId: string, eventTypeId: string, conditions: ConditionInput[], ): Promise<CreateRuleResult>"
+      },
+      "java": {
+        "method": "createRule",
+        "resource": "workflows()",
+        "signature": "public CreateRuleResult createRule(UUID workflowId, UUID workflowVersionId, UUID fromStateId, UUID toStateId, UUID eventTypeId, List<ConditionInput> conditions)"
+      },
+      "python": {
+        "method": "create_rule",
+        "resource": "workflows",
+        "signature": "def create_rule( self, workflow_id: str, workflow_version_id: str, from_state_id: str, to_state_id: str, event_type_id: str, conditions: List[ConditionInput], ) -> CreateRuleResult:"
+      },
+      "go": {
+        "method": "CreateRule",
+        "resource": "WorkflowsResource",
+        "signature": "func (r *WorkflowsResource) CreateRule(ctx context.Context, workflowID, workflowVersionID, fromStateID, toStateID, eventTypeID string, conditions []ConditionInput) (CreateRuleResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "ListEventTypes": {
+    "operationId": "ListEventTypes",
+    "method": "GET",
+    "path": "/v1/organizations/{organizationId}/event-types",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WorkflowRules"
+    ],
+    "capability": "workflowrules",
+    "sdk": {
+      "typescript": {
+        "method": "list",
+        "resource": "eventTypes",
+        "signature": "list(organizationId: string): Promise<EventTypeResponse[]>"
+      },
+      "java": {
+        "method": "list",
+        "resource": "eventTypes()",
+        "signature": "public List<EventTypeResponse> list(UUID organizationId)"
+      },
+      "python": {
+        "method": "list",
+        "resource": "event_types",
+        "signature": "def list(self, organization_id: str) -> list[EventTypeResponse]:"
+      },
+      "go": {
+        "method": "List",
+        "resource": "EventTypesResource",
+        "signature": "func (r *EventTypesResource) List(ctx context.Context, organizationID string) ([]EventTypeResponse, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "CreateEventType": {
+    "operationId": "CreateEventType",
+    "method": "POST",
+    "path": "/v1/organizations/{organizationId}/event-types",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WorkflowRules"
+    ],
+    "capability": "workflowrules",
+    "sdk": {
+      "typescript": {
+        "method": "create",
+        "resource": "eventTypes",
+        "signature": "create(organizationId: string, name: string): Promise<CreateEventTypeResult>"
+      },
+      "java": {
+        "method": "create",
+        "resource": "eventTypes()",
+        "signature": "public CreateEventTypeResult create(UUID organizationId, String name)"
+      },
+      "python": {
+        "method": "create",
+        "resource": "event_types",
+        "signature": "def create(self, organization_id: str, name: str) -> CreateEventTypeResult:"
+      },
+      "go": {
+        "method": "Create",
+        "resource": "EventTypesResource",
+        "signature": "func (r *EventTypesResource) Create(ctx context.Context, organizationID, name string) (CreateEventTypeResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "IngestEvent": {
+    "operationId": "IngestEvent",
+    "method": "POST",
+    "path": "/v1/applications/{applicationId}/events",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WorkflowRules"
+    ],
+    "capability": "workflowrules",
+    "sdk": {
+      "typescript": {
+        "method": "ingest",
+        "resource": "events",
+        "signature": "ingest( applicationId: string, workflowVersionId: string, currentStateId: string, transactionReference: string, eventTypeId: string, eventSource: EnumValue<number>, payload: Record<string, string> | undefined, idempotencyKey?: string, ): Promise<EventIngestionResult>"
+      },
+      "java": {
+        "method": "ingest",
+        "resource": "events()",
+        "signature": "public EventIngestionResult ingest(UUID applicationId, UUID workflowVersionId, UUID currentStateId, UUID transactionReference, UUID eventTypeId, EventSource eventSource, Map<String, String> payload, String idempotencyKey)"
+      },
+      "python": {
+        "method": "ingest",
+        "resource": "events",
+        "signature": "def ingest( self, application_id: str, workflow_version_id: str, current_state_id: str, transaction_reference: str, event_type_id: str, event_source: EnumValue[int], payload: dict[str, str] | None = None, idempotency_key: str | None = None, ) -> EventIngestionResult:"
+      },
+      "go": {
+        "method": "Ingest",
+        "resource": "EventsResource",
+        "signature": "func (r *EventsResource) Ingest( ctx context.Context, applicationID, workflowVersionID, currentStateID, transactionReference, eventTypeID string, eventSource EventSource, payload map[string]string, idempotencyKey ...string, ) (EventIngestionResult, error)"
+      }
+    },
+    "matrixStatus": {
+      "java": "DONE",
+      "typescript": "DONE",
+      "python": "DONE",
+      "go": "DONE"
+    },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  }
+}

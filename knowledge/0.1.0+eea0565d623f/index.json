@@ -1,0 +1,132 @@
+{
+  "capabilities": [
+    "accountholders",
+    "accounts",
+    "apikeys",
+    "applications",
+    "assetnetworkcatalog",
+    "auth",
+    "deposits",
+    "environments",
+    "executioncustody",
+    "ledger",
+    "members",
+    "notifications",
+    "organizations",
+    "payout",
+    "sandbox",
+    "settlement",
+    "transactions",
+    "withdrawals",
+    "workflowrules"
+  ],
+  "concepts": [
+    "Settlement",
+    "Payout",
+    "obrigação econômica (economic obligation)",
+    "PlatformFee",
+    "PricingPolicy configuration",
+    "SelfCustody",
+    "NetworkCostPayerAccount",
+    "CUSTOMER_RESOURCES",
+    "ExecutionSource",
+    "API Key",
+    "Deposit",
+    "Withdrawal multi-source",
+    "Settlement multi-source",
+    "ManagedCustody availability",
+    "PayoutPolicy (public modes)",
+    "Production readiness"
+  ],
+  "recipes": [
+    {
+      "id": "marketplace",
+      "recipeStatus": "READY",
+      "referenceProjectStatus": "READY"
+    },
+    {
+      "id": "wallet-payment-app",
+      "recipeStatus": "SUPPORTED_CONCEPT",
+      "referenceProjectStatus": "PLANNED"
+    },
+    {
+      "id": "service-milestone",
+      "recipeStatus": "SUPPORTED_CONCEPT",
+      "referenceProjectStatus": "PLANNED"
+    }
+  ],
+  "errorCodes": [
+    "IDEMPOTENCY_KEY_CONFLICT",
+    "PAYOUT_BATCH_IDEMPOTENCY_KEY_CONFLICT",
+    "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE",
+    "CUSTOMER_NETWORK_RESOURCE_INSUFFICIENT",
+    "CUSTOMER_RESOURCE_STAKE_INVALID",
+    "EXECUTION_SOURCE_ALREADY_REGISTERED",
+    "NETWORK_COST_PAYER_ACCOUNT_ALREADY_REGISTERED",
+    "EXECUTION_DESTINATION_ALREADY_REGISTERED",
+    "PAYOUT_POLICY_MODE_NOT_SUPPORTED",
+    "PAYOUT_BATCH_TRIGGER_NOT_SUPPORTED",
+    "VALIDATION_ERROR",
+    "SIGNED_TRANSACTION_MISMATCH"
+  ],
+  "webhookEvents": [
+    "transaction.created",
+    "transaction.funded",
+    "transaction.reserved",
+    "transaction.cancelled",
+    "transaction.frozen",
+    "transaction.unfrozen",
+    "transaction.settled",
+    "transaction.refunded",
+    "payment_intent.created",
+    "payment_intent.cancelled",
+    "payment_intent.expired",
+    "payment_intent.late_deposit_received",
+    "deposit.address_generated",
+    "deposit.detected",
+    "deposit.confirming",
+    "deposit.confirmed",
+    "deposit.rejected",
+    "deposit.reorg_frozen",
+    "deposit.under_review",
+    "settlement.executed",
+    "settlement.failed",
+    "settlement.fee_applied",
+    "settlement.split_portion_retained",
+    "settlement.split_portion_released",
+    "refund.executed",
+    "refund.rejected",
+    "withdrawal.requested",
+    "withdrawal.approved",
+    "withdrawal.rejected",
+    "withdrawal.cancelled",
+    "withdrawal.broadcast",
+    "withdrawal.broadcast_failed",
+    "withdrawal.confirmed",
+    "withdrawal.failed",
+    "withdrawal.requires_reconciliation",
+    "withdrawal_destination.registered"
+  ],
+  "projects": [
+    {
+      "id": "marketplace-mercatto",
+      "status": "READY",
+      "pattern": "marketplace"
+    },
+    {
+      "id": "quickstart-node",
+      "status": "READY",
+      "pattern": "getting-started"
+    }
+  ],
+  "counts": {
+    "publicOperations": 117,
+    "excludedAdminOperations": 37,
+    "capabilities": 19,
+    "errors": 12,
+    "webhookEvents": 36,
+    "recipes": 3,
+    "projects": 2,
+    "conflicts": 0
+  }
+}

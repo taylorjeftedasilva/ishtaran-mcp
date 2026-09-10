@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "knowledgeVersion": "0.1.0+eea0565d623f",
+  "generatedAt": "2026-09-09T21:40:58.316Z",
+  "sourceCommit": "51f148541d0e98e43b8d29c70a69bf25121bf6a3",
+  "openApiVersion": "v1",
+  "openApiHash": "a91e482943a06d3c29749b94fb3d5a29ae2ec5d80cff7a9c6ab171b687807590",
+  "bundleHash": "eea0565d623f94a4dc29adbf9072fc42ce304d2a4ab5806a50b7ac59780d524e",
+  "supportedSdkVersions": [
+    {
+      "language": "typescript",
+      "version": "0.1.3"
+    },
+    {
+      "language": "java",
+      "version": "0.1.3"
+    },
+    {
+      "language": "python",
+      "version": "0.1.3"
+    },
+    {
+      "language": "go",
+      "version": "0.1.3"
+    }
+  ],
+  "minimumCompatibleMcpVersion": "0.1.0",
+  "environmentStatus": {
+    "local": "active",
+    "sandbox": "active",
+    "production": "not_active_for_real_crypto_flows"
+  },
+  "signature": null,
+  "signatureAlgorithm": null
+}

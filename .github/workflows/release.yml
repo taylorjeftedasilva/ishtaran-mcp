@@ -1,0 +1,73 @@
+# Triggered only by a protected version tag (never a pull request, never a branch push) --
+# pushing a `v*` tag requires write access to this repository, so a fork/PR can never trigger a
+# publish. Mirrors sdks/typescript's release.yml pattern exactly (same monorepo, same npm
+# Trusted Publishing/OIDC setup) rather than inventing a new one. Two jobs, least privilege:
+# `test` only reads the repo; `publish` is the only job with `id-token: write` (npm Trusted
+# Publishing/OIDC -- no long-lived NPM_TOKEN secret needed) and runs behind the `npm-release`
+# environment, which the repository owner can gate with required reviewers in
+# Settings -> Environments. This is the ONLY path that can publish -- there is no publish step
+# anywhere in ci.yml, and no automatic publish on push to main.
+#
+# No `npm run build:knowledge` step: the Knowledge Bundle is committed, pre-built data,
+# regenerated and published from the Ishtaran monorepo (which has access to the live OpenAPI
+# contract and all 4 SDKs' source trees) -- this repo only builds/tests/publishes the Engine
+# against whatever bundle is already committed under mcp/knowledge/.
+
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    environment: npm-release
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          # npm Trusted Publishing/OIDC (id-token: write above) requires npm CLI >= 11.5.1, which
+          # itself requires Node >= 22.22 -- see sdks/typescript/.github/workflows/release.yml
+          # for the live-confirmed reason Node 20's bundled npm silently skips OIDC entirely.
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install -g npm@latest
+      - run: npm ci
+      - run: npm run build
+      # Fails the job if the tag and package.json version ever drift -- never publish a version
+      # that doesn't match what was tagged/reviewed.
+      - name: Verify tag matches package.json version
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          PKG_VERSION="$(node -p "require('./package.json').version")"
+          if [ "$TAG_VERSION" != "$PKG_VERSION" ]; then
+            echo "Tag v$TAG_VERSION does not match package.json version $PKG_VERSION"
+            exit 1
+          fi
+      - run: npm pack --dry-run
+      # --provenance requires `id-token: write` (above) and publishes a signed build provenance
+      # attestation; --access public is required for a scoped package (@ishtaran/mcp defaults to
+      # private otherwise).
+      - run: npm publish --provenance --access public

@@ -1,0 +1,350 @@
+{
+  "accountholders": {
+    "id": "accountholders",
+    "operations": [
+      "CreateAccountHolderInvitation",
+      "RevokeRelationship",
+      "SignUpAccountHolder",
+      "LoginAccountHolder",
+      "GetAccountHolderMe",
+      "ClaimAccountHolderInvitation",
+      "SignUpAndClaimAccountHolderInvitation"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "accounts": {
+    "id": "accounts",
+    "operations": [
+      "ListAccountsByOrganization",
+      "CreateAccount",
+      "AuthorizeAccountForApplication",
+      "GetAccount",
+      "CloseAccount",
+      "FreezeAccount",
+      "UnfreezeAccount"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "apikeys": {
+    "id": "apikeys",
+    "operations": [
+      "RotateApiKey",
+      "RevokeApiKey"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "applications": {
+    "id": "applications",
+    "operations": [
+      "ListEnvironments",
+      "CreateEnvironment",
+      "ArchiveApplication",
+      "SuspendApplication",
+      "ReactivateApplication"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "assetnetworkcatalog": {
+    "id": "assetnetworkcatalog",
+    "operations": [
+      "ListAssets",
+      "GetAsset",
+      "ListNetworks",
+      "GetNetwork",
+      "ListAssetNetworks",
+      "GetAssetNetwork"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "auth": {
+    "id": "auth",
+    "operations": [
+      "Login",
+      "RefreshToken",
+      "RequestPasswordReset",
+      "ConfirmPasswordReset",
+      "SignUp"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "deposits": {
+    "id": "deposits",
+    "operations": [
+      "CreatePaymentIntent",
+      "GetPaymentIntent",
+      "GetDeposit"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "environments": {
+    "id": "environments",
+    "operations": [
+      "ListApiKeys",
+      "GenerateApiKey"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "executioncustody": {
+    "id": "executioncustody",
+    "operations": [
+      "RegisterWallet",
+      "AllocateDepositAddress",
+      "GetWallet",
+      "GetWalletPublicMaterial",
+      "CreateSigningRequest",
+      "GetNetworkExecutionQuote",
+      "GetSigningRequest",
+      "SubmitSignedTransaction",
+      "RegisterExecutionDestination",
+      "RegisterExecutionSource",
+      "SyncCustomerResourceStake",
+      "RegisterNetworkCostPayerAccount",
+      "UpdateNetworkResourcePreference"
+    ],
+    "relatedErrors": [
+      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE",
+      "CUSTOMER_NETWORK_RESOURCE_INSUFFICIENT",
+      "CUSTOMER_RESOURCE_STAKE_INVALID",
+      "EXECUTION_SOURCE_ALREADY_REGISTERED",
+      "NETWORK_COST_PAYER_ACCOUNT_ALREADY_REGISTERED",
+      "SIGNED_TRANSACTION_MISMATCH"
+    ],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "ledger": {
+    "id": "ledger",
+    "operations": [
+      "GetAccountBalance",
+      "GetAccountLedgerEntries"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [
+      "wallet-payment-app"
+    ],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "members": {
+    "id": "members",
+    "operations": [
+      "AcceptInvite",
+      "ListMembers",
+      "InviteMember",
+      "AssignMemberRole",
+      "SuspendMember",
+      "ReactivateMember",
+      "RemoveMember"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "notifications": {
+    "id": "notifications",
+    "operations": [
+      "SearchWebhookEndpoints",
+      "ConfigureWebhookEndpoint",
+      "GetWebhookEndpoint",
+      "RotateWebhookEndpointSecret",
+      "DeactivateWebhookEndpoint",
+      "SearchWebhookDeliveries",
+      "GetWebhookDelivery",
+      "RedeliverWebhook"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "organizations": {
+    "id": "organizations",
+    "operations": [
+      "CreateOrganization",
+      "GetOrganization",
+      "SuspendOrganization",
+      "ReactivateOrganization",
+      "ListApplications",
+      "CreateApplication"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "payout": {
+    "id": "payout",
+    "operations": [
+      "GetPayableSummary",
+      "CreatePayoutBatch",
+      "GetPayoutBatch"
+    ],
+    "relatedErrors": [
+      "PAYOUT_BATCH_IDEMPOTENCY_KEY_CONFLICT",
+      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE",
+      "PAYOUT_BATCH_TRIGGER_NOT_SUPPORTED"
+    ],
+    "relatedWebhooks": [],
+    "relatedRecipes": [
+      "marketplace"
+    ],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "sandbox": {
+    "id": "sandbox",
+    "operations": [
+      "SandboxFaucet",
+      "SandboxSimulateDeposit",
+      "SandboxSimulateConfirmation",
+      "SandboxSimulateBroadcastConfirmation",
+      "SandboxSimulateWithdrawal",
+      "SandboxSetObservedTreasuryBalance",
+      "GetSandboxObservedTreasuryBalance",
+      "GetSandboxObservedAddress",
+      "GetSandboxBroadcastAttempt"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "settlement": {
+    "id": "settlement",
+    "operations": [
+      "SearchSettlements",
+      "ExecuteSettlement",
+      "GetSettlement",
+      "ReleaseRetainedSplit",
+      "SearchRefunds",
+      "ExecuteRefund",
+      "GetRefund",
+      "GetTransactionSettlementSummary"
+    ],
+    "relatedErrors": [
+      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE"
+    ],
+    "relatedWebhooks": [],
+    "relatedRecipes": [
+      "marketplace",
+      "service-milestone"
+    ],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "transactions": {
+    "id": "transactions",
+    "operations": [
+      "CreateTransaction",
+      "GetTransaction",
+      "GetTransactionState",
+      "ReserveTransactionBalance",
+      "CancelTransaction",
+      "FreezeTransaction",
+      "UnfreezeTransaction"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "withdrawals": {
+    "id": "withdrawals",
+    "operations": [
+      "CreateWithdrawalDestination",
+      "SearchWithdrawals",
+      "RequestWithdrawal",
+      "GetWithdrawalQuote",
+      "GetWithdrawal",
+      "CancelWithdrawal",
+      "RetryWithdrawalBroadcast"
+    ],
+    "relatedErrors": [
+      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE"
+    ],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "workflowrules": {
+    "id": "workflowrules",
+    "operations": [
+      "ListWorkflowsByOrganization",
+      "CreateWorkflow",
+      "GetWorkflow",
+      "CreateWorkflowVersion",
+      "GetWorkflowVersion",
+      "PublishWorkflowVersion",
+      "CreateRule",
+      "ListEventTypes",
+      "CreateEventType",
+      "IngestEvent"
+    ],
+    "relatedErrors": [],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  }
+}

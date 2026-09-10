@@ -1,0 +1,73 @@
+{
+  "name": "@ishtaran/mcp",
+  "version": "0.1.0",
+  "description": "Ishtaran MCP server -- the official AI-agent knowledge/discovery/planning/validation layer for the Ishtaran platform. Never executes financial operations; the SDK does that.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "ishtaran-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "knowledge",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ishtaran",
+    "llm-tools",
+    "ai-agents",
+    "payments",
+    "crypto-escrow"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:knowledge": "tsx build/index.ts",
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:contract": "vitest run tests/contract",
+    "test:golden": "vitest run tests/golden",
+    "test:antipattern": "vitest run tests/anti-pattern",
+    "test:marketplace": "vitest run tests/marketplace",
+    "test:update": "vitest run tests/update",
+    "ci": "npm run build:knowledge && npm run typecheck && npm run test:unit && npm run test:contract && npm run test:golden && npm run test:antipattern && npm run test:marketplace && npm run test:update && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "js-yaml": "^4.1.0",
+    "@types/js-yaml": "^4.0.9",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^4.1.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylorjeftedasilva/ishtaran-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/taylorjeftedasilva/ishtaran-mcp/issues"
+  },
+  "homepage": "https://ishtaran.com"
+}
