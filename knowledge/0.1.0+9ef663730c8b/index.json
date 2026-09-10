@@ -36,7 +36,8 @@
     "Settlement multi-source",
     "ManagedCustody availability",
     "PayoutPolicy (public modes)",
-    "Production readiness"
+    "Production readiness",
+    "Ledger Entry"
   ],
   "recipes": [
     {

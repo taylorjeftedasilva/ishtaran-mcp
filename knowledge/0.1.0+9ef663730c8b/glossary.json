@@ -134,5 +134,14 @@
     "sources": [
       "docs/getting-started.md"
     ]
+  },
+  {
+    "term": "Ledger Entry",
+    "contrastsWith": "Account balance",
+    "definition": "An Account's balance is never mutated directly -- every change is an immutable, append-only Ledger Entry created via recordEntry. Current balance is always a derived value (the sum of that Account's Ledger Entries), never a field that gets written to in place.",
+    "commonConfusion": "Do not model an Account balance as a single mutable number you would update after a Settlement/Payout/Withdrawal -- the real invariant is that only new Ledger Entries are ever appended, which is also why every balance change is auditable after the fact.",
+    "sources": [
+      "docs/architecture/CUSTODY-EXECUTION-MODES.md"
+    ]
   }
 ]

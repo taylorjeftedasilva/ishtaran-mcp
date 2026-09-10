@@ -37,6 +37,9 @@
     "Production readiness": [
       "sandbox",
       "transactions"
+    ],
+    "Ledger Entry": [
+      "ledger"
     ]
   },
   "capabilityToOperations": {
