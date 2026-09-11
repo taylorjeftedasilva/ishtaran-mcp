@@ -676,6 +676,33 @@
   },
   {
     "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "creditWalletBalance",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/wallet-balance/credit",
+    "signature": "creditWalletBalance(environmentId: string, address: string, assetNetworkId: string, amount: string, idempotencyKey: string): Promise<SandboxWalletBalanceResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "transferWalletBalance",
+    "httpVerb": "POST",
+    "pathShape": "/v1/environments/*/sandbox/wallet-balance/transfer",
+    "signature": "transferWalletBalance( environmentId: string, fromAddress: string, toAddress: string, assetNetworkId: string, amount: string, idempotencyKey: string, ): Promise<SandboxWalletTransferResponse>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../sandboxResource.ts",
+    "resourceAccessor": "sandbox",
+    "methodName": "getWalletBalance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/environments/*/sandbox/wallet-balance",
+    "signature": "getWalletBalance(environmentId: string, assetNetworkId: string, address: string): Promise<SandboxWalletBalanceResponse>"
+  },
+  {
+    "language": "typescript",
     "resourceFile": "sdks/typescript/.../settlementsResource.ts",
     "resourceAccessor": "settlements",
     "methodName": "executeSettlement",
@@ -808,6 +835,33 @@
     "httpVerb": "POST",
     "pathShape": "/v1/transactions/*/unfreeze",
     "signature": "unfreeze(transactionId: string): Promise<void>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../walletBalanceResource.ts",
+    "resourceAccessor": "walletBalance",
+    "methodName": "getBalance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/wallet-balances",
+    "signature": "getBalance(accountId: string, environmentId: string, assetNetworkId: string): Promise<WalletBalanceResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../walletBalanceResource.ts",
+    "resourceAccessor": "walletBalance",
+    "methodName": "refreshBalance",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/wallet-balances/refresh",
+    "signature": "refreshBalance(accountId: string, environmentId: string, assetNetworkId: string): Promise<WalletBalanceResult>"
+  },
+  {
+    "language": "typescript",
+    "resourceFile": "sdks/typescript/.../walletBalanceResource.ts",
+    "resourceAccessor": "walletBalance",
+    "methodName": "getAssetBalances",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/wallet-balances/aggregate",
+    "signature": "getAssetBalances(accountId: string, environmentId: string, assetNetworkIds: string[]): Promise<WalletAssetBalanceResult[]>"
   },
   {
     "language": "typescript",

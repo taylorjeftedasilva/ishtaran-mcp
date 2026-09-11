@@ -58,12 +58,12 @@ describe('toolLogic', () => {
     expect(recipe.referenceProjectDetail?.id).toBe('marketplace-mercatto');
   });
 
-  it('getRecipe wallet-payment-app is SUPPORTED_CONCEPT with a PLANNED reference project, never NOT_SUPPORTED', () => {
+  it('getRecipe wallet-payment-app is SUPPORTED_CONCEPT with a READY reference project (promoted 2026-09-11), never NOT_SUPPORTED', () => {
     const recipe = logic.getRecipe(bundle, { recipeId: 'wallet-payment-app' }) as any;
     expect(recipe.recipeStatus).toBe('SUPPORTED_CONCEPT');
-    expect(recipe.referenceProjectStatus).toBe('PLANNED');
-    expect(recipe.referenceProject).toBeNull();
-    expect(recipe.referenceProjectDetail).toBeNull();
+    expect(recipe.referenceProjectStatus).toBe('READY');
+    expect(recipe.referenceProject).toBe('wallet-payment-app');
+    expect(recipe.referenceProjectDetail?.id).toBe('wallet-payment-app');
   });
 
   it('planIntegration resolves "marketplace" goal text to the marketplace recipe with real operations', () => {

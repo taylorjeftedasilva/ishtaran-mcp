@@ -5,9 +5,9 @@
     "description": "A complete two-sided marketplace reference implementation: buyer/seller Accounts, PaymentIntent funding, Transaction reserve, Settlement with PlatformFee and Split, MANUAL Payout, and 14+ scenario scripts exercising the full lifecycle including refunds, freezes, and network-execution edge cases.",
     "status": "READY",
     "pattern": "marketplace",
-    "repositoryUrl": "https://github.com/taylorjeftedasilva/smartcontract (monorepo path: examples/marketplace-mercatto)",
+    "repositoryUrl": "https://github.com/taylorjeftedasilva/ishtaran-mercatto-example",
     "defaultBranch": "main",
-    "revision": "6b91c4b64a9d65f79b2c329fd5eb46e85a6d80bb",
+    "revision": "62cb70bd0b4ca202d75baba6951c6666030a4ac7",
     "sourceArchiveUrl": null,
     "contentHash": null,
     "languages": [
@@ -25,7 +25,8 @@
       "payouts",
       "refunds",
       "webhooks",
-      "network-execution"
+      "network-execution",
+      "walletbalance"
     ],
     "sdk": [
       {
@@ -52,7 +53,7 @@
       "Uses Sandbox only, never Production.",
       "THRESHOLD/SCHEDULED PayoutPolicy not exercised (not publicly supported)."
     ],
-    "lastValidatedAt": "2026-09-10T06:14:14-03:00"
+    "lastValidatedAt": "2026-09-11T12:24:51-03:00"
   },
   {
     "id": "quickstart-node",
@@ -62,7 +63,7 @@
     "pattern": "getting-started",
     "repositoryUrl": "https://github.com/taylorjeftedasilva/smartcontract (monorepo path: examples/quickstart-node)",
     "defaultBranch": "main",
-    "revision": "6b91c4b64a9d65f79b2c329fd5eb46e85a6d80bb",
+    "revision": "62cb70bd0b4ca202d75baba6951c6666030a4ac7",
     "sourceArchiveUrl": null,
     "contentHash": null,
     "languages": [
@@ -101,41 +102,65 @@
     "knownLimitations": [
       "Does not cover Settlement, Payout, Withdrawal, or webhooks -- not a substitute for the marketplace/wallet/service recipes."
     ],
-    "lastValidatedAt": "2026-09-10T06:14:14-03:00"
+    "lastValidatedAt": "2026-09-11T12:24:51-03:00"
   },
   {
     "id": "wallet-payment-app",
-    "name": "Wallet / payment app (planned reference)",
-    "description": "A planned reference implementation for the wallet-payment-app recipe (end-user balance, deposit, withdrawal). The underlying capabilities are real and supported today (see the wallet-payment-app recipe, recipeStatus: SUPPORTED_CONCEPT) -- no runnable code exists for this pattern yet.",
-    "status": "PLANNED",
+    "name": "Wallet & Payment App (self-custody wallet reference)",
+    "description": "A self-custody wallet and payment app: the private key stays entirely client-side, the balance shown is the wallet's own observed on-chain state (WalletBalance, never Ledger), and Send (direct wallet-to-wallet transfer) and Pay (fulfillment of a Payment Request, drives the real Transaction/PaymentIntent/Settlement pipeline) are kept structurally distinct throughout. Also demonstrates app-owner-configurable monetization (a RevenueStrategy decides who absorbs the platform fee) without the app writing its own fee/settlement logic. Real, runnable reference code -- verified live against the public Sandbox (manual product validation plus a 9-scenario E2E battery). Its recipe entry (id: wallet-payment-app) describes an OLDER, simpler Ledger-only backend-custody pattern -- this reference project does NOT follow that pattern; see its own README/GAPS.md for the real, self-custody architecture actually implemented.",
+    "status": "READY",
     "pattern": "wallet-payment-app",
-    "repositoryUrl": null,
-    "defaultBranch": null,
-    "revision": null,
+    "repositoryUrl": "https://github.com/taylorjeftedasilva/ishtaran-wallet-example",
+    "defaultBranch": "main",
+    "revision": "62cb70bd0b4ca202d75baba6951c6666030a4ac7",
     "sourceArchiveUrl": null,
     "contentHash": null,
-    "languages": [],
-    "frameworks": [],
+    "languages": [
+      "typescript"
+    ],
+    "frameworks": [
+      "node",
+      "react",
+      "fastify"
+    ],
     "capabilities": [
       "accounts",
       "deposits",
-      "ledger",
-      "withdrawals"
+      "transactions",
+      "settlements",
+      "withdrawals",
+      "walletbalance",
+      "webhooks"
     ],
-    "sdk": [],
+    "sdk": [
+      {
+        "language": "typescript",
+        "version": "0.1.3"
+      }
+    ],
     "difficulty": "intermediate",
     "tags": [
       "wallet",
       "payments",
-      "planned"
+      "self-custody",
+      "wallet-balance"
     ],
-    "docs": [],
-    "entryPoints": [],
+    "docs": [
+      "README.md",
+      "GAPS.md"
+    ],
+    "entryPoints": [
+      "apps/api/src/server.ts",
+      "apps/web/src/App.tsx",
+      "e2e/wallet/run.ts"
+    ],
     "minimumKnowledgeVersion": "0.1.0",
     "knownLimitations": [
-      "PLANNED only -- no reference code exists yet. Do not present this as available; use the wallet-payment-app recipe (get_recipe) for the supported pattern instead."
+      "Browser-local private key storage is a demo convenience, not a production key-management solution.",
+      "Production blockchain execution is not available on Ishtaran yet -- Sandbox only.",
+      "Does not follow this project's own wallet-payment-app recipe text (that recipe predates this implementation and describes a simpler Ledger-only pattern) -- read the repo's own docs for the real architecture, not the recipe."
     ],
-    "lastValidatedAt": "2026-09-10T06:14:14-03:00"
+    "lastValidatedAt": "2026-09-11T12:24:51-03:00"
   },
   {
     "id": "service-milestone",
@@ -169,6 +194,6 @@
     "knownLimitations": [
       "PLANNED only -- no reference code exists yet. Do not present this as available; use the service-milestone recipe (get_recipe) for the supported pattern instead."
     ],
-    "lastValidatedAt": "2026-09-10T06:14:14-03:00"
+    "lastValidatedAt": "2026-09-11T12:24:51-03:00"
   }
 ]

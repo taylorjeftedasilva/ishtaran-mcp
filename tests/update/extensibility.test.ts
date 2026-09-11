@@ -106,11 +106,14 @@ it('a new READY project + recipe published remotely is discoverable after update
   expect(recipe.referenceProjectDetail.id).toBe('service-marketplace');
   expect(recipe.referenceProjectDetail.status).toBe('READY');
 
-  // 6. A PLANNED project must never be reported as if it were available -- sanity check the
-  //    inverse still holds for the one recipe we did NOT touch.
-  const stillPlanned = getRecipe(updated, { recipeId: 'wallet-payment-app' }) as any;
-  expect(stillPlanned.referenceProjectStatus).toBe('PLANNED');
-  expect(stillPlanned.referenceProjectDetail).toBeNull();
+  // 6. A recipe this synthetic update does NOT touch must keep serving its own correct, real
+  //    state post-swap -- proves the update never corrupts unrelated content. Originally used
+  //    wallet-payment-app as the untouched control while it was still PLANNED; promoted to READY
+  //    2026-09-11 (real reference project published), so marketplace -- also untouched by this
+  //    test's payload, and READY with a real referenceProjectDetail -- serves the same purpose.
+  const untouched = getRecipe(updated, { recipeId: 'marketplace' }) as any;
+  expect(untouched.referenceProjectStatus).toBe('READY');
+  expect(untouched.referenceProjectDetail?.id).toBe('marketplace-mercatto');
 
   // Sanity: an operation lookup untouched by the update still resolves correctly post-swap.
   expect('error' in chooseSdk(updated, { operationId: 'ExecuteSettlement' })).toBe(false);

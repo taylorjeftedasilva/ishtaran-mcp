@@ -105,8 +105,8 @@ export const RECIPES: Recipe[] = [
     description:
       'An end-user-facing wallet where each user has an Account, can deposit crypto, see a Ledger balance, and withdraw to their own external address, subject to a cooldown/approval policy.',
     recipeStatus: 'SUPPORTED_CONCEPT',
-    referenceProjectStatus: 'PLANNED',
-    referenceProject: null,
+    referenceProjectStatus: 'READY',
+    referenceProject: 'wallet-payment-app',
     use_cases: ['Consumer crypto wallet', 'Balance-holding payment app', 'Peer-funded prepaid account'],
     required_capabilities: [
       'Account creation per end user',
@@ -147,16 +147,18 @@ export const RECIPES: Recipe[] = [
       'Payout != Withdrawal -- this pattern uses RequestWithdrawal directly (the end-user-facing primitive), not the organization-level Payout/PayoutBatch mechanism.',
       'A single Withdrawal draws from exactly one Account -- multi-source aggregation is not supported.',
       'The end-user client must only ever hold an AccountHolder JWT, never the API Key.',
+      'Wallet Balance != Ledger -- if the app shows the wallet\'s own on-chain state (client.walletBalance) rather than this recipe\'s Ledger-only balance, never sum or substitute one for the other (see the walletbalance capability).',
     ],
     errors: ['NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE', 'VALIDATION_ERROR'],
     webhooks: ['deposit.confirmed', 'withdrawal.requested', 'withdrawal.approved', 'withdrawal.broadcast', 'withdrawal.confirmed', 'withdrawal.failed'],
     idempotency: 'RequestWithdrawal must carry a deterministic Idempotency-Key per real withdrawal intent.',
     security: ['Never embed the API Key client-side.', 'Verify webhook signatures server-side before updating any UI-facing balance state.'],
-    example: null,
+    example: 'wallet-payment-app reference project (READY, see get_project) -- note it implements a DIFFERENT, richer architecture than this recipe\'s own flow above: self-custody (client-side private key, never a backend-held wallet) plus WalletBalance for the displayed balance, not this recipe\'s Ledger-only/backend-custody pattern. Read this recipe for the underlying capability catalog; read the project\'s own docs for the actual architecture it runs.',
     anti_patterns: [
       'Shipping the API Key inside a mobile app to let it call RequestWithdrawal directly.',
       'Treating Withdrawal as multi-source-capable.',
       'Polling instead of consuming webhooks for withdrawal state changes.',
+      'Assuming the wallet-payment-app reference project follows this recipe\'s Ledger-only/backend-custody flow verbatim -- it doesn\'t; it\'s self-custody.',
     ],
   },
   {

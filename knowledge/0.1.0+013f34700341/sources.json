@@ -1,7 +1,7 @@
 [
   {
     "path": "website/openapi/ishtaran-api.json",
-    "contentHash": "a91e482943a06d3c29749b94fb3d5a29ae2ec5d80cff7a9c6ab171b687807590"
+    "contentHash": "a621b46094a1cd6bbe3e45ca73fb1bffc7b22623f2d85afc415d1216bd39e1ea"
   },
   {
     "path": "sdk-feature-matrix.json",
@@ -21,7 +21,7 @@
   },
   {
     "path": "website/docs/getting-started.md",
-    "contentHash": "0fa3c369c47ed08692eb0f9c81dcacc780ef74a96e7cf82c0f6c680fe809618d"
+    "contentHash": "0d814c470efc396e02a2a73e1425377ef5a8082e2ae8694f8f9b55b5c2b0b136"
   },
   {
     "path": "website/docs/concepts/authentication.md",

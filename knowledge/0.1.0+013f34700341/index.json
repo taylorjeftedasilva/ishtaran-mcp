@@ -17,6 +17,7 @@
     "sandbox",
     "settlement",
     "transactions",
+    "walletbalance",
     "withdrawals",
     "workflowrules"
   ],
@@ -48,7 +49,7 @@
     {
       "id": "wallet-payment-app",
       "recipeStatus": "SUPPORTED_CONCEPT",
-      "referenceProjectStatus": "PLANNED"
+      "referenceProjectStatus": "READY"
     },
     {
       "id": "service-milestone",
@@ -121,7 +122,7 @@
     },
     {
       "id": "wallet-payment-app",
-      "status": "PLANNED",
+      "status": "READY",
       "pattern": "wallet-payment-app"
     },
     {
@@ -131,9 +132,9 @@
     }
   ],
   "counts": {
-    "publicOperations": 117,
+    "publicOperations": 120,
     "excludedAdminOperations": 37,
-    "capabilities": 19,
+    "capabilities": 20,
     "errors": 12,
     "webhookEvents": 36,
     "recipes": 3,

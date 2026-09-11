@@ -197,6 +197,11 @@
       "ListEventTypes",
       "CreateEventType",
       "IngestEvent"
+    ],
+    "walletbalance": [
+      "GetWalletBalance",
+      "RefreshWalletBalance",
+      "GetWalletAssetBalances"
     ]
   },
   "operationToErrors": {
