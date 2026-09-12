@@ -104,7 +104,9 @@
       "GetPaymentIntent",
       "GetDeposit"
     ],
-    "relatedErrors": [],
+    "relatedErrors": [
+      "ORGANIZATION_SETTLEMENT_RESTRICTED"
+    ],
     "relatedWebhooks": [],
     "relatedRecipes": [],
     "sources": [
@@ -254,6 +256,9 @@
       "SandboxSimulateWithdrawal",
       "SandboxSetObservedTreasuryBalance",
       "GetSandboxObservedTreasuryBalance",
+      "SandboxCreditWalletBalance",
+      "SandboxTransferWalletBalance",
+      "GetSandboxWalletBalance",
       "GetSandboxObservedAddress",
       "GetSandboxBroadcastAttempt"
     ],
@@ -277,7 +282,8 @@
       "GetTransactionSettlementSummary"
     ],
     "relatedErrors": [
-      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE"
+      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE",
+      "ORGANIZATION_SETTLEMENT_RESTRICTED"
     ],
     "relatedWebhooks": [],
     "relatedRecipes": [
@@ -292,12 +298,29 @@
     "id": "transactions",
     "operations": [
       "CreateTransaction",
+      "SearchExecutions",
       "GetTransaction",
       "GetTransactionState",
       "ReserveTransactionBalance",
       "CancelTransaction",
       "FreezeTransaction",
       "UnfreezeTransaction"
+    ],
+    "relatedErrors": [
+      "ORGANIZATION_SETTLEMENT_RESTRICTED"
+    ],
+    "relatedWebhooks": [],
+    "relatedRecipes": [],
+    "sources": [
+      "website/openapi/ishtaran-api.json"
+    ]
+  },
+  "walletbalance": {
+    "id": "walletbalance",
+    "operations": [
+      "GetWalletBalance",
+      "RefreshWalletBalance",
+      "GetWalletAssetBalances"
     ],
     "relatedErrors": [],
     "relatedWebhooks": [],
@@ -339,20 +362,6 @@
       "ListEventTypes",
       "CreateEventType",
       "IngestEvent"
-    ],
-    "relatedErrors": [],
-    "relatedWebhooks": [],
-    "relatedRecipes": [],
-    "sources": [
-      "website/openapi/ishtaran-api.json"
-    ]
-  },
-  "walletbalance": {
-    "id": "walletbalance",
-    "operations": [
-      "GetWalletBalance",
-      "RefreshWalletBalance",
-      "GetWalletAssetBalances"
     ],
     "relatedErrors": [],
     "relatedWebhooks": [],

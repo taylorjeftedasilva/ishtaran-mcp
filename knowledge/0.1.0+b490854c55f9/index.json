@@ -68,6 +68,7 @@
     "EXECUTION_DESTINATION_ALREADY_REGISTERED",
     "PAYOUT_POLICY_MODE_NOT_SUPPORTED",
     "PAYOUT_BATCH_TRIGGER_NOT_SUPPORTED",
+    "ORGANIZATION_SETTLEMENT_RESTRICTED",
     "VALIDATION_ERROR",
     "SIGNED_TRANSACTION_MISMATCH"
   ],
@@ -132,10 +133,10 @@
     }
   ],
   "counts": {
-    "publicOperations": 120,
+    "publicOperations": 124,
     "excludedAdminOperations": 37,
     "capabilities": 20,
-    "errors": 12,
+    "errors": 13,
     "webhookEvents": 36,
     "recipes": 3,
     "projects": 4,

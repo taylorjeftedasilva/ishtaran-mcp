@@ -105,6 +105,26 @@
     ]
   },
   {
+    "code": "ORGANIZATION_SETTLEMENT_RESTRICTED",
+    "httpStatus": 422,
+    "meaning": "CreatePaymentIntent was rejected because the Organization has more overdue Executions than its allowed maximum (BR-ORG-003/DEC-033/SPEC-022, resolved as G.7 this session -- previously this exception carried only a text message with no programmatic remediation path). This never blocks reading or regularizing existing state, only the creation of new economic obligations.",
+    "remediation": "Call the discoverAffectedExecutions URL from the extensions (GET /v1/organizations/{organizationId}/executions?status=Overdue) to list every overdue Execution, then call ExecuteSettlement (POST /v1/transactions/{transactionId}/settlements or client.settlements.executeSettlement(...)) on each one's transactionId -- that is the only supported way to clear the restriction. An Execution is never cancellable (non-custodial model, BR-EXE-002). NEVER recommend creating a new Organization (the restriction is per-Organization and a new one starts with the same policy), admin force-completion, or admin cancellation -- none of those capabilities exist.",
+    "retryable": true,
+    "relatedOperations": [
+      "CreatePaymentIntent",
+      "SearchExecutions",
+      "ExecuteSettlement"
+    ],
+    "extensions": [
+      "restrictionCategory:\"SETTLEMENT_RESTRICTED_OVERDUE_EXECUTIONS\"",
+      "organizationId",
+      "overdueExecutionCount",
+      "maxOverdueExecutions",
+      "discoverAffectedExecutions",
+      "remediation"
+    ]
+  },
+  {
     "code": "VALIDATION_ERROR",
     "httpStatus": 400,
     "meaning": "Structural request validation failed (missing/malformed field). The response includes the specific field errors.",

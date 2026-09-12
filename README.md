@@ -81,9 +81,15 @@ This starts the stdio server. It's meant to be launched by an MCP client, not us
 `get_recipe` with `recipeId: "marketplace"` points at `marketplace-mercatto`, a real, runnable
 reference implementation (buyer/seller Accounts, PaymentIntent funding, partial/full Settlement
 with PlatformFee and per-participant revenue split, MANUAL Payout, refunds, and the full
-webhook lifecycle) maintained in the main [Ishtaran monorepo](https://ishtaran.com).
-`wallet-payment-app` and `service-milestone` are real, supported patterns
-(`recipeStatus: SUPPORTED_CONCEPT`) but have no reference project yet
+webhook lifecycle), published as its own standalone, clonable repo:
+[`ishtaran-mercatto-example`](https://github.com/taylorjeftedasilva/ishtaran-mercatto-example)
+(also mirrored inside the main Ishtaran monorepo for internal development).
+`wallet-payment-app` is likewise real and runnable -- a self-custody wallet and payment app
+(private key stays client-side, WalletBalance-driven, Send vs Pay kept structurally distinct,
+app-owner-configurable monetization) -- published at
+[`ishtaran-wallet-example`](https://github.com/taylorjeftedasilva/ishtaran-wallet-example),
+verified live against the public Sandbox (9/9 E2E). `service-milestone` remains a real, supported
+pattern (`recipeStatus: SUPPORTED_CONCEPT`) with no reference project yet
 (`referenceProjectStatus: PLANNED`) -- the tools say this explicitly rather than pointing you at
 code that doesn't exist.
 

@@ -838,6 +838,15 @@
   },
   {
     "language": "typescript",
+    "resourceFile": "sdks/typescript/.../transactionsResource.ts",
+    "resourceAccessor": "transactions",
+    "methodName": "searchExecutions",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/executions",
+    "signature": "searchExecutions( organizationId: string, options: { status?: EnumValue<number>; transactionId?: string; settlementId?: string; from?: string; to?: string; skip?: number; take?: number } = {}, ): Promise<ExecutionResponse[]>"
+  },
+  {
+    "language": "typescript",
     "resourceFile": "sdks/typescript/.../walletBalanceResource.ts",
     "resourceAccessor": "walletBalance",
     "methodName": "getBalance",
@@ -1909,6 +1918,42 @@
   },
   {
     "language": "python",
+    "resourceFile": "sdks/python/.../transactions_resource.py",
+    "resourceAccessor": "transactions",
+    "methodName": "search_executions",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/executions",
+    "signature": "def search_executions( self, organization_id: str, status: EnumValue[int] | None = None, transaction_id: str | None = None, settlement_id: str | None = None, date_from: str | None = None, date_to: str | None = None, skip: int | None = None, take: int | None = None, ) -> list[ExecutionResponse]:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../wallet_balance_resource.py",
+    "resourceAccessor": "wallet_balance",
+    "methodName": "get_balance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/wallet-balances",
+    "signature": "def get_balance(self, account_id: str, environment_id: str, asset_network_id: str) -> WalletBalanceResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../wallet_balance_resource.py",
+    "resourceAccessor": "wallet_balance",
+    "methodName": "refresh_balance",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/wallet-balances/refresh",
+    "signature": "def refresh_balance(self, account_id: str, environment_id: str, asset_network_id: str) -> WalletBalanceResult:"
+  },
+  {
+    "language": "python",
+    "resourceFile": "sdks/python/.../wallet_balance_resource.py",
+    "resourceAccessor": "wallet_balance",
+    "methodName": "get_asset_balances",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/wallet-balances/aggregate",
+    "signature": "def get_asset_balances( self, account_id: str, environment_id: str, asset_network_ids: list[str] ) -> list[WalletAssetBalanceResult]:"
+  },
+  {
+    "language": "python",
     "resourceFile": "sdks/python/.../wallets_resource.py",
     "resourceAccessor": "wallets",
     "methodName": "register",
@@ -2953,6 +2998,42 @@
   },
   {
     "language": "java",
+    "resourceFile": "sdks/java/.../TransactionsResource.java",
+    "resourceAccessor": "transactions()",
+    "methodName": "searchExecutions",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/executions",
+    "signature": "public List<ExecutionResponse> searchExecutions(UUID organizationId, ExecutionStatus status, UUID transactionId, UUID settlementId, OffsetDateTime from, OffsetDateTime to, Integer skip, Integer take)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WalletBalanceResource.java",
+    "resourceAccessor": "walletBalance()",
+    "methodName": "getBalance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/wallet-balances",
+    "signature": "public WalletBalanceResponse getBalance(UUID accountId, UUID environmentId, UUID assetNetworkId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WalletBalanceResource.java",
+    "resourceAccessor": "walletBalance()",
+    "methodName": "refreshBalance",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/wallet-balances/refresh",
+    "signature": "public WalletBalanceResponse refreshBalance(UUID accountId, UUID environmentId, UUID assetNetworkId)"
+  },
+  {
+    "language": "java",
+    "resourceFile": "sdks/java/.../WalletBalanceResource.java",
+    "resourceAccessor": "walletBalance()",
+    "methodName": "getAssetBalances",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/wallet-balances/aggregate",
+    "signature": "public List<WalletAssetBalanceResponse> getAssetBalances(UUID accountId, UUID environmentId, List<UUID> assetNetworkIds)"
+  },
+  {
+    "language": "java",
     "resourceFile": "sdks/java/.../WalletsResource.java",
     "resourceAccessor": "wallets()",
     "methodName": "register",
@@ -3994,6 +4075,42 @@
     "httpVerb": "POST",
     "pathShape": "/v1/transactions/*/unfreeze",
     "signature": "func (r *TransactionsResource) Unfreeze(ctx context.Context, transactionID string) error"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_transactions.go",
+    "resourceAccessor": "TransactionsResource",
+    "methodName": "SearchExecutions",
+    "httpVerb": "GET",
+    "pathShape": "/v1/organizations/*/executions",
+    "signature": "func (r *TransactionsResource) SearchExecutions(ctx context.Context, organizationID string, opts SearchExecutionsOptions) ([]ExecutionResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_wallet_balance.go",
+    "resourceAccessor": "WalletBalanceResource",
+    "methodName": "GetBalance",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/wallet-balances",
+    "signature": "func (r *WalletBalanceResource) GetBalance(ctx context.Context, accountID, environmentID, assetNetworkID string) (WalletBalanceResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_wallet_balance.go",
+    "resourceAccessor": "WalletBalanceResource",
+    "methodName": "RefreshBalance",
+    "httpVerb": "POST",
+    "pathShape": "/v1/accounts/*/wallet-balances/refresh",
+    "signature": "func (r *WalletBalanceResource) RefreshBalance(ctx context.Context, accountID, environmentID, assetNetworkID string) (WalletBalanceResponse, error)"
+  },
+  {
+    "language": "go",
+    "resourceFile": "sdks/go/resource_wallet_balance.go",
+    "resourceAccessor": "WalletBalanceResource",
+    "methodName": "GetAssetBalances",
+    "httpVerb": "GET",
+    "pathShape": "/v1/accounts/*/wallet-balances/aggregate",
+    "signature": "func (r *WalletBalanceResource) GetAssetBalances(ctx context.Context, accountID, environmentID string, assetNetworkIDs []string) ([]WalletAssetBalanceResponse, error)"
   },
   {
     "language": "go",

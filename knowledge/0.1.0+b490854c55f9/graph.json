@@ -155,6 +155,9 @@
       "SandboxSimulateWithdrawal",
       "SandboxSetObservedTreasuryBalance",
       "GetSandboxObservedTreasuryBalance",
+      "SandboxCreditWalletBalance",
+      "SandboxTransferWalletBalance",
+      "GetSandboxWalletBalance",
       "GetSandboxObservedAddress",
       "GetSandboxBroadcastAttempt"
     ],
@@ -170,12 +173,18 @@
     ],
     "transactions": [
       "CreateTransaction",
+      "SearchExecutions",
       "GetTransaction",
       "GetTransactionState",
       "ReserveTransactionBalance",
       "CancelTransaction",
       "FreezeTransaction",
       "UnfreezeTransaction"
+    ],
+    "walletbalance": [
+      "GetWalletBalance",
+      "RefreshWalletBalance",
+      "GetWalletAssetBalances"
     ],
     "withdrawals": [
       "CreateWithdrawalDestination",
@@ -197,11 +206,6 @@
       "ListEventTypes",
       "CreateEventType",
       "IngestEvent"
-    ],
-    "walletbalance": [
-      "GetWalletBalance",
-      "RefreshWalletBalance",
-      "GetWalletAssetBalances"
     ]
   },
   "operationToErrors": {
@@ -214,7 +218,8 @@
       "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE"
     ],
     "ExecuteSettlement": [
-      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE"
+      "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE",
+      "ORGANIZATION_SETTLEMENT_RESTRICTED"
     ],
     "RequestWithdrawal": [
       "NETWORK_EXECUTION_FEE_INSUFFICIENT_BALANCE"
@@ -228,6 +233,12 @@
     ],
     "RegisterNetworkCostPayerAccount": [
       "NETWORK_COST_PAYER_ACCOUNT_ALREADY_REGISTERED"
+    ],
+    "CreatePaymentIntent": [
+      "ORGANIZATION_SETTLEMENT_RESTRICTED"
+    ],
+    "SearchExecutions": [
+      "ORGANIZATION_SETTLEMENT_RESTRICTED"
     ],
     "SubmitSignedTransaction": [
       "SIGNED_TRANSACTION_MISMATCH"
@@ -260,6 +271,11 @@
     "PAYOUT_POLICY_MODE_NOT_SUPPORTED": [],
     "PAYOUT_BATCH_TRIGGER_NOT_SUPPORTED": [
       "CreatePayoutBatch"
+    ],
+    "ORGANIZATION_SETTLEMENT_RESTRICTED": [
+      "CreatePaymentIntent",
+      "SearchExecutions",
+      "ExecuteSettlement"
     ],
     "VALIDATION_ERROR": [],
     "SIGNED_TRANSACTION_MISMATCH": [

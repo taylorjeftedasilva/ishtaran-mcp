@@ -3497,6 +3497,75 @@
       "sdk-feature-matrix.json"
     ]
   },
+  "SandboxCreditWalletBalance": {
+    "operationId": "SandboxCreditWalletBalance",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/sandbox/wallet-balance/credit",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "creditWalletBalance",
+        "resource": "sandbox",
+        "signature": "creditWalletBalance(environmentId: string, address: string, assetNetworkId: string, amount: string, idempotencyKey: string): Promise<SandboxWalletBalanceResponse>"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "SandboxTransferWalletBalance": {
+    "operationId": "SandboxTransferWalletBalance",
+    "method": "POST",
+    "path": "/v1/environments/{environmentId}/sandbox/wallet-balance/transfer",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "transferWalletBalance",
+        "resource": "sandbox",
+        "signature": "transferWalletBalance( environmentId: string, fromAddress: string, toAddress: string, assetNetworkId: string, amount: string, idempotencyKey: string, ): Promise<SandboxWalletTransferResponse>"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetSandboxWalletBalance": {
+    "operationId": "GetSandboxWalletBalance",
+    "method": "GET",
+    "path": "/v1/environments/{environmentId}/sandbox/wallet-balance",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Sandbox"
+    ],
+    "capability": "sandbox",
+    "sdk": {
+      "typescript": {
+        "method": "getWalletBalance",
+        "resource": "sandbox",
+        "signature": "getWalletBalance(environmentId: string, assetNetworkId: string, address: string): Promise<SandboxWalletBalanceResponse>"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
   "GetSandboxObservedAddress": {
     "operationId": "GetSandboxObservedAddress",
     "method": "GET",
@@ -3970,6 +4039,44 @@
       "sdk-feature-matrix.json"
     ]
   },
+  "SearchExecutions": {
+    "operationId": "SearchExecutions",
+    "method": "GET",
+    "path": "/v1/organizations/{organizationId}/executions",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "Transactions"
+    ],
+    "capability": "transactions",
+    "sdk": {
+      "typescript": {
+        "method": "searchExecutions",
+        "resource": "transactions",
+        "signature": "searchExecutions( organizationId: string, options: { status?: EnumValue<number>; transactionId?: string; settlementId?: string; from?: string; to?: string; skip?: number; take?: number } = {}, ): Promise<ExecutionResponse[]>"
+      },
+      "java": {
+        "method": "searchExecutions",
+        "resource": "transactions()",
+        "signature": "public List<ExecutionResponse> searchExecutions(UUID organizationId, ExecutionStatus status, UUID transactionId, UUID settlementId, OffsetDateTime from, OffsetDateTime to, Integer skip, Integer take)"
+      },
+      "python": {
+        "method": "search_executions",
+        "resource": "transactions",
+        "signature": "def search_executions( self, organization_id: str, status: EnumValue[int] | None = None, transaction_id: str | None = None, settlement_id: str | None = None, date_from: str | None = None, date_to: str | None = None, skip: int | None = None, take: int | None = None, ) -> list[ExecutionResponse]:"
+      },
+      "go": {
+        "method": "SearchExecutions",
+        "resource": "TransactionsResource",
+        "signature": "func (r *TransactionsResource) SearchExecutions(ctx context.Context, organizationID string, opts SearchExecutionsOptions) ([]ExecutionResponse, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
   "GetTransaction": {
     "operationId": "GetTransaction",
     "method": "GET",
@@ -4223,6 +4330,120 @@
       "python": "DONE",
       "go": "DONE"
     },
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetWalletBalance": {
+    "operationId": "GetWalletBalance",
+    "method": "GET",
+    "path": "/v1/accounts/{accountId}/wallet-balances",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WalletBalance"
+    ],
+    "capability": "walletbalance",
+    "sdk": {
+      "typescript": {
+        "method": "getBalance",
+        "resource": "walletBalance",
+        "signature": "getBalance(accountId: string, environmentId: string, assetNetworkId: string): Promise<WalletBalanceResult>"
+      },
+      "java": {
+        "method": "getBalance",
+        "resource": "walletBalance()",
+        "signature": "public WalletBalanceResponse getBalance(UUID accountId, UUID environmentId, UUID assetNetworkId)"
+      },
+      "python": {
+        "method": "get_balance",
+        "resource": "wallet_balance",
+        "signature": "def get_balance(self, account_id: str, environment_id: str, asset_network_id: str) -> WalletBalanceResult:"
+      },
+      "go": {
+        "method": "GetBalance",
+        "resource": "WalletBalanceResource",
+        "signature": "func (r *WalletBalanceResource) GetBalance(ctx context.Context, accountID, environmentID, assetNetworkID string) (WalletBalanceResponse, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "RefreshWalletBalance": {
+    "operationId": "RefreshWalletBalance",
+    "method": "POST",
+    "path": "/v1/accounts/{accountId}/wallet-balances/refresh",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WalletBalance"
+    ],
+    "capability": "walletbalance",
+    "sdk": {
+      "typescript": {
+        "method": "refreshBalance",
+        "resource": "walletBalance",
+        "signature": "refreshBalance(accountId: string, environmentId: string, assetNetworkId: string): Promise<WalletBalanceResult>"
+      },
+      "java": {
+        "method": "refreshBalance",
+        "resource": "walletBalance()",
+        "signature": "public WalletBalanceResponse refreshBalance(UUID accountId, UUID environmentId, UUID assetNetworkId)"
+      },
+      "python": {
+        "method": "refresh_balance",
+        "resource": "wallet_balance",
+        "signature": "def refresh_balance(self, account_id: str, environment_id: str, asset_network_id: str) -> WalletBalanceResult:"
+      },
+      "go": {
+        "method": "RefreshBalance",
+        "resource": "WalletBalanceResource",
+        "signature": "func (r *WalletBalanceResource) RefreshBalance(ctx context.Context, accountID, environmentID, assetNetworkID string) (WalletBalanceResponse, error)"
+      }
+    },
+    "matrixStatus": null,
+    "sources": [
+      "website/openapi/ishtaran-api.json",
+      "sdk-feature-matrix.json"
+    ]
+  },
+  "GetWalletAssetBalances": {
+    "operationId": "GetWalletAssetBalances",
+    "method": "GET",
+    "path": "/v1/accounts/{accountId}/wallet-balances/aggregate",
+    "summary": null,
+    "description": null,
+    "tags": [
+      "WalletBalance"
+    ],
+    "capability": "walletbalance",
+    "sdk": {
+      "typescript": {
+        "method": "getAssetBalances",
+        "resource": "walletBalance",
+        "signature": "getAssetBalances(accountId: string, environmentId: string, assetNetworkIds: string[]): Promise<WalletAssetBalanceResult[]>"
+      },
+      "java": {
+        "method": "getAssetBalances",
+        "resource": "walletBalance()",
+        "signature": "public List<WalletAssetBalanceResponse> getAssetBalances(UUID accountId, UUID environmentId, List<UUID> assetNetworkIds)"
+      },
+      "python": {
+        "method": "get_asset_balances",
+        "resource": "wallet_balance",
+        "signature": "def get_asset_balances( self, account_id: str, environment_id: str, asset_network_ids: list[str] ) -> list[WalletAssetBalanceResult]:"
+      },
+      "go": {
+        "method": "GetAssetBalances",
+        "resource": "WalletBalanceResource",
+        "signature": "func (r *WalletBalanceResource) GetAssetBalances(ctx context.Context, accountID, environmentID string, assetNetworkIDs []string) ([]WalletAssetBalanceResponse, error)"
+      }
+    },
+    "matrixStatus": null,
     "sources": [
       "website/openapi/ishtaran-api.json",
       "sdk-feature-matrix.json"
@@ -4954,75 +5175,6 @@
       "python": "DONE",
       "go": "DONE"
     },
-    "sources": [
-      "website/openapi/ishtaran-api.json",
-      "sdk-feature-matrix.json"
-    ]
-  },
-  "GetWalletBalance": {
-    "operationId": "GetWalletBalance",
-    "method": "GET",
-    "path": "/v1/accounts/{accountId}/wallet-balances",
-    "summary": "Get the wallet's own observed on-chain balance (cached snapshot, never queries the chain itself)",
-    "description": null,
-    "tags": [
-      "WalletBalance"
-    ],
-    "capability": "walletbalance",
-    "sdk": {
-      "typescript": {
-        "method": "getBalance",
-        "resource": "walletBalance",
-        "signature": "getBalance(accountId: string, environmentId: string, assetNetworkId: string): Promise<WalletBalanceResult>"
-      }
-    },
-    "matrixStatus": null,
-    "sources": [
-      "website/openapi/ishtaran-api.json",
-      "sdk-feature-matrix.json"
-    ]
-  },
-  "RefreshWalletBalance": {
-    "operationId": "RefreshWalletBalance",
-    "method": "POST",
-    "path": "/v1/accounts/{accountId}/wallet-balances/refresh",
-    "summary": "Ask the platform to authoritatively re-check the real chain state now (server-side freshness/single-flight guard applies)",
-    "description": null,
-    "tags": [
-      "WalletBalance"
-    ],
-    "capability": "walletbalance",
-    "sdk": {
-      "typescript": {
-        "method": "refreshBalance",
-        "resource": "walletBalance",
-        "signature": "refreshBalance(accountId: string, environmentId: string, assetNetworkId: string): Promise<WalletBalanceResult>"
-      }
-    },
-    "matrixStatus": null,
-    "sources": [
-      "website/openapi/ishtaran-api.json",
-      "sdk-feature-matrix.json"
-    ]
-  },
-  "GetWalletAssetBalances": {
-    "operationId": "GetWalletAssetBalances",
-    "method": "GET",
-    "path": "/v1/accounts/{accountId}/wallet-balances/aggregate",
-    "summary": "Aggregate wallet balance across several AssetNetworks, grouped by Asset",
-    "description": null,
-    "tags": [
-      "WalletBalance"
-    ],
-    "capability": "walletbalance",
-    "sdk": {
-      "typescript": {
-        "method": "getAssetBalances",
-        "resource": "walletBalance",
-        "signature": "getAssetBalances(accountId: string, environmentId: string, assetNetworkIds: string[]): Promise<WalletAssetBalanceResult[]>"
-      }
-    },
-    "matrixStatus": null,
     "sources": [
       "website/openapi/ishtaran-api.json",
       "sdk-feature-matrix.json"

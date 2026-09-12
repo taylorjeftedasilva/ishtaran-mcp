@@ -1,27 +1,27 @@
 {
   "schemaVersion": "1.0.0",
-  "knowledgeVersion": "0.1.0+013f34700341",
-  "generatedAt": "2026-09-11T15:28:37.759Z",
-  "sourceCommit": "62cb70bd0b4ca202d75baba6951c6666030a4ac7",
+  "knowledgeVersion": "0.1.0+b490854c55f9",
+  "generatedAt": "2026-09-12T09:40:38.128Z",
+  "sourceCommit": "d41070e4fe7da3887d92e28b032688535855fd98",
   "openApiVersion": "v1",
-  "openApiHash": "a621b46094a1cd6bbe3e45ca73fb1bffc7b22623f2d85afc415d1216bd39e1ea",
-  "bundleHash": "013f3470034184a5a63a51c99e5064ad52537615edddc03b24d1b33f1889e984",
+  "openApiHash": "fa1a6f087a13551e8735f8fad7d92044bd2ea81f033b58b64c9532ed633ea930",
+  "bundleHash": "b490854c55f9e8d206c1f678a5f8f7a69901bf73ba572d8cff2b2d4d73b407d9",
   "supportedSdkVersions": [
     {
       "language": "typescript",
-      "version": "0.1.3"
+      "version": "0.1.7"
     },
     {
       "language": "java",
-      "version": "0.1.3"
+      "version": "0.1.7"
     },
     {
       "language": "python",
-      "version": "0.1.3"
+      "version": "0.1.7"
     },
     {
       "language": "go",
-      "version": "0.1.3"
+      "version": "0.1.7"
     }
   ],
   "minimumCompatibleMcpVersion": "0.1.0",
