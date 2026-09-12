@@ -7,7 +7,7 @@
     "pattern": "marketplace",
     "repositoryUrl": "https://github.com/taylorjeftedasilva/ishtaran-mercatto-example",
     "defaultBranch": "main",
-    "revision": "d41070e4fe7da3887d92e28b032688535855fd98",
+    "revision": "7a224b4ad769da3d2c56aa5946d7be89bcb00890",
     "sourceArchiveUrl": null,
     "contentHash": null,
     "languages": [
@@ -53,7 +53,7 @@
       "Uses Sandbox only, never Production.",
       "THRESHOLD/SCHEDULED PayoutPolicy not exercised (not publicly supported)."
     ],
-    "lastValidatedAt": "2026-09-11T21:13:07-03:00"
+    "lastValidatedAt": "2026-09-12T06:42:38-03:00"
   },
   {
     "id": "quickstart-node",
@@ -63,7 +63,7 @@
     "pattern": "getting-started",
     "repositoryUrl": "https://github.com/taylorjeftedasilva/smartcontract (monorepo path: examples/quickstart-node)",
     "defaultBranch": "main",
-    "revision": "d41070e4fe7da3887d92e28b032688535855fd98",
+    "revision": "7a224b4ad769da3d2c56aa5946d7be89bcb00890",
     "sourceArchiveUrl": null,
     "contentHash": null,
     "languages": [
@@ -102,7 +102,7 @@
     "knownLimitations": [
       "Does not cover Settlement, Payout, Withdrawal, or webhooks -- not a substitute for the marketplace/wallet/service recipes."
     ],
-    "lastValidatedAt": "2026-09-11T21:13:07-03:00"
+    "lastValidatedAt": "2026-09-12T06:42:38-03:00"
   },
   {
     "id": "wallet-payment-app",
@@ -112,7 +112,7 @@
     "pattern": "wallet-payment-app",
     "repositoryUrl": "https://github.com/taylorjeftedasilva/ishtaran-wallet-example",
     "defaultBranch": "main",
-    "revision": "d41070e4fe7da3887d92e28b032688535855fd98",
+    "revision": "7a224b4ad769da3d2c56aa5946d7be89bcb00890",
     "sourceArchiveUrl": null,
     "contentHash": null,
     "languages": [
@@ -160,7 +160,7 @@
       "Production blockchain execution is not available on Ishtaran yet -- Sandbox only.",
       "Does not follow this project's own wallet-payment-app recipe text (that recipe predates this implementation and describes a simpler Ledger-only pattern) -- read the repo's own docs for the real architecture, not the recipe."
     ],
-    "lastValidatedAt": "2026-09-11T21:13:07-03:00"
+    "lastValidatedAt": "2026-09-12T06:42:38-03:00"
   },
   {
     "id": "service-milestone",
@@ -194,6 +194,6 @@
     "knownLimitations": [
       "PLANNED only -- no reference code exists yet. Do not present this as available; use the service-milestone recipe (get_recipe) for the supported pattern instead."
     ],
-    "lastValidatedAt": "2026-09-11T21:13:07-03:00"
+    "lastValidatedAt": "2026-09-12T06:42:38-03:00"
   }
 ]

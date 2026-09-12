@@ -52,6 +52,21 @@ function main() {
   const commit = gitCommit();
   const commitDate = gitCommitDate();
   const tsSdkVersion = JSON.parse(readFileSync(repoPath('sdks', 'typescript', 'package.json'), 'utf-8')).version as string;
+  const pythonSdkVersion = /^version\s*=\s*"([^"]+)"/m.exec(
+    readFileSync(repoPath('sdks', 'python', 'pyproject.toml'), 'utf-8'),
+  )?.[1] as string;
+  const javaSdkVersion = /<version>([^<]+)<\/version>/.exec(
+    readFileSync(repoPath('sdks', 'java', 'pom.xml'), 'utf-8'),
+  )?.[1] as string;
+  const goSdkVersion = /SDKVersion\s*=\s*"([^"]+)"/.exec(
+    readFileSync(repoPath('sdks', 'go', 'user_agent.go'), 'utf-8'),
+  )?.[1] as string;
+  const sdkVersionsByLanguage: Record<SdkLanguage, string> = {
+    typescript: tsSdkVersion,
+    python: pythonSdkVersion,
+    java: javaSdkVersion,
+    go: goSdkVersion,
+  };
 
   console.log(`[mcp-build] OpenAPI: ${openApi.operations.length} total, ${openApi.publicOperations.length} public, ${openApi.adminOperations.length} admin (excluded).`);
   console.log(`[mcp-build] SDK extraction: ${extractedMethods.length} methods across ${LANGUAGES.length} languages.`);
@@ -241,7 +256,7 @@ function main() {
     openApiVersion: openApi.version,
     openApiHash,
     bundleHash: sha256Hex(preHashPayload),
-    supportedSdkVersions: LANGUAGES.map((lang) => ({ language: lang, version: tsSdkVersion })),
+    supportedSdkVersions: LANGUAGES.map((lang) => ({ language: lang, version: sdkVersionsByLanguage[lang] })),
     minimumCompatibleMcpVersion: '0.1.0',
     environmentStatus: { local: 'active', sandbox: 'active', production: 'not_active_for_real_crypto_flows' },
     signature: null,
